@@ -3,11 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/*
+ * TODO:
+ * - I Dont like the Jumping system cause we cant hold `JUMP` to make the player keep jumping
+ * - ...
+ */
+
+/*
+ * BUG:
+ * - We cannot fall if we are running into a wall
+ * - ...
+ */
+
 public class PlayerMovement : MonoBehaviour
 {
 	// Components
 	private Rigidbody2D _rigidbody;
 	private Animator _animator;
+	private SpriteRenderer _spriteRenderer;
 
 	// Player States
 	private bool _isRunning = false;
@@ -34,16 +47,24 @@ public class PlayerMovement : MonoBehaviour
 	 * @memberOf : UnityEngine
 	 */
 	void Start() {
-		// Get Rigidbody2D & Animator from Player game object
+		// getting components ...
 		_rigidbody = GetComponent<Rigidbody2D>();
 		_animator = GetComponent<Animator>();
+		_spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	/*
-	 * Handle Player movement behaviour
+	 * Handle Player movement & animator behaviour
 	 * @memberOf : UnityEngine
 	 */
 	void FixedUpdate() {
+		// Needs to update movements first,
+		// to be sures to have the correct status for handleAnimator ☝️🤓
+		handleMovements();
+		handleAnimator();
+	}
+
+	void handleMovements() {
 
 		// Get current Rigidbody velocity
 		Vector2 velocity = _rigidbody.velocity;
@@ -55,6 +76,8 @@ public class PlayerMovement : MonoBehaviour
 		if (_isJumping && !_isInAir) {
 			// Add jumpForce to y velocity
 			velocity.y = jumpForce;
+			// Reset _isJumping
+			_isJumping = false;
 			// Set player in Air
 			_isInAir = true;
 		}
@@ -66,6 +89,22 @@ public class PlayerMovement : MonoBehaviour
 
 		// Set new velocity to player Rigidbody
 		_rigidbody.velocity = velocity;
+	}
+
+	void handleAnimator() {
+
+		// Update animator values
+		_animator.SetBool("isRunning", _isRunning);
+
+		// Stop here if moveInput has not been updated
+		if (_moveInput.x == 0f) return;
+
+		// Here we check if the player is is looking right,
+		// If the SpriteRenderer flip direction is not like current looking direction,
+		// We update flipX SpriteRenderer state
+		bool isLookingRight = _moveInput.x < 0;
+		if (_spriteRenderer.flipX != isLookingRight)
+			_spriteRenderer.flipX = isLookingRight;
 	}
 
 	/*

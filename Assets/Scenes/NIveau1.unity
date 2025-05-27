@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 10104565}
   - component: {fileID: 10104567}
   - component: {fileID: 10104566}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Platforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2535,6 +2535,10 @@ PrefabInstance:
     - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: jumpForce
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 4041491494156010563, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: m_Name

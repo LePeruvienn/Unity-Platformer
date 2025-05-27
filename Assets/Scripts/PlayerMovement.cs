@@ -11,22 +11,29 @@ public class PlayerMovement : MonoBehaviour
 
 	// Player States
 	private bool _isRunning = false;
-	private bool _isJumpRequested = false;
+	private bool _isJumping = false;
+	private bool _isInAir = false;
 
 	// Player movement input
 	Vector2 _moveInput = Vector2.zero;
 
+	// Ground check system
+	[Header("Ground checker System")]
+	[SerializeField] private Transform groundCheckerOrigin;
+	[SerializeField] private Vector2 groundCheckerBoxSize = new Vector2(0.5f, 0.1f);
+	[SerializeField] private LayerMask groundLayer;
 
 	// Player movement config
-	public float jumpForce = 5f;
-	public float moveSpeed = 5f;
-	public float runSpeed = 8f;
+	[Header("Movement values")]
+	[SerializeField] private float jumpForce = 5f;
+	[SerializeField] private float moveSpeed = 5f;
+	[SerializeField] private float runSpeed = 8f;
 
 	/*
 	 * Start Method used to get Player's Components
+	 * @memberOf : UnityEngine
 	 */
-	void Start()
-	{
+	void Start() {
 		// Get Rigidbody2D & Animator from Player game object
 		_rigidbody = GetComponent<Rigidbody2D>();
 		_animator = GetComponent<Animator>();
@@ -34,9 +41,10 @@ public class PlayerMovement : MonoBehaviour
 
 	/*
 	 * Handle Player movement behaviour
+	 * @memberOf : UnityEngine
 	 */
-	void FixedUpdate()
-	{
+	void FixedUpdate() {
+
 		// Get current Rigidbody velocity
 		Vector2 velocity = _rigidbody.velocity;
 
@@ -44,13 +52,17 @@ public class PlayerMovement : MonoBehaviour
 		velocity.x = _moveInput.x * (_isRunning ? runSpeed : moveSpeed);
 
 		// If player is trying to jump
-		if (_isJumpRequested) {
-
+		if (_isJumping && !_isInAir) {
 			// Add jumpForce to y velocity
 			velocity.y = jumpForce;
-			// Now player dont want to jump
-			_isJumpRequested = false;
+			// Set player in Air
+			_isInAir = true;
 		}
+
+		// If player is inAir, check if he is grounded
+		if (_isInAir && isGrounded())
+			// If he is reset _isInAir
+			_isInAir = false;
 
 		// Set new velocity to player Rigidbody
 		_rigidbody.velocity = velocity;
@@ -58,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
 	/*
 	 * Used to update player direction input values
+	 * @memberOf : InputSystem.Event
 	 */
 	void OnMove(InputValue value) {
 
@@ -66,13 +79,15 @@ public class PlayerMovement : MonoBehaviour
 
 	/*
 	 * Update request jump status
+	 * @memberOf : InputSystem.Event
 	 */
 	void OnJump() {
-		_isJumpRequested = true;
+		_isJumping = true;
 	}
 
 	/*
 	 * Handle player isRunning state
+	 * @memberOf : InputSystem.Event
 	 */
 	void OnRun(InputValue value) {
 
@@ -81,5 +96,35 @@ public class PlayerMovement : MonoBehaviour
 
 		// If Player is pressing is set isRunning to true
 		_isRunning = pressing >= 0.5f;
+	}
+	
+	/*
+	 * Check if te player is on the ground
+	 * @memberOf : PlayerMovement
+	 */
+	bool isGrounded() {
+		
+		// Run a BoxCast to see if we are colliding with the ground
+		return Physics2D.BoxCast(
+			groundCheckerOrigin.position, // Cast origin
+			groundCheckerBoxSize,         // size of the box
+			0f,                           // rotation
+			Vector2.down,                 // cast direction
+			0f,                           // cast distance
+			groundLayer                   // layer mask detection
+		);
+	}
+
+
+	/*
+	 * Used to draw collisions & cast on scene
+	 * @memberOf : Debug 🤓
+	 */
+	void OnDrawGizmosSelected() {
+	
+		Gizmos.color = Color.red;
+
+		// Draw groundChecker box
+		Gizmos.DrawWireCube(groundCheckerOrigin.position, groundCheckerBoxSize);
 	}
 }

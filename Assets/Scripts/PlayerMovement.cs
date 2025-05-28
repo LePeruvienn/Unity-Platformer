@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
 		Vector2 velocity = _rigidbody.velocity;
 
 		// Add velocity is player depening of player input & state
-		velocity.x = _moveInput.x * (_isRunning ? runSpeed : moveSpeed);
+		velocity.x = _moveInput.x * (_isRunning && !_isJumping ? runSpeed : moveSpeed);
 
 		// Check if player is on ground
 		bool grounded = isGrounded();
@@ -102,7 +102,11 @@ public class PlayerMovement : MonoBehaviour
 	void handleAnimator() {
 
 		// Update animator values
-		_animator.SetBool("isRunning", _isRunning);
+		_animator.SetBool("isRunning", _moveInput.x != 0f || _isJumping);
+
+		// if player is running speed up animation speed
+		if (_isRunning && _moveInput.x != 0)
+			_animator.speed = 1.5f;
 
 		// Stop here if moveInput has not been updated
 		if (_moveInput.x == 0f) return;

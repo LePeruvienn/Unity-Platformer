@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 	private bool _isInAir = false;
 
 	// Player movement input
-	Vector2 _moveInput = Vector2.zero;
+	private Vector2 _moveInput = Vector2.zero;
 
 	// Ground check system
 	[Header("Ground checker System")]
@@ -59,6 +59,10 @@ public class PlayerMovement : MonoBehaviour
 		handleAnimator();
 	}
 
+	/*
+	 * Handle Player Movements
+	 * @memberOf : PlayerMovement
+	 */
 	void handleMovements() {
 
 		// Get current Rigidbody velocity
@@ -99,6 +103,10 @@ public class PlayerMovement : MonoBehaviour
 		_rigidbody.velocity = velocity;
 	}
 
+	/*
+	 * Handle Player Animations
+	 * @memberOf : PlayerMovement
+	 */
 	void handleAnimator() {
 
 		// Update animator values
@@ -124,7 +132,6 @@ public class PlayerMovement : MonoBehaviour
 	 * @memberOf : InputSystem.Event
 	 */
 	void OnMove(InputValue value) {
-
 		_moveInput = value.Get<Vector2>();
 	}
 

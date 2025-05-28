@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
 	// Player movement input
 	private Vector2 _moveInput = Vector2.zero;
 
+	// Coyote jump vars
+	private float _coyoteTime = 0f;
+
 	// Ground check system
 	[Header("Ground checker System")]
 	[SerializeField] private Transform groundCheckerOrigin;
@@ -36,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float jumpForce = 5f;
 	[SerializeField] private float moveSpeed = 5f;
 	[SerializeField] private float runSpeed = 8f;
+	[SerializeField] private float coyoteDuration = 500f;
 
 	/*
 	 * Start Method used to get Player's Components
@@ -71,8 +75,22 @@ public class PlayerMovement : MonoBehaviour
 		// Add velocity is player depening of player input & state
 		velocity.x = _moveInput.x * (_isRunning && !_isJumping ? runSpeed : moveSpeed);
 
-		// Check if player is on ground
+		// Get grounded value
 		bool grounded = isGrounded();
+
+		// If player is falling, we set him inAir
+		if (!grounded && !_isJumping && _coyoteTime < coyoteDuration) {
+
+			// Wait coyoteDuration (deltaTime is in seconds)
+			_coyoteTime += Time.deltaTime * 1000;
+
+			// If we go out the coyoteDuration we set him in air
+			if (_coyoteTime >= coyoteDuration)
+				_isInAir = true;
+		}
+		// Else we reset coyoteTime
+		else if (_coyoteTime != 0f)
+			_coyoteTime = 0f;
 
 		// If player is trying to jump
 		if (_requestJump && !_isInAir && !_isJumping) {
@@ -90,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
 			_isInAir = true;
 
 		// If player is inAir, check if he is grounded
-		if (_isInAir && grounded) {
+		else if (_isInAir && grounded) {
 			// If he is reset _isInAir
 			_isInAir = false;
 			_isJumping = false;

@@ -9256,6 +9256,18 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: -7583907484783248528, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7583907484783248528, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7583907484783248528, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: runSpeed
       value: 7
@@ -9263,6 +9275,10 @@ PrefabInstance:
     - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: jumpForce
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
+      propertyPath: coyoteDuration
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: groundLayer.m_Bits

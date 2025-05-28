@@ -9,12 +9,6 @@ using UnityEngine.InputSystem;
  * - ...
  */
 
-/*
- * BUG:
- * - We cannot fall if we are running into a wall
- * - ...
- */
-
 public class PlayerMovement : MonoBehaviour
 {
 	// Components
@@ -24,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
 	// Player States
 	private bool _isRunning = false;
+	private bool _requestJump = false;
 	private bool _isJumping = false;
 	private bool _isInAir = false;
 
@@ -72,20 +67,33 @@ public class PlayerMovement : MonoBehaviour
 		// Add velocity is player depening of player input & state
 		velocity.x = _moveInput.x * (_isRunning ? runSpeed : moveSpeed);
 
+		// Check if player is on ground
+		bool grounded = isGrounded();
+
 		// If player is trying to jump
-		if (_isJumping && !_isInAir) {
+		if (_requestJump && !_isInAir && !_isJumping) {
 			// Add jumpForce to y velocity
 			velocity.y = jumpForce;
-			// Reset _isJumping
-			_isJumping = false;
-			// Set player in Air
-			_isInAir = true;
+			// Reset _requestJump
+			_requestJump = false;
+			// Set player jumping
+			_isJumping = true;
 		}
 
+		// If player is jumping and has left the ground
+		if (_isJumping && !grounded)
+			// Set his inAir status to true
+			_isInAir = true;
+
 		// If player is inAir, check if he is grounded
-		if (_isInAir && isGrounded())
+		if (_isInAir && grounded) {
 			// If he is reset _isInAir
 			_isInAir = false;
+			_isJumping = false;
+		}
+
+		// Reset isJumping
+		_requestJump = false;
 
 		// Set new velocity to player Rigidbody
 		_rigidbody.velocity = velocity;
@@ -121,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
 	 * @memberOf : InputSystem.Event
 	 */
 	void OnJump() {
-		_isJumping = true;
+		_requestJump = true;
 	}
 
 	/*
@@ -156,13 +164,13 @@ public class PlayerMovement : MonoBehaviour
 
 
 	/*
-	 * Used to draw collisions & cast on scene
+	 * Used to draw collisions & cast on scene when selected
 	 * @memberOf : Debug 🤓
 	 */
 	void OnDrawGizmosSelected() {
 	
+		// Set draw color to red
 		Gizmos.color = Color.red;
-
 		// Draw groundChecker box
 		Gizmos.DrawWireCube(groundCheckerOrigin.position, groundCheckerBoxSize);
 	}

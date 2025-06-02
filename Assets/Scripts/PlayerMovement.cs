@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
  * TODO:
  * - I Dont like the Jumping system cause we cant hold `JUMP` to make the player keep jumping
  * - Add wall jump feature
- * - Improve jump system
  * - Improve Ladder System
  * - ...
  */
@@ -21,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
 
 	// Player States
 	private bool _isRunning = false;
-	private bool _requestJump = false;
 	private bool _isJumping = false;
 	private bool _isInAir = false;
 	private bool _isClimbing = false;
@@ -106,17 +104,6 @@ public class PlayerMovement : MonoBehaviour
 		else if (_coyoteTime != 0f)
 			_coyoteTime = 0f;
 
-		// If player is trying to jump
-		if (_requestJump && !_isInAir && !_isJumping) {
-
-			// Add jumpForce to y velocity
-			velocity.y = jumpForce;
-			// Reset _requestJump
-			_requestJump = false;
-			// Set player jumping
-			_isJumping = true;
-		}
-
 		// If player is jumping and has left the ground
 		if (_isJumping && !grounded)
 			// Set his inAir status to true
@@ -128,9 +115,6 @@ public class PlayerMovement : MonoBehaviour
 			_isInAir = false;
 			_isJumping = false;
 		}
-
-		// Reset isJumping
-		_requestJump = false;
 
 		// Handle Climbing
 		if (isTouchingLadder()) {
@@ -206,11 +190,26 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	/*
-	 * Update request jump status
+	 * Handle player's JUMP
 	 * @memberOf : InputSystem.Event
 	 */
 	private void OnJump() {
-		_requestJump = true;
+
+		// If player is trying to jump
+		if (!_isInAir && !_isJumping) {
+
+			// Get current Rigidbody velocity
+			Vector2 velocity = _rigidbody.velocity;
+
+			// Add jumpForce to y velocity
+			velocity.y = jumpForce;
+
+			// Set player jumping
+			_isJumping = true;
+
+			// Set Rigidbody2D new velocity
+			_rigidbody.velocity = velocity;
+		}
 	}
 
 	/*

@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
  * - I Dont like the Jumping system cause we cant hold `JUMP` to make the player keep jumping
  * - Add wall jump feature
  * - Improve jump system
+ * - Improve Ladder System
  * - ...
  */
 
@@ -134,17 +135,20 @@ public class PlayerMovement : MonoBehaviour
 		// Handle Climbing
 		if (isTouchingLadder()) {
 
-			// Remove Rigidbody gravity
-			_rigidbody.gravityScale = 0f;
-
-			// Make player go up and down to the ladder
-			velocity.y = climbingSpeed * _moveInput.y;
-
 			// Set not Climbing to false if we are grounded and not moving on the ladder
 			if (grounded && _moveInput.y == 0f)
 				_isClimbing = false;
-			else
+
+			else if (_moveInput.y != 0 && !_isClimbing)
 				_isClimbing = true;
+
+			// If player is Climbing
+			if (_isClimbing) {
+				// Remove Rigidbody gravity
+				_rigidbody.gravityScale = 0f;
+				// Make player go up and down to the ladder
+				velocity.y = climbingSpeed * _moveInput.y;
+			}
 
 		// If not touching ladder reset _isClimbing to false
 		} else {

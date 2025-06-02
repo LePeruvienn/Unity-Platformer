@@ -12,50 +12,60 @@ public class MobMovement : MonoBehaviour
 
 	// Mob main collider
 	private BoxCollider2D _collider;
+	private CapsuleCollider2D _bottomCollider;
+
+	// Current Mob direction
+	private Vector2 _currentDirection;
 
 	// Mob movement config
 	[Header("Movement values")]
 	[SerializeField] private float moveSpeed = 5f;
 
-	// Collider check system
-	[Header("Colliders checker System")]
-	[SerializeField] private BoxCollider2D frontCollider;
-	[SerializeField] private BoxCollider2D bottomCollider;
-
-	// Start is called before the first frame update
+	/*
+	 * Start Method used to get Mob's Components & set _rigidbody velocity
+	 * @memberOf : UnityEngine
+	 */
 	void Start()
 	{
 		// getting components ...
 		_rigidbody = GetComponent<Rigidbody2D>();
 		_collider = GetComponent<BoxCollider2D>();
+		_bottomCollider = GetComponent<CapsuleCollider2D>();
 		_animator = GetComponent<Animator>();
 		_spriteRenderer = GetComponent<SpriteRenderer>();
 
-		_rigidbody.velocity = new Vector2 (moveSpeed, 0f);
+		_currentDirection = new Vector2(moveSpeed, 0);
+		_rigidbody.velocity = _currentDirection;
 	}
 
-	// Update is called once per frame
+	/*
+	 * Is called every frame
+	 * @memberOf : UnityEngine
+	 */
 	void Update()
 	{
-		// If we dont there is void under the mob or there is a wall in front of him
-		if (!checkBottomCollision() || checkFrontCollision()) {
-			// Flip mob
-			Vector3 scale = transform.localScale;
+
+	}
+
+	/*
+	 * Is called when a collider is leaving an element
+	 * @memberOf : UnityEngine.Event
+	 */
+	void OnTriggerExit2D(Collider2D other) {
+
+		// If object is a Platform
+		if (other.gameObject.layer == LayerMask.NameToLayer("Platforms")) {
+
+			// Set mob's new direction
+			_currentDirection.x *= -1;
+
+			// Set mob's new velocity
+			_rigidbody.velocity = _currentDirection;
+
+			// Flip mob 
+			Vector2 scale = transform.localScale;
 			scale.x *= -1;
 			transform.localScale = scale;
-			// change direction
-			_rigidbody.velocity = new Vector2 (moveSpeed * -1, 0f);
 		}
-	}
-
-
-	bool checkFrontCollision() {
-		// Check if player is touching a ladder
-		return frontCollider.IsTouchingLayers(LayerMask.GetMask("Platforms"));
-	}
-
-	bool checkBottomCollision() {
-		// Check if player is touching a ladder
-		return bottomCollider.IsTouchingLayers(LayerMask.GetMask("Platforms"));
 	}
 }

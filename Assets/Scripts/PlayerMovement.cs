@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 /*
  * TODO:
  * - I Dont like the Jumping system cause we cant hold `JUMP` to make the player keep jumping
+ * - Add wall jump feature
+ * - Improve jump system
  * - ...
  */
 
@@ -29,17 +31,17 @@ public class PlayerMovement : MonoBehaviour
 	private float _coyoteTime = 0f;
 
 	// Ground check system
-	[Header("Ground checker System")]
-	[SerializeField] private Transform groundCheckerOrigin;
-	[SerializeField] private Vector2 groundCheckerBoxSize = new Vector2(0.5f, 0.1f);
-	[SerializeField] private LayerMask groundLayer;
+	[Header("Colliders checker System")]
+	[SerializeField] private BoxCollider2D leftCollider;
+	[SerializeField] private BoxCollider2D rightCollider;
+	[SerializeField] private BoxCollider2D bottomCollider;
 
 	// Player movement config
 	[Header("Movement values")]
 	[SerializeField] private float jumpForce = 5f;
 	[SerializeField] private float moveSpeed = 5f;
 	[SerializeField] private float runSpeed = 8f;
-	[SerializeField] private float coyoteDuration = 500f;
+	[SerializeField] private float coyoteDuration = 0.2f;
 
 	/*
 	 * Start Method used to get Player's Components
@@ -82,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 		if (!grounded && !_isJumping && _coyoteTime < coyoteDuration) {
 
 			// Wait coyoteDuration (deltaTime is in seconds)
-			_coyoteTime += Time.deltaTime * 1000;
+			_coyoteTime += Time.deltaTime;
 
 			// If we go out the coyoteDuration we set him in air
 			if (_coyoteTime >= coyoteDuration)
@@ -94,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
 		// If player is trying to jump
 		if (_requestJump && !_isInAir && !_isJumping) {
+
 			// Add jumpForce to y velocity
 			velocity.y = jumpForce;
 			// Reset _requestJump
@@ -133,6 +136,9 @@ public class PlayerMovement : MonoBehaviour
 		// if player is running speed up animation speed
 		if (_isRunning && _moveInput.x != 0)
 			_animator.speed = 1.5f;
+		// Set animation speed to 1 if it is more
+		else if (_animator.speed > 1f)
+			_animator.speed = 1f;
 
 		// Stop here if moveInput has not been updated
 		if (_moveInput.x == 0f) return;
@@ -179,28 +185,25 @@ public class PlayerMovement : MonoBehaviour
 	 * @memberOf : PlayerMovement
 	 */
 	bool isGrounded() {
-		
-		// Run a BoxCast to see if we are colliding with the ground
-		return Physics2D.BoxCast(
-			groundCheckerOrigin.position, // Cast origin
-			groundCheckerBoxSize,         // size of the box
-			0f,                           // rotation
-			Vector2.down,                 // cast direction
-			0f,                           // cast distance
-			groundLayer                   // layer mask detection
-		);
+		// Check if player bottom collider is colliding with a platform
+		return bottomCollider.IsTouchingLayers(LayerMask.GetMask("Platforms"));
 	}
 
+	/*
+	 * Check if te player can wall jump from a left wall
+	 * @memberOf : PlayerMovement
+	 */
+	bool canWallJumpLeft() {
+		// Check if player bottom collider is colliding with a platform
+		return leftCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")) && _isInAir;
+	}
 
 	/*
-	 * Used to draw collisions & cast on scene when selected
-	 * @memberOf : Debug 🤓
+	 * Check if te player can wall jump from a right wall
+	 * @memberOf : PlayerMovement
 	 */
-	void OnDrawGizmosSelected() {
-	
-		// Set draw color to red
-		Gizmos.color = Color.red;
-		// Draw groundChecker box
-		Gizmos.DrawWireCube(groundCheckerOrigin.position, groundCheckerBoxSize);
+	bool canWallJumpRight() {
+		// Check if player bottom collider is colliding with a platform
+		return rightCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")) && _isInAir;
 	}
 }

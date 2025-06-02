@@ -13,8 +13,8 @@ TagManager:
   - UI
   - Background
   - Platforms
+  - Climbing
   - Player
-  - 
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
   - name: Platforms
     uniqueID: 210535101
     locked: 0
-  - name: Player
+  - name: Climbing
     uniqueID: 677415423
+    locked: 0
+  - name: Player
+    uniqueID: 1594773765
     locked: 0

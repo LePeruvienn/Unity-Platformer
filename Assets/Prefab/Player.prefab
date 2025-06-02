@@ -404,7 +404,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1811434164763819406
 MonoBehaviour:
@@ -425,6 +425,7 @@ MonoBehaviour:
   moveSpeed: 5
   runSpeed: 10
   coyoteDuration: 0.2
+  climbingSpeed: 3
 --- !u!114 &7812780195522648178
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,12 +23,18 @@ public class PlayerMovement : MonoBehaviour
 	private bool _requestJump = false;
 	private bool _isJumping = false;
 	private bool _isInAir = false;
+	private bool _isClimbing = false;
 
 	// Player movement input
 	private Vector2 _moveInput = Vector2.zero;
 
 	// Coyote jump vars
 	private float _coyoteTime = 0f;
+
+	// Player main collider
+	private CapsuleCollider2D _collider;
+
+	private float _startGrativityScale;
 
 	// Ground check system
 	[Header("Colliders checker System")]
@@ -42,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float moveSpeed = 5f;
 	[SerializeField] private float runSpeed = 8f;
 	[SerializeField] private float coyoteDuration = 0.2f;
+	[SerializeField] private float climbingSpeed = 3f;
 
 	/*
 	 * Start Method used to get Player's Components
@@ -50,8 +57,12 @@ public class PlayerMovement : MonoBehaviour
 	void Start() {
 		// getting components ...
 		_rigidbody = GetComponent<Rigidbody2D>();
+		_collider = GetComponent<CapsuleCollider2D>();
 		_animator = GetComponent<Animator>();
 		_spriteRenderer = GetComponent<SpriteRenderer>();
+
+		// Set startGrativityScale
+		_startGrativityScale = _rigidbody.gravityScale;
 	}
 
 	/*
@@ -69,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
 	 * Handle Player Movements
 	 * @memberOf : PlayerMovement
 	 */
-	void handleMovements() {
+	private void handleMovements() {
 
 		// Get current Rigidbody velocity
 		Vector2 velocity = _rigidbody.velocity;
@@ -120,6 +131,31 @@ public class PlayerMovement : MonoBehaviour
 		// Reset isJumping
 		_requestJump = false;
 
+		// Handle Climbing
+		if (isTouchingLadder()) {
+
+			// Remove Rigidbody gravity
+			_rigidbody.gravityScale = 0f;
+
+			// Make player go up and down to the ladder
+			velocity.y = climbingSpeed * _moveInput.y;
+
+			// Set not Climbing to false if we are grounded and not moving on the ladder
+			if (grounded && _moveInput.y == 0f)
+				_isClimbing = false;
+			else
+				_isClimbing = true;
+
+		// If not touching ladder reset _isClimbing to false
+		} else {
+
+			// Reset _isClimbing
+			_isClimbing = false;
+
+			// Readd Rigidbody gravity
+			_rigidbody.gravityScale = _startGrativityScale;
+		}
+
 		// Set new velocity to player Rigidbody
 		_rigidbody.velocity = velocity;
 	}
@@ -128,16 +164,22 @@ public class PlayerMovement : MonoBehaviour
 	 * Handle Player Animations
 	 * @memberOf : PlayerMovement
 	 */
-	void handleAnimator() {
+	private void handleAnimator() {
 
 		// Update animator values
-		_animator.SetBool("isRunning", _moveInput.x != 0f || _isJumping);
+		_animator.SetBool("isRunning", (_moveInput.x != 0f || _isJumping) && !_isClimbing);
+		_animator.SetBool("isClimbing", _isClimbing);
+
+		// Make Climbing animation stop if we are not moving
+		if (_isClimbing && _moveInput.y == 0f)
+			_animator.speed = 0f;
 
 		// if player is running speed up animation speed
-		if (_isRunning && _moveInput.x != 0)
+		else if (_isRunning && _moveInput.x != 0)
 			_animator.speed = 1.5f;
-		// Set animation speed to 1 if it is more
-		else if (_animator.speed > 1f)
+		
+		// Set to default animation speed
+		else
 			_animator.speed = 1f;
 
 		// Stop here if moveInput has not been updated
@@ -155,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
 	 * Used to update player direction input values
 	 * @memberOf : InputSystem.Event
 	 */
-	void OnMove(InputValue value) {
+	private void OnMove(InputValue value) {
 		_moveInput = value.Get<Vector2>();
 	}
 
@@ -163,7 +205,7 @@ public class PlayerMovement : MonoBehaviour
 	 * Update request jump status
 	 * @memberOf : InputSystem.Event
 	 */
-	void OnJump() {
+	private void OnJump() {
 		_requestJump = true;
 	}
 
@@ -171,7 +213,7 @@ public class PlayerMovement : MonoBehaviour
 	 * Handle player isRunning state
 	 * @memberOf : InputSystem.Event
 	 */
-	void OnRun(InputValue value) {
+	private void OnRun(InputValue value) {
 
 		// Get pressing value
 		float pressing = value.Get<float>();
@@ -184,7 +226,7 @@ public class PlayerMovement : MonoBehaviour
 	 * Check if te player is on the ground
 	 * @memberOf : PlayerMovement
 	 */
-	bool isGrounded() {
+	private bool isGrounded() {
 		// Check if player bottom collider is colliding with a platform
 		return bottomCollider.IsTouchingLayers(LayerMask.GetMask("Platforms"));
 	}
@@ -193,7 +235,7 @@ public class PlayerMovement : MonoBehaviour
 	 * Check if te player can wall jump from a left wall
 	 * @memberOf : PlayerMovement
 	 */
-	bool canWallJumpLeft() {
+	private bool canWallJumpLeft() {
 		// Check if player bottom collider is colliding with a platform
 		return leftCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")) && _isInAir;
 	}
@@ -202,8 +244,27 @@ public class PlayerMovement : MonoBehaviour
 	 * Check if te player can wall jump from a right wall
 	 * @memberOf : PlayerMovement
 	 */
-	bool canWallJumpRight() {
+	private bool canWallJumpRight() {
 		// Check if player bottom collider is colliding with a platform
 		return rightCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")) && _isInAir;
+	}
+
+
+	/*
+	 * Check if player is touching a ladder
+	 * @memberOf : PlayerMovement
+	 */
+	private bool isTouchingLadder() {
+		// Check if player is touching a ladder
+		return rightCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
+	}
+
+
+	/*
+	 * Make player climb the ladder
+	 * @memberOf : PlayerMovement
+	 */
+	private void climb() {
+
 	}
 }

@@ -311,7 +311,7 @@ public class PlayerMovement : MonoBehaviour
 	 */
 	private bool isTouchingSpikes() {
 		// Check if player is touching water
-		return _collider.IsTouchingLayers(LayerMask.GetMask("Spikes"));
+		return bottomCollider.IsTouchingLayers(LayerMask.GetMask("Spikes"));
 	}
 
 	/*

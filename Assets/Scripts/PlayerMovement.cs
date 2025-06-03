@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
 	private Animator _animator;
 	private SpriteRenderer _spriteRenderer;
 
+	// Player death
+	private bool _isDead = false;
+
 	// Player States
 	private bool _isRunning = false;
 	private bool _isJumping = false;
@@ -49,6 +52,9 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float coyoteDuration = 0.2f;
 	[SerializeField] private float climbingSpeed = 3f;
 
+	[Header("Movement values")]
+
+
 	/*
 	 * Start Method used to get Player's Components
 	 * @memberOf : UnityEngine
@@ -69,6 +75,10 @@ public class PlayerMovement : MonoBehaviour
 	 * @memberOf : UnityEngine
 	 */
 	void FixedUpdate() {
+
+		// Dont do the update loop if player is dead
+		if (_isDead) return;
+
 		// Needs to update movements first,
 		// to be sures to have the correct status for handleAnimator ☝️🤓
 		handleMovements();
@@ -195,6 +205,9 @@ public class PlayerMovement : MonoBehaviour
 	 */
 	private void OnJump() {
 
+		// Dont handle player's input if he is dead
+		if (_isDead) return;
+
 		// If player is trying to jump
 		if (!_isInAir && !_isJumping) {
 
@@ -217,6 +230,9 @@ public class PlayerMovement : MonoBehaviour
 	 * @memberOf : InputSystem.Event
 	 */
 	private void OnRun(InputValue value) {
+
+		// Dont handle player's input if he is dead
+		if (_isDead) return;
 
 		// Get pressing value
 		float pressing = value.Get<float>();
@@ -262,12 +278,24 @@ public class PlayerMovement : MonoBehaviour
 		return rightCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
 	}
 
-
 	/*
-	 * Make player climb the ladder
+	 * Handle player death movement & animation
 	 * @memberOf : PlayerMovement
 	 */
-	private void climb() {
+	private void die() {
+		
+	}
 
+	/*
+	 * Make the player die
+	 * @memberOf : PlayerMovement
+	 */
+	public void kill() {
+
+		// Make player lay on the floor
+		_animator.SetTrigger("Die");
+
+		// Set dead status to true
+		_isDead = true;
 	}
 }

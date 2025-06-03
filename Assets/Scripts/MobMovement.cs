@@ -42,9 +42,25 @@ public class MobMovement : MonoBehaviour
 	 * Is called every frame
 	 * @memberOf : UnityEngine
 	 */
-	void Update()
-	{
+	void Update() {
 
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+
+		// If collision is not in the layer Player return
+		if (other.gameObject.layer != LayerMask.NameToLayer("Player"))
+			return;
+
+		// Get Player Movement component
+		PlayerMovement player = other.GetComponent<PlayerMovement>();
+
+		// If we object dont have a PlayerMovement compoenent return
+		if (player == null)
+			return;
+
+		// KILL PLAYER !!!!! 😠🖕
+		player.kill();
 	}
 
 	/*

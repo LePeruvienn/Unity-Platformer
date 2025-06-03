@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 /*
  * TODO:
  * - I Dont like the Jumping system cause we cant hold `JUMP` to make the player keep jumping
  * - Add wall jump feature
  * - Improve Ladder System
+ * - Add blend transition for camera system !
  * - ...
  */
 
@@ -52,9 +54,16 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float coyoteDuration = 0.2f;
 	[SerializeField] private float climbingSpeed = 3f;
 
-	[Header("Movement values")]
+	[Header("Die Animation")]
+	[SerializeField] private float deathJumpForce = 6f;
+	[SerializeField] private float deathRotateSpeed = 2f;
 
+	[Header("Camera")]
+	[SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
 
+	// Cached vars ☝️🤓 "Used to optimize memory allocation !"
+	private Vector3 _cachedDeathRotation = new Vector3 (0, 0, 0);
+	
 	/*
 	 * Start Method used to get Player's Components
 	 * @memberOf : UnityEngine
@@ -76,8 +85,17 @@ public class PlayerMovement : MonoBehaviour
 	 */
 	void FixedUpdate() {
 
-		// Dont do the update loop if player is dead
-		if (_isDead) return;
+		// If player is dead handle die animation
+		if (_isDead) {
+			die();
+			return;
+		}
+
+		// If we are touching water kill player 
+		if (isTouchingWater() || isTouchingSpikes()) {
+			kill();
+			return;
+		}
 
 		// Needs to update movements first,
 		// to be sures to have the correct status for handleAnimator ☝️🤓
@@ -279,11 +297,35 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	/*
+	 * Check if player is touching water
+	 * @memberOf : PlayerMovement
+	 */
+	private bool isTouchingWater() {
+		// Check if player is touching water
+		return _collider.IsTouchingLayers(LayerMask.GetMask("Water"));
+	}
+
+	/*
+	 * Check if player is touching spikes
+	 * @memberOf : PlayerMovement
+	 */
+	private bool isTouchingSpikes() {
+		// Check if player is touching water
+		return _collider.IsTouchingLayers(LayerMask.GetMask("Spikes"));
+	}
+
+	/*
 	 * Handle player death movement & animation
 	 * @memberOf : PlayerMovement
 	 */
 	private void die() {
-		
+
+		// Return if player is not falling
+		if (_rigidbody.velocity.y > 0) return;
+
+		// Make player rotate over time
+		_cachedDeathRotation.z = deathRotateSpeed * Time.deltaTime * 1000;
+		transform.Rotate (_cachedDeathRotation);
 	}
 
 	/*
@@ -292,8 +334,20 @@ public class PlayerMovement : MonoBehaviour
 	 */
 	public void kill() {
 
-		// Make player lay on the floor
-		_animator.SetTrigger("Die");
+		// Player death animation
+		_animator.SetTrigger("death");
+
+		// Disable collider
+		_collider.enabled = false;
+
+		// Make player jump & reset x velocity
+		Vector2 velocity = _rigidbody.velocity;
+		velocity.y = deathJumpForce;
+		velocity.x = 0;
+		_rigidbody.velocity = velocity;
+
+		// Disable Camera
+		stateDrivenCamera.enabled = false;
 
 		// Set dead status to true
 		_isDead = true;

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6265348497110853225}
   - component: {fileID: 6686888709360430258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BottomCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7870832913184810919}
   - component: {fileID: 9026032635587565356}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2339286845315556184}
   - component: {fileID: 5028215078033485770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: -7583907484783248528}
   - component: {fileID: 1811434164763819406}
   - component: {fileID: 7812780195522648178}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,6 +426,9 @@ MonoBehaviour:
   runSpeed: 10
   coyoteDuration: 0.2
   climbingSpeed: 3
+  deathJumpForce: 6
+  deathRotateSpeed: 2
+  stateDrivenCamera: {fileID: 0}
 --- !u!114 &7812780195522648178
 MonoBehaviour:
   m_ObjectHideFlags: 0

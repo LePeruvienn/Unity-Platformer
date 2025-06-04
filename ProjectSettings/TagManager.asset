@@ -16,8 +16,8 @@ TagManager:
   - Climbing
   - Spikes
   - Player
-  - 
-  - 
+  - Entities
+  - Exit
   - 
   - 
   - 
@@ -53,6 +53,12 @@ TagManager:
   - name: Climbing
     uniqueID: 677415423
     locked: 0
-  - name: Player
+  - name: Entities
     uniqueID: 1594773765
+    locked: 0
+  - name: Exit
+    uniqueID: 4290705659
+    locked: 0
+  - name: Player
+    uniqueID: 2409896243
     locked: 0

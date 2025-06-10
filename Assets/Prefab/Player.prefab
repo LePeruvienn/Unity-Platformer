@@ -394,7 +394,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 749577976c5d2a0f3a395f67830c4aac, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -421,7 +421,7 @@ MonoBehaviour:
   leftCollider: {fileID: 9026032635587565356}
   rightCollider: {fileID: 5028215078033485770}
   bottomCollider: {fileID: 6686888709360430258}
-  jumpForce: 5
+  jumpForce: 10
   moveSpeed: 5
   runSpeed: 10
   coyoteDuration: 0.2

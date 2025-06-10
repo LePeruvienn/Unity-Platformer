@@ -18,7 +18,7 @@ TagManager:
   - Player
   - Entities
   - Exit
-  - 
+  - Coin
   - 
   - 
   - 
@@ -59,6 +59,9 @@ TagManager:
   - name: Exit
     uniqueID: 4290705659
     locked: 0
-  - name: Player
+  - name: Coin
     uniqueID: 2409896243
+    locked: 0
+  - name: Player
+    uniqueID: 2004750211
     locked: 0

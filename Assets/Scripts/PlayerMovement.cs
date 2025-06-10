@@ -38,7 +38,11 @@ public class PlayerMovement : MonoBehaviour
 	// Player main collider
 	private CapsuleCollider2D _collider;
 
+	// Used to save the base gravity scale
 	private float _startGrativityScale;
+
+	// GameSession script
+	private GameSession _gameSession;
 
 	// Ground check system
 	[Header("Colliders checker System")]
@@ -74,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
 		_collider = GetComponent<CapsuleCollider2D>();
 		_animator = GetComponent<Animator>();
 		_spriteRenderer = GetComponent<SpriteRenderer>();
+		_gameSession = FindObjectOfType<GameSession>();
 
 		// Set startGrativityScale
 		_startGrativityScale = _rigidbody.gravityScale;

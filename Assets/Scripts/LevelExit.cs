@@ -33,8 +33,9 @@ public class LevelExit : MonoBehaviour
 	 */
 	void OnTriggerEnter2D(Collider2D other) {
 
-		// Load scene after waiting delay
-		Invoke("LoadScene", delayInSeconds);
+		if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+			// Load scene after waiting delay
+			Invoke("LoadScene", delayInSeconds);
 	}
 
 	/*

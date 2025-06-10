@@ -65,6 +65,10 @@ public class PlayerMovement : MonoBehaviour
 	[Header("Camera")]
 	[SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
 
+	[Header("SFX Assets")]
+	[SerializeField] private AudioClip deathSFX;
+
+
 	// Cached vars ☝️🤓 "Used to optimize memory allocation !"
 	private Vector3 _cachedDeathRotation = new Vector3 (0, 0, 0);
 	
@@ -338,6 +342,9 @@ public class PlayerMovement : MonoBehaviour
 	 * @memberOf : PlayerMovement
 	 */
 	public void kill() {
+
+		// Play death SFX
+		AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position);
 
 		// Player death animation
 		_animator.SetTrigger("death");

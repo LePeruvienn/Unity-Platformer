@@ -28265,6 +28265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab4c9efe0ac4f6fd98904c90a65650a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifePickupSFX: {fileID: 8300000, guid: 9ef493792f2985e7598f2853e8245d8d, type: 3}
   playerLives: 3
 --- !u!1 &722912757
 GameObject:

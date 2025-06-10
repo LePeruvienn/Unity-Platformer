@@ -7,6 +7,7 @@ public class LevelExit : MonoBehaviour
 {
 	private int currentSceneIndex;
 
+	[SerializeField] private AudioClip nextLevelSFX;
 	[SerializeField] private int delayInSeconds = 1;
 
 	/*
@@ -33,9 +34,14 @@ public class LevelExit : MonoBehaviour
 	 */
 	void OnTriggerEnter2D(Collider2D other) {
 
-		if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-			// Load scene after waiting delay
-			Invoke("LoadScene", delayInSeconds);
+		// If not triggered by a player stop here
+		if (other.gameObject.layer != LayerMask.NameToLayer("Player")) return;
+
+		// Play next level sfx
+		AudioSource.PlayClipAtPoint(nextLevelSFX, Camera.main.transform.position);
+
+		// Load scene after waiting delay
+		Invoke("LoadScene", delayInSeconds);
 	}
 
 	/*

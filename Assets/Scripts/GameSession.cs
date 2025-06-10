@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
+
+	[Header("Audio SFX")]
+	[SerializeField] private AudioClip lifePickupSFX;
+
+	[Header("Player lives")]
 	[SerializeField] int playerLives = 3;
 
 	/*
@@ -45,6 +50,9 @@ public class GameSession : MonoBehaviour
 	 * @memberOf : GameSession
 	 */
 	private void takeLife() {
+
+		// Play life pickup SFX
+		AudioSource.PlayClipAtPoint(lifePickupSFX, Camera.main.transform.position);
 
 		// Remove one player live
 		playerLives--;

@@ -5,6 +5,9 @@ using UnityEngine;
 public class MobMovement : MonoBehaviour
 {
 
+	// GameSession script
+	private GameSession _gameSession;
+
 	// Components
 	private Rigidbody2D _rigidbody;
 	private Animator _animator;
@@ -34,8 +37,12 @@ public class MobMovement : MonoBehaviour
 		_animator = GetComponent<Animator>();
 		_spriteRenderer = GetComponent<SpriteRenderer>();
 
+		// Set current direction
 		_currentDirection = new Vector2(moveSpeed, 0);
 		_rigidbody.velocity = _currentDirection;
+
+		// Get gme session script
+		_gameSession = FindObjectOfType<GameSession>();
 	}
 
 	/*
@@ -52,15 +59,8 @@ public class MobMovement : MonoBehaviour
 		if (other.gameObject.layer != LayerMask.NameToLayer("Player"))
 			return;
 
-		// Get Player Movement component
-		PlayerMovement player = other.GetComponent<PlayerMovement>();
-
-		// If we object dont have a PlayerMovement compoenent return
-		if (player == null)
-			return;
-
 		// KILL PLAYER !!!!! 😠🖕
-		player.kill();
+		_gameSession.takeLife();
 	}
 
 	/*

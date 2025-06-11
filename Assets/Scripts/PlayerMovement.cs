@@ -29,6 +29,14 @@ public class PlayerMovement : MonoBehaviour
 	private bool _isInAir = false;
 	private bool _isClimbing = false;
 
+	// Immune system
+	private bool _isImmune = false;
+	private float _immuneTime = 0f;
+
+	// Handle player blink
+	private bool _blinking = false;
+	private float _blinkTime = 0f;
+
 	// Player movement input
 	private Vector2 _moveInput = Vector2.zero;
 
@@ -57,6 +65,10 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float runSpeed = 8f;
 	[SerializeField] private float coyoteDuration = 0.2f;
 	[SerializeField] private float climbingSpeed = 3f;
+
+
+	[Header("Immune System")]
+	[SerializeField] private float blinkDuration = 0.1f;
 
 	[Header("Die Animation")]
 	[SerializeField] private float deathJumpForce = 6f;
@@ -102,9 +114,15 @@ public class PlayerMovement : MonoBehaviour
 
 		// If we are touching water kill player 
 		if (isTouchingWater() || isTouchingSpikes()) {
-			kill();
+
+			// KILL PLAYER !!!!! 😠🖕
+			_gameSession.takeLife();
+
 			return;
 		}
+
+		// Handle playe's immunity
+		handleImmune();
 
 		// Needs to update movements first,
 		// to be sures to have the correct status for handleAnimator ☝️🤓
@@ -194,6 +212,10 @@ public class PlayerMovement : MonoBehaviour
 		// Update animator values
 		_animator.SetBool("isRunning", (_moveInput.x != 0f || _isJumping) && !_isClimbing);
 		_animator.SetBool("isClimbing", _isClimbing);
+
+		// Handle _blinking animation if needed
+		if (_isImmune)
+			handleBlink();
 
 		// Make Climbing animation stop if we are not moving
 		if (_isClimbing && _moveInput.y == 0f)
@@ -363,5 +385,88 @@ public class PlayerMovement : MonoBehaviour
 
 		// Set dead status to true
 		_isDead = true;
+	}
+
+	/*
+	 * Handle player immunity
+	 * @memberOf : PlayerMovement
+	 */
+	private void handleImmune() {
+		
+		// If player is _isImmune and has Immune time left
+		if (_isImmune && _immuneTime > 0) {
+
+			// Remove elapsed time
+			_immuneTime -= Time.deltaTime;
+
+			// Reset immune status
+			if (_immuneTime <= 0) {
+				_isImmune = false;
+				_blinking = false;
+				resetBlink();
+			}
+		}
+	}
+
+	/*
+	 * Set the player immune of a defined amount of seconds
+	 * @param duration - immune duration
+	 * @memberOf : PlayerMovement
+	 */
+	public void setImmune(float duration) {
+
+		_immuneTime = duration;
+		_isImmune = true;
+		_blinking = true;
+	}
+
+	/*
+	 * Getter of player immune status
+	 * @return player's immune status
+	 * @memberOf : PlayerMovement
+	 */
+	public bool isImmune() {
+
+		return _isImmune;
+	}
+
+	private void handleBlink() {
+
+		// Remove elapsed time
+		_blinkTime -= Time.deltaTime;
+
+		// If all duration has elapsed revert blink
+		if (_blinkTime < 0) {
+
+			_blinkTime = blinkDuration;
+			_blinking = !_blinking;
+
+			float alpha = (_blinking) ? 1f : 0f;
+
+			Color color = _spriteRenderer.color;
+			color.a = alpha;
+			_spriteRenderer.color = color;
+		}
+	}
+
+	private void resetBlink() {
+
+		Color color = _spriteRenderer.color;
+		color.a = 1f;
+		_spriteRenderer.color = color;
+	}
+
+	/*
+	 * Make the player knockback towards into the direction in param
+	 * @param direction - the direction the player is gonna been pushed
+	 * @memberOf : PlayerMovement
+	 */
+	public void knockBack(Vector2 direction) {
+
+		Vector2 velocity = _rigidbody.velocity;
+
+		velocity += direction;
+
+		_rigidbody.velocity = velocity;
 	}
 }

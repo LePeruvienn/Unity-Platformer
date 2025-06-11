@@ -296,6 +296,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""2771db2d-9e3f-4f86-bdef-a2002bdd4ebc"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""575ee3d3-928b-4cd0-95af-428549cc023e"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",

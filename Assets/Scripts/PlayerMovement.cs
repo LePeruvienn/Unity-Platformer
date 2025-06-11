@@ -6,8 +6,6 @@ using Cinemachine;
 
 /*
  * TODO:
- * - I Dont like the Jumping system cause we cant hold `JUMP` to make the player keep jumping
- * - Add wall jump feature
  * - Improve Ladder System
  * - Add blend transition for camera system !
  * - ...
@@ -31,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 	private bool _isClimbing = false;
 	private bool _jumpingWallLeft = false;
 	private bool _jumpingWallRight = false;
+	private bool _isShooting = false;
 
 	// Handle player's jump time
 	private float _jumpTime = 0f;
@@ -143,7 +142,11 @@ public class PlayerMovement : MonoBehaviour
 
 		// Needs to update movements first,
 		// to be sures to have the correct status for handleAnimator ☝️🤓
-		handleMovements();
+
+		// Player cant move while shooting !
+		if (!_isShooting)
+			handleMovements();
+
 		handleAnimator();
 	}
 
@@ -251,6 +254,26 @@ public class PlayerMovement : MonoBehaviour
 	 */
 	private void handleAnimator() {
 
+		// Handle shooting animation
+		if (_isShooting) {
+
+			// Set shoot animator to true and running to false !
+			_animator.SetBool("shoot", true);
+			_animator.SetBool("isRunning", false);
+
+			// Get animation state
+			AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+
+			// If animation has ended reset _isShooting
+			if (stateInfo.normalizedTime >= 1f) {
+				_animator.SetBool("shoot", false);
+				_isShooting = false;
+			}
+
+			// Stop here when shooting we dont want to player other animation
+			return;
+		}
+
 		// Update animator values
 		_animator.SetBool("isRunning", (_moveInput.x != 0f || _isJumping) && !_isClimbing);
 		_animator.SetBool("isClimbing", _isClimbing);
@@ -297,7 +320,7 @@ public class PlayerMovement : MonoBehaviour
 	private void OnJump(InputValue value) {
 
 		// If player is dead there is nothing to do
-		if (_isDead) return;
+		if (_isDead || _isShooting) return;
 
 		// Get input value
 		bool isPressed = value.isPressed;
@@ -382,6 +405,26 @@ public class PlayerMovement : MonoBehaviour
 
 		// If Player is pressing is set isRunning to true
 		_isRunning = pressing >= 0.5f;
+	}
+
+	/*
+	 * Handle the player fire input, used to make the player shoot an arrow
+	 * @memberOf : InputSystem.Event
+	 */
+	private void OnFire() {
+
+		// If player is already shooting or jumping or Climbing stop here
+		if (_isDead || _isShooting || _isJumping || _isClimbing) return;
+	
+		// Set shooting status to true
+		_isShooting = true;
+		
+		// Reset other status to be sure to be not moving or jumping
+		_isRunning = false;
+		_isJumping = false;
+
+		// reset Rigidbody velocity
+		_rigidbody.velocity = Vector2.zero;
 	}
 	
 	/*

@@ -28501,6 +28501,8 @@ MonoBehaviour:
   playerObject: {fileID: 2042457137}
   playerLives: 3
   immuneDuration: 3
+  fullHeart: {fileID: 729889697, guid: f069915783b2aaa34825f567e9cadd73, type: 3}
+  emptyHeart: {fileID: -22733237, guid: f069915783b2aaa34825f567e9cadd73, type: 3}
   healthBarRoot: {fileID: 1640738223}
   heartPrefab: {fileID: 423395545998203487, guid: 7c1b668d99e5a1d0da1f392fcdf97e8e, type: 3}
 --- !u!1 &722912757

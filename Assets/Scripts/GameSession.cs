@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
+
+	private GameObject[] _heartObjects;
 
 	[Header("Audio SFX")]
 	[SerializeField] private AudioClip lifePickupSFX;
@@ -15,6 +18,8 @@ public class GameSession : MonoBehaviour
 	[SerializeField] private float immuneDuration = 3f;
 
 	[Header("UI")]
+	[SerializeField] private Sprite fullHeart;
+	[SerializeField] private Sprite emptyHeart;
 	[SerializeField] private GameObject healthBarRoot;
 	[SerializeField] private GameObject heartPrefab;
 
@@ -46,6 +51,8 @@ public class GameSession : MonoBehaviour
 		// Get player PlayerMovement object from player
 		_playerMovement = playerObject.GetComponent<PlayerMovement>();
 
+		// Setup haert objects array
+		_heartObjects = new GameObject[playerLives];
 
 		// Intialize healthbar
 		initHealthBar();
@@ -64,12 +71,24 @@ public class GameSession : MonoBehaviour
 		if (heartPrefab == null) Debug.LogError("heartPrefab not set !!");
 		if (healthBarRoot == null) Debug.LogError("healthBarRoot not set !!");
 
+		// Generate hearts objects in UI
 		for (int i = 0; i < playerLives; i++) {
+
+			// Instantiate object
 			GameObject heartImage = Instantiate(heartPrefab, healthBarRoot.transform.position, healthBarRoot.transform.rotation) as GameObject;
+
+			// Set localScale & position & parent
 			heartImage.transform.position = healthBarRoot.transform.position;
 			heartImage.transform.localPosition = healthBarRoot.transform.position;
 			heartImage.transform.parent = healthBarRoot.transform;
 			heartImage.transform.localScale = new Vector3 (1, 1, 1);
+
+			// Set image
+			Image image = heartImage.GetComponent<Image>();
+			image.sprite = fullHeart;
+
+			// Save object is _heartObjects array
+			_heartObjects[i] = heartImage;
 		}
 	}
 
@@ -79,11 +98,18 @@ public class GameSession : MonoBehaviour
 	 */
 	public void takeLife() {
 
+		// If player has no lives return
+		if (playerLives == 0) return;
+
 		// If player is immmune dont handle takeLife
 		if (_playerMovement.isImmune()) return;
 
 		// Play life pickup SFX
 		AudioSource.PlayClipAtPoint(lifePickupSFX, Camera.main.transform.position);
+
+		// Set empty heart image
+		Image image = _heartObjects[playerLives - 1].GetComponent<Image>();
+		image.sprite = emptyHeart;
 
 		// Remove one player live
 		playerLives--;

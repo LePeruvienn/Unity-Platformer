@@ -28499,13 +28499,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifePickupSFX: {fileID: 8300000, guid: 9ef493792f2985e7598f2853e8245d8d, type: 3}
   playerObject: {fileID: 2042457137}
-  playerLives: 3
+  maxPlayerLives: 3
   immuneDuration: 3
   fullHeart: {fileID: 729889697, guid: f069915783b2aaa34825f567e9cadd73, type: 3}
   emptyHeart: {fileID: -22733237, guid: f069915783b2aaa34825f567e9cadd73, type: 3}
   healthBarRoot: {fileID: 1640738223}
   heartPrefab: {fileID: 423395545998203487, guid: 7c1b668d99e5a1d0da1f392fcdf97e8e, type: 3}
-  score: {fileID: 0}
+  scoreText: {fileID: 1766788867}
 --- !u!1 &722912757
 GameObject:
   m_ObjectHideFlags: 0

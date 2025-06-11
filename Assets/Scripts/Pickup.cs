@@ -37,10 +37,13 @@ public class Pickup : MonoBehaviour
 		// Play pickyp SFX
 		AudioSource.PlayClipAtPoint(pickupSFX, Camera.main.transform.position);
 
+		// If object is a heal heal player
 		if (gameObject.tag == "heal")
-			Debug.Log ("heal");
+			gameSession.heal();
+
+		// Else it's a coin to add score
 		else
-			Debug.Log ("coin");
+			gameSession.addScore();
 
 		// Destory current game object
 		Destroy(gameObject);

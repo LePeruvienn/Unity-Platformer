@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameSession : MonoBehaviour
 {
 
 	private GameObject[] _heartObjects;
 
+	private int playerLives;
+
+	private int score = 0;
+
 	[Header("Audio SFX")]
 	[SerializeField] private AudioClip lifePickupSFX;
 
 	[Header("Player")]
 	[SerializeField] private GameObject playerObject;
-	[SerializeField] private int playerLives = 3;
+
+	[SerializeField] private int maxPlayerLives = 3;
 	[SerializeField] private float immuneDuration = 3f;
 
 	[Header("UI")]
@@ -22,7 +28,7 @@ public class GameSession : MonoBehaviour
 	[SerializeField] private Sprite emptyHeart;
 	[SerializeField] private GameObject healthBarRoot;
 	[SerializeField] private GameObject heartPrefab;
-	[SerializeField] private GameObject score;
+	[SerializeField] private TMP_Text scoreText;
 
 	private PlayerMovement _playerMovement;
 
@@ -48,7 +54,10 @@ public class GameSession : MonoBehaviour
 	 * @memberOf : UnityEngine
 	 */
 	void Start() {
-		
+
+		// Set playerLives
+		playerLives = maxPlayerLives;
+
 		// Get player PlayerMovement object from player
 		_playerMovement = playerObject.GetComponent<PlayerMovement>();
 
@@ -66,6 +75,10 @@ public class GameSession : MonoBehaviour
 	void Update() {
 	}
 
+	/*
+	 * Intialize healthbar by creating all hearts
+	 * @memberOf : UnityEngine
+	 */
 	private void initHealthBar() {
 
 		// Check if all is set good
@@ -108,12 +121,12 @@ public class GameSession : MonoBehaviour
 		// Play life pickup SFX
 		AudioSource.PlayClipAtPoint(lifePickupSFX, Camera.main.transform.position);
 
-		// Set empty heart image
-		Image image = _heartObjects[playerLives - 1].GetComponent<Image>();
-		image.sprite = emptyHeart;
-
 		// Remove one player live
 		playerLives--;
+
+		// Set empty heart image
+		Image image = _heartObjects[playerLives].GetComponent<Image>();
+		image.sprite = emptyHeart;
 
 		// if player still alive
 		if (playerLives > 0)
@@ -121,6 +134,33 @@ public class GameSession : MonoBehaviour
 			_playerMovement.setImmune(immuneDuration);
 		else
 			_playerMovement.kill();
+	}
+
+	// TODO:
+	public void addScore() {
+
+		// Add 1 to score
+		score++;
+
+		// Update score text
+		scoreText.SetText("x " + score);
+	}
+
+	/*
+	 * Heal player of one life !
+	 * @memberOf : GameSession
+	 */
+	public void heal() {
+
+		// If player is full health return
+		if (playerLives == maxPlayerLives) return;
+
+		// Set full heart image
+		Image image = _heartObjects[playerLives].GetComponent<Image>();
+		image.sprite = fullHeart;
+
+		// Add a life
+		playerLives++;
 	}
 
 	/*

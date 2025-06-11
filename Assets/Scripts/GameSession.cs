@@ -38,7 +38,7 @@ public class GameSession : MonoBehaviour
 	 */
 	void Awake() {
 
-		// Get numbers of sessions
+		// Get numbers of game session in scene
 		int numberOfGameSessions = FindObjectsOfType<GameSession>().Length;
 
 		// If there is already a session destroy this game object
@@ -184,6 +184,9 @@ public class GameSession : MonoBehaviour
 	 * @memberOf : GameSession
 	 */
 	private void resetGameSession() {
+
+		// Reset Scene Persist
+		FindObjectOfType<ScenePersist>().resetScenePersist();
 
 		// Load scene 0
 		SceneManager.LoadScene(0);

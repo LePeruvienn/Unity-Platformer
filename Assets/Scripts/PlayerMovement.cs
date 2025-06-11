@@ -163,16 +163,15 @@ public class PlayerMovement : MonoBehaviour
 		bool grounded = isGrounded();
 
 		// handle wall jumps states 👽
-		if (_jumpingWallLeft && (!isLeftTouchingPlatforms() || grounded)) {
-			// Reset state & jump amount
+		if (_jumpingWallLeft && (!isLeftTouchingPlatforms() || grounded))
 			_jumpingWallLeft = false;
-			_wallJumpLeftAmount = 0;
-		}
-		if (_jumpingWallRight && (!isRightTouchingPlatforms() || grounded)) {
-			// Reset state & jump amount
+
+		if (_jumpingWallRight && (!isRightTouchingPlatforms() || grounded))
 			_jumpingWallRight = false;
-			_wallJumpRightAmount = 0;
-		}
+
+		// reset wall jump count when grounded
+		if (_wallJumpLeftAmount > 0 && grounded) _wallJumpLeftAmount = 0;
+		if (_wallJumpRightAmount > 0 && grounded) _wallJumpRightAmount = 0;
 
 		// If player is falling, we set him inAir ✈️
 		if (!grounded && !_isJumping && _coyoteTime < coyoteDuration) {
@@ -341,8 +340,9 @@ public class PlayerMovement : MonoBehaviour
 			_jumpingWallLeft = true;
 			_jumpHeld = true;
 			_jumpTime = jumpHoldDuration;
-			// Add 1 to jump left Amount
+			// Add 1 to jump left Amount & reset other wall jump
 			_wallJumpLeftAmount++;
+			_wallJumpRightAmount = 0;
 		}
 
 		// Handle Wall jump right
@@ -362,8 +362,9 @@ public class PlayerMovement : MonoBehaviour
 			_jumpingWallRight = true;
 			_jumpHeld = true;
 			_jumpTime = jumpHoldDuration;
-			// Add 1 to jump right Amount
+			// Add 1 to jump right Amount & reset other wall jump
 			_wallJumpRightAmount++;
+			_wallJumpLeftAmount = 0;
 		}
 	}
 

@@ -82204,6 +82204,14 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
+      propertyPath: wallJumpForce
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
+      propertyPath: wallJumpMalus
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: coyoteDuration
       value: 0.2
       objectReference: {fileID: 0}

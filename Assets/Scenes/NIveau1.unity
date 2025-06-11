@@ -82185,11 +82185,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7583907484783248528, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: m_Interpolate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7583907484783248528, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: runSpeed
@@ -82200,6 +82200,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
+      propertyPath: jumpHoldForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: coyoteDuration
       value: 0.2
       objectReference: {fileID: 0}
@@ -82208,12 +82212,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
+      propertyPath: jumpHoldDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: stateDrivenCamera
       value: 
       objectReference: {fileID: 1288180628}
     - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
+      propertyPath: heldJumpForceScale
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1811434164763819406, guid: 4b0ad35a498f9ce4fa4fa8fef24afc59, type: 3}
       propertyPath: groundCheckerBoxSize.x

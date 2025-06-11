@@ -26,8 +26,18 @@ public class PlayerMovement : MonoBehaviour
 	// Player States
 	private bool _isRunning = false;
 	private bool _isJumping = false;
+	private bool _jumpHeld = false;
 	private bool _isInAir = false;
 	private bool _isClimbing = false;
+	private bool _jumpingWallLeft = false;
+	private bool _jumpingWallRight = false;
+
+	// Handle player's jump time
+	private float _jumpTime = 0f;
+
+	// Handle wall jump malus
+	private int _wallJumpRightAmount = 0;
+	private int _wallJumpLeftAmount = 0;
 
 	// Immune system
 	private bool _isImmune = false;
@@ -60,12 +70,19 @@ public class PlayerMovement : MonoBehaviour
 
 	// Player movement config
 	[Header("Movement values")]
-	[SerializeField] private float jumpForce = 5f;
 	[SerializeField] private float moveSpeed = 5f;
 	[SerializeField] private float runSpeed = 8f;
 	[SerializeField] private float coyoteDuration = 0.2f;
 	[SerializeField] private float climbingSpeed = 3f;
 
+	[Header("Jump configuration")]
+	[SerializeField] private float jumpForce = 10f;
+	[SerializeField] private float jumpHoldForce = 1.5f;
+	[SerializeField] private float jumpHoldDuration = 0.2f;
+	[SerializeField] private float heldJumpForceScale = 1.5f;
+	[SerializeField] private float wallJumpForce = 12f;
+	[SerializeField] private float wallJumpHorizontalForce = 6f;
+	[SerializeField] private float wallJumpMalus = 0.5f;
 
 	[Header("Immune System")]
 	[SerializeField] private float blinkDuration = 0.1f;
@@ -145,7 +162,19 @@ public class PlayerMovement : MonoBehaviour
 		// Get grounded value
 		bool grounded = isGrounded();
 
-		// If player is falling, we set him inAir
+		// handle wall jumps states 👽
+		if (_jumpingWallLeft && (!isLeftTouchingPlatforms() || grounded)) {
+			// Reset state & jump amount
+			_jumpingWallLeft = false;
+			_wallJumpLeftAmount = 0;
+		}
+		if (_jumpingWallRight && (!isRightTouchingPlatforms() || grounded)) {
+			// Reset state & jump amount
+			_jumpingWallRight = false;
+			_wallJumpRightAmount = 0;
+		}
+
+		// If player is falling, we set him inAir ✈️
 		if (!grounded && !_isJumping && _coyoteTime < coyoteDuration) {
 
 			// Wait coyoteDuration (deltaTime is in seconds)
@@ -169,6 +198,20 @@ public class PlayerMovement : MonoBehaviour
 			// If he is reset _isInAir
 			_isInAir = false;
 			_isJumping = false;
+			_jumpHeld = false;
+		}
+
+		// Keep going up if we still jumping
+		if (_jumpHeld && _jumpTime > 0f) {
+
+			// Compute held boost factor
+			float bonus = Mathf.Clamp01(_jumpTime / jumpHoldDuration) * heldJumpForceScale;
+
+			// Add jumpHoldForce depening of deltaTime
+			velocity.y += jumpHoldForce * Time.deltaTime * bonus;
+
+			// Add elapsed time
+			_jumpTime -= Time.deltaTime;
 		}
 
 		// Handle Climbing
@@ -252,25 +295,75 @@ public class PlayerMovement : MonoBehaviour
 	 * Handle player's JUMP
 	 * @memberOf : InputSystem.Event
 	 */
-	private void OnJump() {
+	private void OnJump(InputValue value) {
 
-		// Dont handle player's input if he is dead
+		// If player is dead there is nothing to do
 		if (_isDead) return;
 
-		// If player is trying to jump
+		// Get input value
+		bool isPressed = value.isPressed;
+
+		// if not pressed
+		if (!isPressed) {
+			// Reset jump held and stop here
+			_jumpHeld = false;
+			return;
+		}
+
+		// Handle normal jump
 		if (!_isInAir && !_isJumping) {
 
-			// Get current Rigidbody velocity
+			// Add jump velocity
 			Vector2 velocity = _rigidbody.velocity;
-
-			// Add jumpForce to y velocity
 			velocity.y = jumpForce;
-
-			// Set player jumping
-			_isJumping = true;
-
-			// Set Rigidbody2D new velocity
 			_rigidbody.velocity = velocity;
+
+			// Update states
+			_isJumping = true;
+			_jumpHeld = true;
+			_jumpTime = jumpHoldDuration;
+		}
+
+		// Handle Wall jump left
+		else if (canWallJumpLeft()) {
+
+			// Compute malus
+			float malus = Mathf.Pow(wallJumpMalus, _wallJumpLeftAmount);
+			
+			// Add wallJump velocity
+			Vector2 velocity = _rigidbody.velocity;
+			velocity.x = wallJumpHorizontalForce * malus;
+			velocity.y = wallJumpForce * malus;
+			_rigidbody.velocity = velocity;
+
+			// Update states
+			_isJumping = true;
+			_jumpingWallLeft = true;
+			_jumpHeld = true;
+			_jumpTime = jumpHoldDuration;
+			// Add 1 to jump left Amount
+			_wallJumpLeftAmount++;
+		}
+
+		// Handle Wall jump right
+		else if (canWallJumpRight()) {
+
+			// Compute malus
+			float malus = Mathf.Pow(wallJumpMalus, _wallJumpRightAmount);
+
+			// Add wallJump velocity
+			Vector2 velocity = _rigidbody.velocity;
+			velocity.x = -wallJumpHorizontalForce * malus;
+			velocity.y = wallJumpForce * malus;
+			_rigidbody.velocity = velocity;
+
+			// Update states
+			_isJumping = true;
+			_jumpingWallRight = true;
+			_jumpHeld = true;
+			_jumpTime = jumpHoldDuration;
+			// Add 1 to jump right Amount
+			_wallJumpRightAmount++;
 		}
 	}
 
@@ -305,7 +398,15 @@ public class PlayerMovement : MonoBehaviour
 	 */
 	private bool canWallJumpLeft() {
 		// Check if player bottom collider is colliding with a platform
-		return leftCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")) && _isInAir;
+		return leftCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")) && _isInAir && !_jumpingWallLeft;
+	}
+
+	/*
+	 * Check if left collider is touching platforms
+	 * @memberOf : PlayerMovement
+	 */
+	private bool isLeftTouchingPlatforms() {
+		return leftCollider.IsTouchingLayers(LayerMask.GetMask("Platforms"));
 	}
 
 	/*
@@ -314,9 +415,16 @@ public class PlayerMovement : MonoBehaviour
 	 */
 	private bool canWallJumpRight() {
 		// Check if player bottom collider is colliding with a platform
-		return rightCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")) && _isInAir;
+		return rightCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")) && _isInAir && !_jumpingWallRight;
 	}
 
+	/*
+	 * Check if right collider is touching platforms
+	 * @memberOf : PlayerMovement
+	 */
+	private bool isRightTouchingPlatforms() {
+		return rightCollider.IsTouchingLayers(LayerMask.GetMask("Platforms"));
+	}
 
 	/*
 	 * Check if player is touching a ladder

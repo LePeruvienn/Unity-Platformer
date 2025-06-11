@@ -422,11 +422,14 @@ MonoBehaviour:
   leftCollider: {fileID: 9026032635587565356}
   rightCollider: {fileID: 5028215078033485770}
   bottomCollider: {fileID: 6686888709360430258}
-  jumpForce: 10
   moveSpeed: 5
   runSpeed: 10
   coyoteDuration: 0.2
   climbingSpeed: 3
+  jumpForce: 10
+  jumpHoldForce: 1.5
+  jumpHoldDuration: 0.5
+  blinkDuration: 0.1
   deathJumpForce: 6
   deathRotateSpeed: 2
   stateDrivenCamera: {fileID: 0}

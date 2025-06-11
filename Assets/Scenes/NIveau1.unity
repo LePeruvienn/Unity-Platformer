@@ -28505,6 +28505,7 @@ MonoBehaviour:
   emptyHeart: {fileID: -22733237, guid: f069915783b2aaa34825f567e9cadd73, type: 3}
   healthBarRoot: {fileID: 1640738223}
   heartPrefab: {fileID: 423395545998203487, guid: 7c1b668d99e5a1d0da1f392fcdf97e8e, type: 3}
+  score: {fileID: 0}
 --- !u!1 &722912757
 GameObject:
   m_ObjectHideFlags: 0
@@ -82332,6 +82333,79 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55eedbc326373d9cc84ef3a8911f5ccc, type: 3}
+--- !u!1001 &8141338617041145451
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4357834074551735900, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357834074551735900, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1885071053
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044150559657447515, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_Name
+      value: Heal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044150559657447515, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012040361220676042, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.274
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012040361220676042, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.536
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012040361220676042, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012040361220676042, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012040361220676042, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012040361220676042, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012040361220676042, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012040361220676042, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012040361220676042, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012040361220676042, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163818484891931055, guid: 427ebda494746fc50b66280a74d91800, type: 3}
+      propertyPath: gameSession
+      value: 
+      objectReference: {fileID: 678174036}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 427ebda494746fc50b66280a74d91800, type: 3}
 --- !u!1001 &8251909306077814817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82380,6 +82454,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3229796999247651500, guid: ac09206a06bd11c0592b3571123abfd0, type: 3}
+      propertyPath: gameSession
+      value: 
+      objectReference: {fileID: 678174036}
     - target: {fileID: 8367114943349785718, guid: ac09206a06bd11c0592b3571123abfd0, type: 3}
       propertyPath: m_Name
       value: Coin
@@ -82402,3 +82480,4 @@ SceneRoots:
   - {fileID: 367716147}
   - {fileID: 678174035}
   - {fileID: 972645698}
+  - {fileID: 8141338617041145451}

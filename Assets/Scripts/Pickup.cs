@@ -7,6 +7,8 @@ public class Pickup : MonoBehaviour
 
 	[SerializeField] private AudioClip pickupSFX;
 
+	[SerializeField] private GameSession gameSession;
+
 	/*
 	 * Start is called before the first frame update
 	 * @memberOf : UnityEngine
@@ -34,6 +36,11 @@ public class Pickup : MonoBehaviour
 
 		// Play pickyp SFX
 		AudioSource.PlayClipAtPoint(pickupSFX, Camera.main.transform.position);
+
+		if (gameObject.tag == "heal")
+			Debug.Log ("heal");
+		else
+			Debug.Log ("coin");
 
 		// Destory current game object
 		Destroy(gameObject);

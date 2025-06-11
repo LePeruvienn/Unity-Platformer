@@ -22,6 +22,7 @@ public class GameSession : MonoBehaviour
 	[SerializeField] private Sprite emptyHeart;
 	[SerializeField] private GameObject healthBarRoot;
 	[SerializeField] private GameObject heartPrefab;
+	[SerializeField] private GameObject score;
 
 	private PlayerMovement _playerMovement;
 

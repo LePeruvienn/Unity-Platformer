@@ -5,9 +5,11 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
 
+	// SFX to play when picking up the item
 	[SerializeField] private AudioClip pickupSFX;
 
-	[SerializeField] private GameSession gameSession;
+	// GameSession script
+	private GameSession _gameSession;
 
 	/*
 	 * Start is called before the first frame update
@@ -15,6 +17,8 @@ public class Pickup : MonoBehaviour
 	 */
 	void Start() {
 
+		// Get GameSession script
+		_gameSession = FindObjectOfType<GameSession>();
 	}
 
 	/*
@@ -39,11 +43,15 @@ public class Pickup : MonoBehaviour
 
 		// If object is a heal heal player
 		if (gameObject.tag == "heal")
-			gameSession.heal();
+			_gameSession.heal();
+		
+		// If object is a arrow, add an arrow to the player
+		else if (gameObject.tag == "arrow pickup")
+			_gameSession.addArrow();
 
 		// Else it's a coin to add score
 		else
-			gameSession.addScore();
+			_gameSession.addScore();
 
 		// Destory current game object
 		Destroy(gameObject);

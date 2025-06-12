@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - heal
+  - arrow pickup
   layers:
   - Default
   - TransparentFX

@@ -99,14 +99,14 @@ public class GameSession : MonoBehaviour
 	void Update() {
 
 		// If we are waiting for game over
-		if (showGameOverTime > 0) {
+		if (timeToWaitBeforeGameOver > 0) {
 	
 			// remove elapsed time
-			showGameOverTime -= Time.deltaTime;
+			timeToWaitBeforeGameOver -= Time.deltaTime;
 
 			// Set object active !
-			if (showGameOverTime < 0)
-				gameOverCanvas.SetActive(true);
+			if (timeToWaitBeforeGameOver < 0)
+				SetActive(gameOverCanvas);
 		}
 	}
 
@@ -167,14 +167,8 @@ public class GameSession : MonoBehaviour
 		if (playerLives > 0)
 			// Set player immune for 3 seconds 👼
 			_playerMovement.setImmune(immuneDuration);
-		else {
-
-			// Kill player
+		else
 			_playerMovement.kill();
-
-			// Enable death screen timer
-			showGameOverTime = timeToWaitBeforeGameOver;
-		}
 	}
 
 	/*

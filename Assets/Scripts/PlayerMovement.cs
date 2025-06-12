@@ -7,8 +7,6 @@ using Cinemachine;
 /*
  * TODO:
  * - Improve Ladder System
- * - Add blend transition for camera system !
- * - ...
  */
 
 public class PlayerMovement : MonoBehaviour
@@ -30,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
 	private bool _jumpingWallLeft = false;
 	private bool _jumpingWallRight = false;
 	private bool _isShooting = false;
+	private bool _isRolling = false;
 
 	// Handle player's jump time
 	private float _jumpTime = 0f;
@@ -115,6 +114,8 @@ public class PlayerMovement : MonoBehaviour
 		_collider = GetComponent<CapsuleCollider2D>();
 		_animator = GetComponent<Animator>();
 		_spriteRenderer = GetComponent<SpriteRenderer>();
+		
+		// Get GameSession
 		_gameSession = FindObjectOfType<GameSession>();
 
 		// Set startGrativityScale

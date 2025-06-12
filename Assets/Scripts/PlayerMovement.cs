@@ -83,6 +83,11 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float wallJumpHorizontalForce = 6f;
 	[SerializeField] private float wallJumpMalus = 0.5f;
 
+	[Header("Shooting")]
+	[SerializeField] private GameObject arrowPrefab;
+	[SerializeField] private Transform arrowSpawnOrigin;
+	[SerializeField] private float arrowSpeed = 10f;
+
 	[Header("Immune System")]
 	[SerializeField] private float blinkDuration = 0.1f;
 
@@ -260,12 +265,13 @@ public class PlayerMovement : MonoBehaviour
 			// Set shoot animator to true and running to false !
 			_animator.SetBool("shoot", true);
 			_animator.SetBool("isRunning", false);
+			_animator.SetBool("isClimbing", false);
 
 			// Get animation state
 			AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
 
 			// If animation has ended reset _isShooting
-			if (stateInfo.normalizedTime >= 1f) {
+			if (stateInfo.IsName("Bow") && stateInfo.normalizedTime >= 1f) {
 				_animator.SetBool("shoot", false);
 				_isShooting = false;
 			}
@@ -413,8 +419,9 @@ public class PlayerMovement : MonoBehaviour
 	 */
 	private void OnFire() {
 
-		// If player is already shooting or jumping or Climbing stop here
-		if (_isDead || _isShooting || _isJumping || _isClimbing) return;
+		// Player dont have the right to use his arrow or,
+		// if player is already shooting or jumping or Climbing stop here ❌
+		if (!_gameSession.useArrow() || _isDead || _isShooting || _isJumping || _isClimbing) return;
 	
 		// Set shooting status to true
 		_isShooting = true;
@@ -425,6 +432,23 @@ public class PlayerMovement : MonoBehaviour
 
 		// reset Rigidbody velocity
 		_rigidbody.velocity = Vector2.zero;
+
+		// Spawn Arrow Object
+		GameObject arrowInstance = Instantiate(arrowPrefab, arrowSpawnOrigin.position, arrowSpawnOrigin.rotation);
+
+		// Get arrow Rigidbody2D & SpriteRenderer
+		Rigidbody2D arrowRigidBody = arrowInstance.GetComponent<Rigidbody2D>();
+		SpriteRenderer arrowSpriteRenderer = arrowInstance.GetComponent<SpriteRenderer>();
+
+		// Flip arrow SpriteRenderer if needed
+		arrowSpriteRenderer.flipX = _spriteRenderer.flipX;
+		arrowSpriteRenderer.flipY = _spriteRenderer.flipX;
+
+		// Computed speed depending of player direction
+		float computedSpeed = (_spriteRenderer.flipX) ? -arrowSpeed : arrowSpeed;
+		
+		// Set arrow velocity
+		arrowRigidBody.velocity = new Vector2 (computedSpeed, 0);
 	}
 	
 	/*

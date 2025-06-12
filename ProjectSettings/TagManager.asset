@@ -20,7 +20,7 @@ TagManager:
   - Entities
   - Exit
   - Coin
-  - 
+  - Arrow
   - 
   - 
   - 
@@ -65,4 +65,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2004750211
+    locked: 0
+  - name: Arrow
+    uniqueID: 3708847505
     locked: 0

@@ -14,6 +14,8 @@ public class GameSession : MonoBehaviour
 
 	private int score = 0;
 
+	private int arrowAmount = 0;
+
 	[Header("Audio SFX")]
 	[SerializeField] private AudioClip lifePickupSFX;
 
@@ -23,12 +25,16 @@ public class GameSession : MonoBehaviour
 	[SerializeField] private int maxPlayerLives = 3;
 	[SerializeField] private float immuneDuration = 3f;
 
+	[Header("Arrows")]
+	[SerializeField] private int startArrowAmount = 3;
+
 	[Header("UI")]
 	[SerializeField] private Sprite fullHeart;
 	[SerializeField] private Sprite emptyHeart;
 	[SerializeField] private GameObject healthBarRoot;
 	[SerializeField] private GameObject heartPrefab;
 	[SerializeField] private TMP_Text scoreText;
+	[SerializeField] private TMP_Text arrowsText;
 
 	private PlayerMovement _playerMovement;
 
@@ -58,6 +64,9 @@ public class GameSession : MonoBehaviour
 		// Set playerLives
 		playerLives = maxPlayerLives;
 
+		// set arrowAmount
+		arrowAmount = startArrowAmount;
+
 		// Get player PlayerMovement object from player
 		_playerMovement = playerObject.GetComponent<PlayerMovement>();
 
@@ -66,6 +75,12 @@ public class GameSession : MonoBehaviour
 
 		// Intialize healthbar
 		initHealthBar();
+
+		// Update score text
+		scoreText.SetText("x " + score);
+
+		// Update arrows text
+		arrowsText.SetText("x " + arrowAmount);
 	}
 
 	/*
@@ -136,7 +151,10 @@ public class GameSession : MonoBehaviour
 			_playerMovement.kill();
 	}
 
-	// TODO:
+	/*
+	 * Add 1 to the player's score
+	 * @memberOf : GameSession
+	 */
 	public void addScore() {
 
 		// Add 1 to score
@@ -144,6 +162,38 @@ public class GameSession : MonoBehaviour
 
 		// Update score text
 		scoreText.SetText("x " + score);
+	}
+
+	/*
+	 * Add 1 arrow to the player
+	 * @memberOf : GameSession
+	 */
+	public void addArrow() {
+
+		// Add 1 to arrow amount
+		arrowAmount++;
+
+		// Update arrows text
+		arrowsText.SetText("x " + arrowAmount);
+	}
+
+	/*
+	 * Make user try to use an arrow
+	 * @return bool - true if he do, false if he cant
+	 * @memberOf : GameSession
+	 */
+	public bool useArrow() {
+
+		// If user cant shoot an arrow return false
+		if (arrowAmount == 0) return false;
+
+		// Remove 1 to arrow amount
+		arrowAmount--;
+
+		// Update arrows text
+		arrowsText.SetText("x " + arrowAmount);
+
+		return true;
 	}
 
 	/*

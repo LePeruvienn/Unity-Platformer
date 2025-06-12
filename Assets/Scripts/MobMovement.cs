@@ -20,16 +20,25 @@ public class MobMovement : MonoBehaviour
 	// Current Mob direction
 	private Vector2 _currentDirection;
 
+	// Mob states
+	private bool _isDead = false;
+
 	// Mob movement config
 	[Header("Movement values")]
 	[SerializeField] private float moveSpeed = 5f;
+
+	[Header("Die Animation")]
+	[SerializeField] private float deathJumpForce = 6f;
+	[SerializeField] private float deathRotateSpeed = 2f;
+
+	// Cached vars ☝️🤓 "Used to optimize memory allocation !"
+	private Vector3 _cachedDeathRotation = new Vector3 (0, 0, 0);
 
 	/*
 	 * Start Method used to get Mob's Components & set _rigidbody velocity
 	 * @memberOf : UnityEngine
 	 */
-	void Start()
-	{
+	void Start() {
 		// getting components ...
 		_rigidbody = GetComponent<Rigidbody2D>();
 		_collider = GetComponent<BoxCollider2D>();
@@ -51,9 +60,21 @@ public class MobMovement : MonoBehaviour
 	 */
 	void Update() {
 
+		// If mob is alive do nothing
+		if (!_isDead) return;
+
+		// Return if player is not falling
+		if (_rigidbody.velocity.y > 0) return;
+
+		// Make player rotate over time
+		_cachedDeathRotation.z = deathRotateSpeed * Time.deltaTime * 1000;
+		transform.Rotate (_cachedDeathRotation);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
+
+		// Dont do anything if mob is dead
+		if (_isDead) return;
 
 		// If collision is not in the layer Player return
 		if (other.gameObject.layer != LayerMask.NameToLayer("Player"))
@@ -69,6 +90,9 @@ public class MobMovement : MonoBehaviour
 	 */
 	void OnTriggerExit2D(Collider2D other) {
 
+		// Dont do anything if mob is dead
+		if (_isDead) return;
+
 		// If object is a Platform
 		if (other.gameObject.layer == LayerMask.NameToLayer("Platforms")) {
 
@@ -83,5 +107,24 @@ public class MobMovement : MonoBehaviour
 			scale.x *= -1;
 			transform.localScale = scale;
 		}
+	}
+
+	/*
+	 * Kill the Mob
+	 * @memberOf : UnityEngine.Event
+	 */
+	public void kill() {
+
+		// Set Mob state
+		_isDead = true;
+
+		// Stop Animator
+		_animator.speed = 0f;
+
+		// Set RigidbodyType to Dynamic
+		_rigidbody.bodyType = RigidbodyType2D.Dynamic;
+
+		// Add velocity to top !
+		_rigidbody.velocity = new Vector2 (0, deathJumpForce);
 	}
 }

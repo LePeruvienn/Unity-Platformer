@@ -548,7 +548,7 @@ public class PlayerMovement : MonoBehaviour
 	 */
 	private bool isTouchingLadder() {
 		// Check if player is touching a ladder
-		return rightCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
+		return _collider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
 	}
 
 	/*

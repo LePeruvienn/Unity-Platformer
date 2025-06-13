@@ -151,7 +151,7 @@ public class GameSession : MonoBehaviour
 	 * Remove a live from player
 	 * @memberOf : GameSession
 	 */
-	public void takeLife() {
+	public void takeLife(bool forceDeath = false) {
 
 		// If player has no lives return
 		// If player is immmune dont handle takeLife
@@ -168,10 +168,20 @@ public class GameSession : MonoBehaviour
 		Image image = _heartObjects[playerLives].GetComponent<Image>();
 		image.sprite = emptyHeart;
 
+		// If we want to kill player (force player's death)
+		if (forceDeath) {
+			// Set empty heart for all sprites
+			for (int i = 0; i < playerLives; i++) {
+				Image img = _heartObjects[i].GetComponent<Image>();
+				img.sprite = emptyHeart;
+			}
+		}
+
 		// if player still alive
-		if (playerLives > 0)
+		if (playerLives > 0 && !forceDeath)
 			// Set player immune for 3 seconds 👼
 			_playerMovement.setImmune(immuneDuration);
+
 		else {
 
 			// Kill player

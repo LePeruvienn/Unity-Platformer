@@ -135,13 +135,15 @@ public class PlayerMovement : MonoBehaviour
 			return;
 		}
 
+		bool touchingWater = isTouchingWater();
+		bool touchingSpikes = isTouchingSpikes();
+
 		// If we are touching water kill player 
-		if (isTouchingWater() || isTouchingSpikes()) {
+		if (touchingWater || touchingSpikes) {
 
 			// KILL PLAYER !!!!! 😠🖕
-			_gameSession.takeLife();
-
-			return;
+			// FORCE PLAYER DEATH IF TOUCHING WATER !
+			_gameSession.takeLife(touchingWater);
 		}
 
 		// Handle playe's immunity

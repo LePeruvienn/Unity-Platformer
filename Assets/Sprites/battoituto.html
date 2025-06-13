@@ -1,0 +1,1961 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html style="background-color: rgb(21, 21, 21); height: 100%;"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="preconnect" href="https://static1.textcraft.net/">
+    <link href="battoituto_fichiers/style2.css" rel="stylesheet" type="text/css" media="screen">
+
+    <title>Textcraft: Text &amp; logo maker - Minecraft, 8-bit styles and more</title>
+    <link rel="shortcut icon" href="https://textcraft.net/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/alkilhboimleigdblhagakfnfdalebbm">
+    <link rel="apple-touch-icon" href="https://textcraft.net/textcraft-225x225.jpg">
+<!--
+    <link rel="apple-touch-icon-precomposed" href="/txicon2-ios-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/txicon2-ios-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/txicon2-ios-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/txicon2-ios-144x144.png" />
+-->
+<!--
+    <link rel="apple-touch-startup-image" href="tx-ios-startup2.png">
+-->
+
+    <meta name="description" content="Create Minecraft, 8-bit, gaming and other styled text or logos online. Free with high quality results. Options include drop shadow, font styles, colored borders and 3d effect.">
+    <meta name="keywords" content="logo maker, text maker, minecraft, text generator, 8-bit text, gta font, minecraft text maker, minecraft logo generator, minecraft logo maker, minecraft fonts, minecraft style, minecraft art, minecraft logos, gaming text, gaming fonts, youtube fonts, youtube text, thumbnail text, thumbnail fonts">
+<!--
+    <meta name="google-translate-customization" content="968d83d13dfcdee6-6317ee1259481238-g5b7afe134b7362bf-d"></meta>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+-->
+    <meta name="viewport" content="user-scalable=yes, width=device-width">
+    <meta name="apple-mobile-web-app-title" content="Textcraft">
+
+<!--
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1" />
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, target-densityDpi=device-dpi" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+-->
+
+<meta property="og:title" content="Textcraft: Text &amp; logo maker - Minecraft, 8-bit styles and more">
+<meta property="og:site_name" content="Textcraft">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://textcraft.net/">
+<meta property="og:description" content="Create Minecraft, 8-bit, gaming and other styled text or logos online. Free with high quality results. Options include drop shadow, font styles, colored borders and 3d effect.">
+<meta property="og:image" content="https://textcraft.net/fb-icon.png">
+<meta property="fb:app_id" content="108977052595340">
+<meta property="fb:admins" content="100001866019297">
+
+
+<script type="text/javascript">
+var _is_mobile,_is_tablet,_is_android,_is_oldandroid,_is_ios;
+_is_mobile=0;
+_is_tablet=0;
+_is_android=0;
+_is_oldandroid=0;
+_is_ios=0;
+</script>
+<!--
+<script type="text/javascript">
+var addToHomeConfig = {
+ startDelay: 5000,
+ returningVisitor: false,
+ autostart: false
+};
+
+</script>
+<link rel="stylesheet" href="/add2home/style/add2home.css">
+<script type="application/javascript" src="/add2home/src/add2home.js" async></script>
+-->
+
+<script type="text/javascript">
+var cs0,cs1,cs2,cs3;
+var _showad,_homehash;
+
+function cs_init() {
+  // The 2nd parameter for each color picker is the intial color value
+//  cs0 = new color_select('cs0','#181818');
+//  cs1 = new color_select('cs1','#222222');
+//  cs0 = new color_select('cs0','#FF262E');
+  cs0 = new color_select('cs0','#2C262E');
+  cs1 = new color_select('cs1','#2C262E');
+  cs2 = new color_select('cs2','#211E4E');
+  cs3 = new color_select('cs3','#EBD406');
+
+
+  // spatially attach the color select to an element
+  // (when triggered, it will always appear below this element)
+  cs0.attach_to_element(document.getElementById("colorswatch"),-210,-160);
+  cs1.attach_to_element(document.getElementById("border-swatches"),-38,-82);
+  cs2.attach_to_element(document.getElementById("border-swatches"),-38,-82); // Attach these to same place also
+  cs3.attach_to_element(document.getElementById("border-swatches"),-38,-82);
+/*
+  cs1.attach_to_element(document.getElementById("color_select_icon1"),-237,-80);
+  cs2.attach_to_element(document.getElementById("color_select_icon1"),-269,-100); // Attach these to icon1 also
+  cs3.attach_to_element(document.getElementById("color_select_icon1"),-269,-100);
+*/
+  // Hack...
+  document.getElementById("colorswatch2").style.display="none";
+  document.getElementById("colorswatch2").style.width="";
+  document.getElementById("colorswatch2").style.height="";
+  document.getElementById("colorswatch3").style.display="none";
+  document.getElementById("colorswatch3").style.width="";
+  document.getElementById("colorswatch3").style.height="";
+
+  // Hack... get the default size button element
+  _currentsizebutton=document.getElementById('sizebutton-l');
+  _currentborderbutton=document.getElementById('borderbutton-1');
+  _currentglowbutton=document.getElementById('optionwidth4_default');
+  _currentglossybutton=document.getElementById('glossybutton-1');
+  _currentlightbutton=document.getElementById('lightbutton-1');
+
+  // Get other misc. elements
+  _container=document.getElementById('container');
+  _topbanner=document.getElementById('top-banner');
+  _genfields=document.getElementById('gen_fields');
+  _fittowidth_slider=document.getElementById('fittowidth_slider');
+  _fittowidth1=document.getElementById('fittowidth1');
+  _fittowidth2=document.getElementById('fittowidth2');
+  _charsel=document.getElementById('charsel');
+  _multilinesel=document.getElementById('multilinesel');
+  _yourtextbg=document.getElementById('yourtext-bg');
+  _yourtext2bg=document.getElementById('yourtext2-bg');
+  _yourtext3bg=document.getElementById('yourtext3-bg');
+  _yourtext=document.getElementById('yourtext');
+  _yourtext2=document.getElementById('yourtext2');
+  _yourtext3=document.getElementById('yourtext3');
+  _multilinepagenum=document.getElementById('multilinepagenum');
+
+
+//viewport = document.querySelector("meta[name=viewport]");
+//viewport.setAttribute('content', 'width=device-width;');
+
+RecalcBannerBG();_showad=0;
+
+  // Get the font colour selection/display divs
+//  for(i=0;i<_numcolours;i++) // numcolours now depends on the font, while fontcol is fixed at 8x2
+  for(i=0;i<16;i++)
+  _fontcol[i]=document.getElementById('font-colour'+i);
+
+  for(i=0;i<8;i++)
+  _pagedots[i]=document.getElementById('pagedot'+i);
+
+  // Number of fonts
+  for(i=0;i<30;i++)
+  _coloptbgloaded["font"+i]=0;;
+
+ // SelectFontColour(colour required, update or not)
+ // Colours set should be same as font_colour, font_colour2 etc. input fields
+  _multiline=1;
+  SelectFontColour('0',0)
+  _multiline=2;
+  SelectFontColour('4',0)
+  _multiline=3;
+  SelectFontColour('2',0)
+
+  _multiline=1;
+  updateFontColour();  
+  UpdateMultiDisplay(1);
+  
+  // Check HTML5 local storage to see if borderscale button state is set
+  if(typeof(Storage) !== "undefined") {
+   ls_borderscale=localStorage.getItem("borderscale");
+
+   if (ls_borderscale==1)
+    SetBorderscaleSelected();
+  }
+
+  // Hack for firefox, make sure fit lines has initial correct value
+  _genfields.fit_lines.value=0;
+  //DisplayMouseStatus();
+  
+  //touch_init();
+  LoadFeaturedStyles();
+
+LoadTop10();
+//alert("1");
+
+  // Load the style settings. Some duplication here
+  if (_pageloadedstyle==1) 
+   LoadStyleSettings(_loaded_stylename,_loaded_filename,_loaded_submitter,_loaded_url,_loaded_numhits,_loaded_full_url,_loaded_thumb_url,_loaded_icon_url,_loaded_yourtext_url);
+/*
+  else
+  // Register that we're finished initialising. StyleChangeSet() will now be effective when a setting is changed.
+  // Only do it at this stage if we haven't loaded a style initially from the main page.
+  _finishedinit=1;
+*/
+
+//alert("2");
+ AttachResizeHandler(); 
+
+ _finished_csinit=1;
+
+CacheLogin();
+} // end cs_init()
+
+function cs0_change_update(new_color) {
+  document.gen_fields.color0.value = new_color;
+  document.getElementById('color0_display').style.background = new_color;
+  StyleChangeSet();
+
+  // When we update the glow colour, we're finished with the loadstyleinprogress flag
+  _loadstyleinprogress=0;
+}
+function cs1_change_update(new_color) {
+  document.gen_fields.color1.value = new_color;
+  document.getElementById('color1_display').style.background = new_color;
+  StyleChangeSet();
+}
+function cs2_change_update(new_color) {
+  document.gen_fields.color2.value = new_color;
+  document.getElementById('color2_display').style.background = new_color;
+  StyleChangeSet();
+}
+function cs3_change_update(new_color) {
+  document.gen_fields.color3.value = new_color;
+  document.getElementById('color3_display').style.background = new_color;
+  StyleChangeSet();
+
+// We're now finished init if there wasn't a style loaded initially from the main page?
+  if (_pageloadedstyle==0 && _finishedinit==0)
+   _finishedinit=1; 
+
+}
+</script>
+
+<!-- misc. scripts moved from here to footer -->
+    <script type="text/javascript" src="battoituto_fichiers/animatedpng_mod.js"></script>
+    <script language="JavaScript" src="battoituto_fichiers/slider2.js"></script>
+
+<style>.goog-te-menu-frame.skiptranslate {top: 52px !important;}</style>
+<script>
+/*
+ // Note: Using this instead of body onload should mean page inits without waiting for even async scripts like google ads etc. to load
+ // But we had to take async flag off textgen.js
+ // Alternatively this would probably work the same just somewhere before the </body> tag
+ if( document.readyState !== 'loading' ) {
+  cs_init(); ClickHandler(); AddTranslate(); 
+ } else {
+  document.addEventListener('DOMContentLoaded', function() { cs_init(); ClickHandler(); AddTranslate(); }, false);
+ }
+*/
+</script>
+
+<!-- Hack for Chrome to prevent white flash -->
+<style>
+html {
+background-color:#151515; background:  url(https://static1.textcraft.net/bgimg/bg11-final3.jpg) top repeat;
+}
+</style>
+
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="battoituto_fichiers/m=el_main_css.css"><script type="text/javascript" charset="UTF-8" src="battoituto_fichiers/m=el_main.js"></script></head>
+
+
+<body style="position: relative; min-height: 100%; top: 40px; cursor: auto;"><div style="" class="skiptranslate"><iframe id=":2.container" class="VIpgJd-ZVi9od-ORHb-OEVmcd skiptranslate" frameborder="0" src="#" style="visibility:visible"></iframe></div>
+<!--
+<body onLoad="cs_init(); ClickHandler(); AddTranslate();">
+<body style="position:absolute; top:0px; left:0px; background-color:#151515; background: url(https://static1.textcraft.net/bgimg/bg11-final3.jpg) top repeat;" onLoad="cs_init(); ClickHandler(); AddTranslate();">
+-->
+
+<!-- Project Wonderful Ad Box Loader -->
+<!-- Put this after the <body> tag at the top of your page -->
+<!--
+<script type="text/javascript">
+   (function(){function pw_load(){
+      if(arguments.callee.z)return;else arguments.callee.z=true;
+      var d=document;var s=d.createElement('script');
+      var x=d.getElementsByTagName('script')[0];
+      s.type='text/javascript';s.async=true;
+      s.src='//www.projectwonderful.com/pwa.js';
+      x.parentNode.insertBefore(s,x);}
+   if (window.attachEvent){
+//    window.attachEvent('DOMContentLoaded',pw_load);
+    window.attachEvent('onload',pw_load);}
+   else{
+//    window.addEventListener('DOMContentLoaded',pw_load,false);
+    window.addEventListener('load',pw_load,false);}})();
+</script>
+-->
+<!-- End Project Wonderful Ad Box Loader -->
+
+
+<div id="modal-mask" style="height: 2890px; width: 1880px; visibility: hidden;"></div>
+
+<div id="top-banner" style="width: 1878px; height: 99px; position: absolute; left: 0px; top: 0px; z-index: 5; background: url(&quot;https://static1.textcraft.net/img/top-banner9.png&quot;) -350px 0px repeat-x;">
+</div>
+
+<div class="container" id="container">
+
+
+
+<div id="modal-progress" style="position: absolute; width: 100%; top: 300px; z-index: 100; display: none;">
+<center style="margin-left:0px;"><script language="JavaScript">wheelAnimSettings = new AnimatedPNG('animsettings', 'https://static1.textcraft.net/img/progress-bar-1.png', 6, 200);wheelAnimSettings.draw(false);</script><img id="animsettings1" src="battoituto_fichiers/progress-bar-1.png" style="display: none;">
+<img id="animsettings2" src="battoituto_fichiers/progress-bar-2.png" style="display: none;">
+<img id="animsettings3" src="battoituto_fichiers/progress-bar-3.png" style="">
+<img id="animsettings4" src="battoituto_fichiers/progress-bar-4.png" style="display: none;">
+<img id="animsettings5" src="battoituto_fichiers/progress-bar-5.png" style="display: none;">
+<img id="animsettings6" src="battoituto_fichiers/progress-bar-6.png" style="display: none;">
+</center></div>
+
+
+<!--
+<div id='top-box' align='left' style="overflow:hidden;">
+-->
+
+<div id="unicode-msg" style="position:absolute; right:22px; top:58px; color:#8e9adc; color:#b9b9b9; color:#a3a3a3; font-size:17px; font-family: 'Roboto', sans-serif; opacity:1;"></div>
+
+<div id="top-box" align="left">
+<div id="logo-box">
+<img src="battoituto_fichiers/textcraft4f.png" alt="textcraft - Minecraft and 8-bit style text and logo maker">
+</div>
+<div id="logo-box-pro" style="display:none">
+</div>
+
+<div style="position:absolute; width:541px; height:42px; right:12px; top:2px; color:#ddd; z-index:20; border: 0px solid #f00; overflow:hidden; opacity:.85">
+
+
+<div style="float:left; width:194px; height:26px; background-color:#383838; border:3px solid #383838; border-radius:4px; margin-top:7px; text-align:right;">
+<div style="float:left; width:31px; margin-top:2px; margin-left:1px;">
+<img src="battoituto_fichiers/flags-icon3a.png">
+</div>
+
+
+<div id="google_translate_element" style="float:left; margin-left:2px; margin-top:-8px; width:158px; border:0px solid #fff;"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage" style="white-space: nowrap;" class="goog-te-gadget-simple"><img src="battoituto_fichiers/cleardot.gif" class="goog-te-gadget-icon" alt="" style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span style="vertical-align: middle;"><a aria-haspopup="true" class="VIpgJd-ZVi9od-xl07Ob-lTBxed" href="#"><span>Sélectionner une langue</span><img src="battoituto_fichiers/cleardot.gif" alt="" width="1" height="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="battoituto_fichiers/cleardot.gif" alt="" width="1" height="1"><span style="color: rgb(118, 118, 118);" aria-hidden="true">▼</span></a></span></div></div></div><script type="text/javascript">function googleTranslateElementInit() {new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,bg,cs,da,de,el,en,es,fa,fi,fr,hi,hu,id,it,iw,ja,ko,ms,nl,no,pl,pt,ro,ru,sl,sv,th,tl,tr,uk,ur,vi,zh-CN,zh-TW', layout:google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-3301414-7'}, 'google_translate_element');} </script>
+<script type="text/javascript" src="battoituto_fichiers/element.js" async=""></script></div>
+
+<div style="float:left; width:132px; height:26px; background-color:#383838; border:3px solid #383838; border-radius:4px; margin-top:7px; margin-left:5px; opacity:.8;">
+
+<!-- facebook like button  -->
+<div style="border:0px solid #fff; float:right; height:21px; margin:3px 0 0 3px;">
+</div>
+
+<!-- plusone button  -->
+<div style="border:0px solid #fff; float:right; height:21px; margin:3px 3px 0 3px;">
+</div>
+
+</div>
+
+<div id="top-iframe" style="float:left;">
+<iframe id="login-status-iframe" name="login-status-iframe" src="battoituto_fichiers/login-status-main.html" width="192" height="32" frameborder="0" scrolling="no"></iframe>
+</div>
+
+</div>
+</div>
+
+<div id="gen" align="left">
+ <form name="gen_fields" id="gen_fields" method="POST" action="" onsubmit="ProcessGen(); return false;">
+  <input type="hidden" id="anim_type" value="none"> 
+<!--
+  <input type='hidden' id='font_style' name='font_style' value='font9'>
+-->
+  <input type="hidden" id="font_style" name="font_style" value="font6">
+  <input type="hidden" id="font_style2" name="font_style2" value="font6">
+  <input type="hidden" id="font_style3" name="font_style3" value="font6">
+  <input type="hidden" id="font_size" name="font_size" value="m">
+  <input type="hidden" id="font_size2" name="font_size2" value="s">
+  <input type="hidden" id="font_size3" name="font_size3" value="s">
+  <input type="hidden" id="border_size" name="border_size" value="1">
+  <input type="hidden" id="border_size2" name="border_size2" value="1">
+  <input type="hidden" id="border_size3" name="border_size3" value="1">
+  <input type="hidden" id="glow_halo" name="glow_halo" value="0">
+  <input type="hidden" id="perspective_effect" name="perspective_effect" value="0">
+  <input type="hidden" id="drop_shadow" name="drop_shadow" value="0">
+  <input type="hidden" id="fit_lines" name="fit_lines" value="844">
+  <input type="hidden" id="truecolour_images" name="truecolour_images" value="0">
+  <input type="hidden" id="glossy" name="glossy" value="0">
+  <input type="hidden" id="lighting" name="lighting" value="0">
+
+<div id="lower_outerbox" style="margin-top: 0px;"><div class="clearer" style="height:0px">&nbsp;</div>
+<div style="width:978px; height:20px; margin-bottom:18px; border:0px solid #0f0;">
+<div id="fittowidth_slider" style="margin-left: 5px; visibility: hidden;">
+<!-- margin is 459 - (default width / 2) = 459-250 = 209 -->
+<div id="fittowidth1" class="fittowidth" style="margin-left: 37px; background: url(&quot;https://static1.textcraft.net/img/fittowidth1.png&quot;) no-repeat;">
+</div>
+<div id="fittowidth2" class="fittowidth" style="background: url(&quot;https://static1.textcraft.net/img/fittowidth2.png&quot;) repeat-x; width: 844px;">
+</div>
+<div id="fittowidth3" class="fittowidth" style="background: url(https://static1.textcraft.net/img/fittowidth3.png) no-repeat">
+</div>
+</div> <!-- end fit to width slider div -->
+<div class="clearer" style="height:0px">&nbsp;</div>
+</div>
+<div class="clearer" style="height:0px">&nbsp;</div>
+
+<div id="options-box">
+<div id="linestyle-box" style="height:504px; background:url(https://static1.textcraft.net/img/controls-bg1k.png) top left no-repeat; background-position:-580px 0px;"><!-- 366px + 57px + 50px--><div class="clearer" style="height:0px">&nbsp;</div>
+
+<div style="margin:16px 0 0 18px;">
+
+<div id="textsize1" style="margin-top:0px">
+  <div id="sizebutton-t" class="optionwidth3a" onmouseover="SetSizeHigh(this,'t')" onmouseout="SetSizeLow(this,'t')" onclick="SetSizeSelected('t',1)" style="background-position: 0px 0px;">
+  <div class="buttonicon-textsize" style="background-position:0px 0px;"></div>
+  <div class="buttonicon-textsize-text" id="textsize-t" style="background-position:0px 0px;"></div>
+  </div>
+  <div id="sizebutton-s" class="optionwidth3a" onmouseover="SetSizeHigh(this,'s')" onmouseout="SetSizeLow(this,'s')" onclick="SetSizeSelected('s',1)" style="background-position: 0px 0px;">
+  <div class="buttonicon-textsize" style="background-position:-24px 0px;"></div>
+  <div class="buttonicon-textsize-text" id="textsize-s" style="background-position: -50px -25px;"></div>
+  </div>
+  <div id="sizebutton-m" class="optionwidth3a" onmouseover="SetSizeHigh(this,'m')" onmouseout="SetSizeLow(this,'m')" onclick="SetSizeSelected('m',1)" style="background-position: -172px 0px;">
+  <div class="buttonicon-textsize" style="background-position:-48px 0px;"></div>
+  <div class="buttonicon-textsize-text" id="textsize-m" style="background-position: -50px -50px;"></div>
+  </div>
+
+  <div style="line-height:1px; height:1px; font-size: 0em; clear: both;">
+  </div>
+
+  <div id="sizebutton-l" class="optionwidth3a" onmouseover="SetSizeHigh(this,'l')" onmouseout="SetSizeLow(this,'l')" onclick="SetSizeSelected('l',1)" style="background-position: 0px 0px;">
+  <div class="buttonicon-textsize" style="background-position:-72px 0px;"></div>
+  <div class="buttonicon-textsize-text" id="textsize-l" style="background-position: -50px -75px;"></div>
+  </div>
+  <div id="sizebutton-x" class="optionwidth3a_default" onmouseover="SetSizeHigh(this,'x')" onmouseout="SetSizeLow(this,'x')" onclick="SetSizeSelected('x',1)" style="background-position: 0px 0px;">
+  <div class="buttonicon-textsize" style="background-position:-96px 0px;"></div>
+  <div class="buttonicon-textsize-text" id="textsize-x" style="background-position: 0px -100px;"></div>
+  </div>
+  <div id="sizebutton-x2" class="optionwidth3a" onmouseover="SetSizeHigh(this,'x2')" onmouseout="SetSizeLow(this,'x2')" onclick="SetSizeSelected('x2',1)" style="background-position: 0px 0px;">
+  <div class="buttonicon-textsize" style="background-position:-120px 0px;"></div>
+  <div class="buttonicon-textsize-text" id="textsize-x2" style="background-position: 0px -125px;"></div>
+  </div>
+
+  <!-- Extra size buttons for paid members -->
+  <div id="pro-size" style="display:none;">
+  <div style="line-height:1px; height:1px; font-size: 0em; clear: both;"></div>
+  <div id="sizebutton-x3" class="optionwidth3a" onmouseover="SetSizeHigh(this,'x3')" onmouseout="SetSizeLow(this,'x3')" onclick="SetSizeSelected('x3',1)">
+  <div class="buttonicon-textsize" style="background-position:-144px 0px;"></div>
+  <div class="buttonicon-textsize-text" id="textsize-x3" style="background-position:0px -150px;"></div>
+  </div>
+  <div id="sizebutton-x4" class="optionwidth3a" onmouseover="SetSizeHigh(this,'x4')" onmouseout="SetSizeLow(this,'x4')" onclick="SetSizeSelected('x4',1)">
+  <div class="buttonicon-textsize" style="background-position:-168px 0px;"></div>
+  <div class="buttonicon-textsize-text" id="textsize-x4" style="background-position:0px -175px;"></div>
+  </div>
+  <div id="sizebutton-x5" class="optionwidth3a" onmouseover="SetSizeHigh(this,'x5')" onmouseout="SetSizeLow(this,'x5')" onclick="SetSizeSelected('x5',1)">
+  <div class="buttonicon-textsize" style="background-position:-192px 0px;"></div>
+  <div class="buttonicon-textsize-text" id="textsize-x5" style="background-position:0px -200px;"></div>
+  </div>
+  </div> <!-- end pro-size div -->
+
+  <!-- Direct users to Textcraft Pro page for larger text sizes -->
+  <div id="pro-size-ad">
+  <div style="line-height:1px; height:1px; font-size: 0em; clear: both;"></div>
+  <a href="https://textcraft.net/tx-pro.php" target="_blank">
+  <div id="sizebutton-ad" class="optionwidthad" onmouseover="SetSizeAdHigh(this)" onmouseout="SetSizeAdLow(this)" ontouchstart="SetSizeAdHigh(this)" onclick="SetSizeAdSelected(this);" style="background-position: 0px 0px;">
+  <div class="buttonicon-textsize" style="background-position:-144px 0px;"></div>
+  <div class="buttonicon-ad-text" id="textsize-ad" style="background-position: 0px 0px;"></div>
+  </div>
+  </a>
+
+  </div> <!-- end pro-size-ad div -->
+
+
+</div>
+
+<div id="textborder" style="margin-left:17px">
+  <div id="borderbutton-1" class="optionwidth3c_default" onmouseover="SetBorderHigh(this,'1')" onmouseout="SetBorderLow(this,'1')" onclick="SetBorderSelected('1',1)" style="background-position: -430px 0px;">
+  <div class="buttonicon-bordersize" style="background-position:0px -28px;"></div>
+  <div class="buttonicon-bordersize-text" id="bordersize-1" style="background-position:-50px -225px;"></div>
+  </div>
+  <div id="borderbutton-2" class="optionwidth3c" onmouseover="SetBorderHigh(this,'2')" onmouseout="SetBorderLow(this,'2')" onclick="SetBorderSelected('2',1)" style="background-position: -258px 0px;">
+  <div class="buttonicon-bordersize" style="background-position:-24px -28px;"></div>
+  <div class="buttonicon-bordersize-text" id="bordersize-2" style="background-position: 0px -250px;"></div>
+  </div>
+  <div id="borderbutton-3" class="optionwidth3c" onmouseover="SetBorderHigh(this,'3')" onmouseout="SetBorderLow(this,'3')" onclick="SetBorderSelected('3',1)" style="background-position: -258px 0px;">
+  <div class="buttonicon-bordersize" style="background-position:-48px -28px;"></div>
+  <div class="buttonicon-bordersize-text" id="bordersize-3" style="background-position: 0px -275px;"></div>
+  </div>
+
+  <div style="line-height:1px; height:1px; font-size: 0em; clear: both;">
+  </div>
+
+  <div id="borderbutton-5" class="optionwidth3c" onmouseover="SetBorderHigh(this,'5')" onmouseout="SetBorderLow(this,'5')" onclick="SetBorderSelected('5',1)" style="background-position: -258px 0px;">
+  <div class="buttonicon-bordersize" style="background-position:-72px -28px;"></div>
+  <div class="buttonicon-bordersize-text" id="bordersize-5" style="background-position: 0px -300px;"></div>
+  </div>
+  <div id="borderbutton-8" class="optionwidth3c" onmouseover="SetBorderHigh(this,'8')" onmouseout="SetBorderLow(this,'8')" onclick="SetBorderSelected('8',1)" style="background-position: -258px 0px;">
+  <div class="buttonicon-bordersize" style="background-position:-96px -28px;"></div>
+  <div class="buttonicon-bordersize-text" id="bordersize-8" style="background-position: 0px -325px;"></div>
+  </div>
+
+  <div id="pro-border" style="display:none;">  <div id="borderbutton-13" class="optionwidth3c" onmouseover="SetBorderHigh(this,'13')" onmouseout="SetBorderLow(this,'13')" onclick="SetBorderSelected('13',1)">
+  <div class="buttonicon-bordersize" style="background-position:-96px -28px;"></div>
+  <div class="buttonicon-bordersize-text" id="bordersize-13" style="background-position:0px -350px;"></div>
+  </div>
+
+  <div style="line-height:1px; height:1px; font-size: 0em; clear: both;">
+  </div>
+
+  <div id="borderbutton-18" class="optionwidth3c" onmouseover="SetBorderHigh(this,'18')" onmouseout="SetBorderLow(this,'18')" onclick="SetBorderSelected('18',1)">
+  <div class="buttonicon-bordersize" style="background-position:-96px -28px;"></div>
+  <div class="buttonicon-bordersize-text" id="bordersize-18" style="background-position:0px -375px;"></div>
+  </div>
+  <div id="borderbutton-24" class="optionwidth3c" onmouseover="SetBorderHigh(this,'24')" onmouseout="SetBorderLow(this,'24')" onclick="SetBorderSelected('24',1)">
+  <div class="buttonicon-bordersize" style="background-position:-96px -28px;"></div>
+  <div class="buttonicon-bordersize-text" id="bordersize-24" style="background-position:0px -400px;"></div>
+  </div>
+
+</div> <!-- end pro-border div -->
+
+<div id="border-swatches" style="margin-top:5px;height:35px; border:0px solid #f0f;">
+<div id="colorswatch1" style="overflow: hidden;">
+    <input id="color1" name="color1" value="#2C262E" style="display:none; margin: 4px 0 0 0;width:9ex;color:white;background-color:black;border:1px solid #777;padding: 2px;" onchange="cs1.setrgb(this.value);" onkeypress="if (event.keyCode == 13){return false;}">
+
+    <div id="color_select_icon1" class="color_select_icon" style="display:block; margin:3px 0 0 1px;">
+     <img id="color1_img" src="battoituto_fichiers/color_select_icon2a.png" onclick="SwatchColourSelect(cs1,1);" style="float:left; margin-left:2px; cursor:pointer;">
+    <div id="color1_display" class="color_display" onclick="SwatchColourSelect(cs1,1);" style="cursor: pointer; background: rgb(44, 38, 46);"></div>
+    </div>
+</div>
+<div id="colorswatch2" style="overflow: hidden; display: none;">
+    <input id="color2" name="color2" value="#211E4E" style="display:none; margin: 4px 0 0 0;width:9ex;color:white;background-color:black;border:1px solid #777;padding: 2px;" onchange="cs2.setrgb(this.value);" onkeypress="if (event.keyCode == 13){return false;}">
+
+    <div id="color_select_icon2" class="color_select_icon" style="display:block; margin:3px 0 0 1px;">
+     <img id="color2_img" src="battoituto_fichiers/color_select_icon2a.png" onclick="SwatchColourSelect(cs2,2);" style="float:left; margin-left:2px; cursor:pointer;">
+    <div id="color2_display" class="color_display" onclick="SwatchColourSelect(cs2,2);" style="background: rgb(33, 30, 78); cursor: pointer;"></div>
+    </div>
+</div>
+<div id="colorswatch3" style="overflow: hidden; display: none;">
+    <input id="color3" name="color3" value="#EBD406" style="display:none; margin: 4px 0 0 0;width:9ex;color:white;background-color:black;border:1px solid #777;padding: 2px;" onchange="cs3.setrgb(this.value);" onkeypress="if (event.keyCode == 13){return false;}">
+
+    <div id="color_select_icon3" class="color_select_icon" style="display:block; margin:3px 0 0 1px;">
+     <img id="color3_img" src="battoituto_fichiers/color_select_icon2a.png" onclick="SwatchColourSelect(cs3,3);" style="float:left; margin-left:2px; cursor:pointer;">
+    <div id="color3_display" class="color_display" onclick="SwatchColourSelect(cs3,3);" style="background: rgb(235, 212, 6); cursor: pointer;"></div>
+    </div>
+</div>
+<div class="clearer" style="height:0px">&nbsp;</div>
+</div>
+<div class="clearer" style="height:0px">&nbsp;</div>
+
+  <!-- Filler for Textcraft Pro border sizes -->
+  <div id="pro-border-ad">  <div id="borderbutton-ad" class="optionwidthad2">
+  <div class="buttonicon-bordersize" style="background-position:-120px -28px;"></div>
+  <div class="buttonicon-ad-text" id="bordersize-ad" style="background-position:0px -45px;"></div>
+  </div>
+
+</div> <!-- end pro-border-ad div -->
+
+<!--
+  <div id="borderbutton-5" class='optionwidth3c' onmouseover="SetBorderHigh(this,'5')" onmouseout="SetBorderLow(this,'5')" onclick="SetBorderSelected('5',1)" >
+  <div style="position:absolute;top:-1px;left:4px;">XXL</div>
+  </div>
+-->
+
+</div>
+
+<div class="clearer" style="height:5px; border:0px solid #f00;">&nbsp;</div>
+
+<!-- fontcolbox -->
+<div id="fontcolbox" style="border:0px solid #fff">
+<!-- Font colour options -->
+<input type="hidden" id="font_colour" name="font_colour" value="8">
+<input type="hidden" id="font_colour2" name="font_colour2" value="9">
+<input type="hidden" id="font_colour3" name="font_colour3" value="2">
+
+<input type="hidden" id="font_page" name="font_page" value="6">
+<input type="hidden" id="font_page2" name="font_page2" value="5">
+<input type="hidden" id="font_page3" name="font_page3" value="5">
+
+<!--
+https://stackoverflow.com/questions/2987706/touchend-event-doesnt-work-on-android
+https://code.google.com/p/android/issues/detail?id=19827#makechanges
+-->
+<div id="leftarrow" class="fontcolarrow" style="background: url(&quot;https://static1.textcraft.net/img/left_arrow3d.png&quot;) 0px 0px; margin-left: 4px;" onmouseover="SetArrowHigh(this,'left')" onmouseout="SetArrowLow(this,'left')" onclick="SetArrow(this,'left')">
+</div>
+
+<div id="colouroptions" style="margin-top:7px; margin-left:4px; z-index:100; border:0px solid #f00">
+
+<div id="optionload-progress" style="position: absolute; top: 0px; left: 0px; z-index: 100; display: none;">
+<!--
+ <img src='https://static1.textcraft.net/img/big-progress.gif' style='margin:41px 0 0 202px;'>
+-->
+ <img src="battoituto_fichiers/small-progress.gif" style="margin:47px 0 0 210px;">
+</div>
+
+<div id="hidden_optionload"><img src="battoituto_fichiers/font23-bg4.jpg" onload="setFontColourBGLoaded('font23')"></div>
+
+<img src="battoituto_fichiers/charsel3.png" id="charsel" style="left: -3px; top: 56px;">
+<!-- div backgrounds  -->
+<div id="font-colour0" class="font-colour" onclick="SelectFontColour('0',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2640px 0px;"></div><div id="font-colour1" class="font-colour" onclick="SelectFontColour('1',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2695px 0px;"></div><div id="font-colour2" class="font-colour" onclick="SelectFontColour('2',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2750px 0px;"></div><div id="font-colour3" class="font-colour" onclick="SelectFontColour('3',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2805px 0px;"></div><div id="font-colour4" class="font-colour" onclick="SelectFontColour('4',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2860px 0px;"></div><div id="font-colour5" class="font-colour" onclick="SelectFontColour('5',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2915px 0px;"></div><div id="font-colour6" class="font-colour" onclick="SelectFontColour('6',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2970px 0px;"></div><div id="font-colour7" class="font-colour" onclick="SelectFontColour('7',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -3025px 0px;"></div><div class="clearer" style="height:2px;"></div><div id="font-colour8" class="font-colour" onclick="SelectFontColour('8',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2640px -55px;"></div><div id="font-colour9" class="font-colour" onclick="SelectFontColour('9',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2695px -55px;"></div><div id="font-colour10" class="font-colour" onclick="SelectFontColour('10',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2750px -55px;"></div><div id="font-colour11" class="font-colour" onclick="SelectFontColour('11',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2805px -55px;"></div><div id="font-colour12" class="font-colour" onclick="SelectFontColour('12',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2860px -55px;"></div><div id="font-colour13" class="font-colour" onclick="SelectFontColour('13',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2915px -55px;"></div><div id="font-colour14" class="font-colour" onclick="SelectFontColour('14',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -2970px -55px;"></div><div id="font-colour15" class="font-colour" onclick="SelectFontColour('15',0)" style="background-image: url(&quot;https://static1.textcraft.net/backgrounds/font6-bg4.jpg?v=1&quot;); background-position: -3025px -55px;"></div><div class="clearer" style="height:2px;"></div></div> <!-- end colouroptions -->
+
+<div id="rightarrow" class="fontcolarrow" style="background: url(&quot;https://static1.textcraft.net/img/right_arrow3d.png&quot;) 0px 0px; margin-left: 0px;" onmouseover="SetArrowHigh(this,'right')" onmouseout="SetArrowLow(this,'right')" onclick="SetArrow(this,'right')">
+</div>
+
+
+</div> <!-- end fontcolbox -->
+
+<div class="clearer" style="height:3px">&nbsp;</div>
+
+<div id="pagedots">
+<div id="pagedot7" class="pagedot" style="background-position: 0px 0px;"></div><div id="pagedot6" class="pagedot" style="background-position: -9px 0px;"></div><div id="pagedot5" class="pagedot" style="background-position: 0px 0px;"></div><div id="pagedot4" class="pagedot" style="background-position: 0px 0px;"></div><div id="pagedot3" class="pagedot" style="background-position: 0px 0px;"></div><div id="pagedot2" class="pagedot" style="background-position: 0px 0px;"></div><div id="pagedot1" class="pagedot" style="background-position: 0px 0px;"></div><div id="pagedot0" class="pagedot" style="background-position: 0px 0px;"></div></div>
+<div class="clearer"></div>
+
+<!-- styleoptionsbox -->
+<div id="styleoptionsbox">
+<div id="style-opt" style="margin-top:3px;">
+
+<!-- new fontblock image is 57px higher, textcraft pro also adds 50px to controls-bg1 background 
+Edit: Not any more
+-->
+<img src="battoituto_fichiers/fontblock7.png" border="0" alt="font styles" style="width:542px; height:186px; margin-left:5px; -webkit-tap-highlight-color: rgba(0,0,0,0);">
+<div id="fontselleft" style="display: block; left: 139px; top: 30px;">
+<img src="battoituto_fichiers/fontsel-left2.png">
+</div>
+<div id="fontselright" style="display: block; left: 258px; top: 30px;">
+<img src="battoituto_fichiers/fontsel-right2.png">
+</div>
+
+<div class="style-opt-button2" style="top:0px; left:0px; width:191px; height:32px;" onclick='SetFontStyle2("font1",1); return false;'></div>
+<div class="style-opt-button2" style="top:0px; left:192px; width:104px; height:32px;" onclick='SetFontStyle2("font2",1); return false;'></div>
+<div class="style-opt-button2" style="top:0px; left:297px; width:151px; height:32px;" onclick='SetFontStyle2("font3",1); return false;'></div>
+<div class="style-opt-button2" style="top:0px; left:449px; width:86px; height:32px;" onclick='SetFontStyle2("font4",1); return false;'></div>
+
+<div class="style-opt-button2" style="top:33px; left:0px; width:136px; height:28px;" onclick='SetFontStyle2("font5",1); return false;'></div>
+<div class="style-opt-button2" style="top:33px; left:137px; width:138px; height:28px;" onclick='SetFontStyle2("font6",1); return false;'></div>
+<div class="style-opt-button2" style="top:33px; left:276px; width:128px; height:28px;" onclick='SetFontStyle2("font7",1); return false;'></div>
+<div class="style-opt-button2" style="top:33px; left:405px; width:130px; height:28px;" onclick='SetFontStyle2("font8",1); return false;'></div>
+
+<div class="style-opt-button2" style="top:62px; left:0px; width:120px; height:29px;" onclick='SetFontStyle2("font18",1); return false;'></div>
+<div class="style-opt-button2" style="top:62px; left:121px; width:153px; height:29px;" onclick='SetFontStyle2("font19",1); return false;'></div>
+<div class="style-opt-button2" style="top:62px; left:275px; width:122px; height:29px;" onclick='SetFontStyle2("font20",1); return false;'></div>
+<div class="style-opt-button2" style="top:62px; left:398px; width:137px; height:29px;" onclick='SetFontStyle2("font21",1); return false;'></div>
+
+<div class="style-opt-button2" style="top:92px; left:0px; width:140px; height:28px;" onclick='SetFontStyle2("font22",1); return false;'></div>
+<div class="style-opt-button2" style="top:92px; left:141px; width:131px; height:28px;" onclick='SetFontStyle2("font23",1); return false;'></div>
+<div class="style-opt-button2" style="top:92px; left:273px; width:126px; height:28px;" onclick='SetFontStyle2("font24",1); return false;'></div>
+<div class="style-opt-button2" style="top:92px; left:400px; width:135px; height:28px;" onclick='SetFontStyle2("font25",1); return false;'></div>
+
+<div class="style-opt-button2" style="top:121px; left:0px; width:103px; height:29px;" onclick='SetFontStyle2("font26",1); return false;'></div>
+<div class="style-opt-button2" style="top:121px; left:104px; width:120px; height:29px;" onclick='SetFontStyle2("font27",1); return false;'></div>
+<div class="style-opt-button2" style="top:121px; left:225px; width:117px; height:29px;" onclick='SetFontStyle2("font28",1); return false;'></div>
+<div class="style-opt-button2" style="top:121px; left:343px; width:101px; height:29px;" onclick='SetFontStyle2("font29",1); return false;'></div>
+<div class="style-opt-button2" style="top:121px; left:445px; width:90px; height:29px;" onclick='SetFontStyle2("font30",1); return false;'></div>
+
+<div class="style-opt-button2" style="top:151px; left:0px; width:106px; height:29px;" onclick='SetFontStyle2("font31",1); return false;'></div>
+<div class="style-opt-button2" style="top:151px; left:107px; width:107px; height:29px;" onclick='SetFontStyle2("font32",1); return false;'></div>
+<div class="style-opt-button2" style="top:151px; left:215px; width:103px; height:29px;" onclick='SetFontStyle2("font33",1); return false;'></div>
+<div class="style-opt-button2" style="top:151px; left:319px; width:82px; height:29px;" onclick='SetFontStyle2("font34",1); return false;'></div>
+<div class="style-opt-button2" style="top:151px; left:399px; width:140px; height:29px;" onclick='SetFontStyle2("font35",1); return false;'></div>
+
+<!--
+<div class="style-opt-button2" style="top:65px; left:0px; width:62px; height:27px;" onclick='SetFontStyle2("font9",1); return false;'></div>
+<div class="style-opt-button2" style="top:65px; left:75px; width:47px; height:27px;" onclick='SetFontStyle2("font10",1); return false;'></div>
+<div class="style-opt-button2" style="top:65px; left:135px; width:62px; height:27px;" onclick='SetFontStyle2("font11",1); return false;'></div>
+<div class="style-opt-button2" style="top:65px; left:214px; width:60px; height:27px;" onclick='SetFontStyle2("font12",1); return false;'></div>
+<div class="style-opt-button2" style="top:65px; left:287px; width:51px; height:27px;" onclick='SetFontStyle2("font13",1); return false;'></div>
+<div class="style-opt-button2" style="top:65px; left:354px; width:67px; height:27px;" onclick='SetFontStyle2("font14",1); return false;'></div>
+<div class="style-opt-button2" style="top:65px; left:436px; width:86px; height:27px;" onclick='SetFontStyle2("font15",1); return false;'></div>
+-->
+
+</div>
+</div>
+
+
+<div class="clearer" style="height:0px">&nbsp;</div>
+
+</div>
+<div id="multilinepagenum" style="top:385px;">1</div>
+</div> <!-- end linestyle-box -->
+
+<div class="clearer" style="height:0px">&nbsp;</div>
+
+<div id="textoptions" style="margin-top:0px;"><!--
+<div id='textoptions' style="margin-top:0px;">
+-->
+
+<div class="clearer" style="height:24px">&nbsp;</div>
+
+<!-- 1st line of options -->
+
+<div id="checkbox4" class="checkbox" onclick="SetCheckboxSelected('4')" onmouseover="SetCheckboxHigh('4')" onmouseout="SetCheckboxLow('4')" style="background-position: -33px 0px;">
+</div>
+<div id="optiontext" style="width:295px; float:left"><span onclick="SetCheckboxSelected('4'); return false;" onmouseover="SetCheckboxHigh('4')" onmouseout="SetCheckboxLow('4')">fit lines to max width</span></div>
+
+<div id="optiontext" style="width:158px; margin-top: 4px; float:left; border:0px solid #fff">
+<div class="slider">
+<script language="JavaScript">
+        var A_TPL = {
+                'b_vertical' : false,
+                'b_watch': true,
+                'n_controlWidth': 150,
+                'n_controlHeight': 22,
+/*
+                'n_sliderWidth': 24,
+                'n_sliderHeight': 22,
+                'n_pathLeft' : 0,
+                'n_pathTop' : 3,
+*/
+                'n_sliderWidth': 30,
+                'n_sliderHeight': 28,
+                'n_pathLeft' : -2,
+                'n_pathTop' : 0,
+                'n_pathLength' : 150-22,
+                's_imgControl': 'https://static1.textcraft.net/img/horiz_slider_bg_tc4a.png',
+                's_imgSlider': 'https://static1.textcraft.net/img/horiz_slider_fg_tc7b.png',
+                'n_zIndex': 1
+        }
+        var A_INIT = {
+                's_form': 'gen_fields',
+                's_name': 'sliderValue',
+                'n_minValue' : 100,
+                'n_maxValue' : 900,
+                'n_value' : 500,
+                'n_step' : 1
+        }
+
+        slider_1=new slider(A_INIT, A_TPL);
+</script><div style="width:150px;height:22px;border:0; background-image:url(https://static1.textcraft.net/img/horiz_slider_bg_tc4a.png); background-size:150px 22px;" id="sl0base"><img src="battoituto_fichiers/horiz_slider_fg_tc7b.png" width="30" height="28" border="0" style="position: relative; left: 117px; top: 0px; z-index: 1; cursor: pointer; visibility: visible;" name="sl0slider" id="sl0slider" onmousedown="return f_sliderMouseDown(0)" ontouchstart="return f_sliderMouseDown(0)"></div>
+</div><!-- end slider div -->
+</div>
+
+<div id="optiontext" style="width:55px; float:left; border:0px solid #fff">
+  <input name="sliderValue" id="sliderValue" type="text" size="3" value="844">
+</div>
+
+
+<div class="clearer" style="height:10px">&nbsp;</div>
+
+<!-- 2nd line of options -->
+<div id="checkbox2" class="checkbox_on" onclick="SetCheckboxSelected('2')" onmouseover="SetCheckboxHigh('2')" onmouseout="SetCheckboxLow('2')" style="background-position: 0px 0px;">
+</div>
+<div id="optiontext" style="width:170px; float:left"><span onclick="SetCheckboxSelected('2'); return false;" onmouseover="SetCheckboxHigh('2')" onmouseout="SetCheckboxLow('2')">drop shadow</span></div>
+
+<div id="checkbox3" class="checkbox" onclick="SetCheckboxSelected('3')" onmouseover="SetCheckboxHigh('3')" onmouseout="SetCheckboxLow('3')" style="background-position: 0px 0px;">
+</div>
+<div id="optiontext" style="width:70px; float:left"><span onclick="SetCheckboxSelected('3'); return false;" onmouseover="SetCheckboxHigh('3')" onmouseout="SetCheckboxLow('3')">glow</span></div>
+
+<div id="optionwidth4_default" onmouseover="SetGlowHigh(this,'2')" onmouseout="SetGlowLow(this,'2')" onclick="SetGlowSelected(this,'2')">
+<div style="position:absolute;top:1px;left:9px;"><img src="battoituto_fichiers/glow-icon-small3.png"></div>
+</div>
+<div id="optionwidth4" onmouseover="SetGlowHigh(this,'3')" onmouseout="SetGlowLow(this,'3')" onclick="SetGlowSelected(this,'3')">
+<div style="position:absolute;top:-1px;left:1px;"><img src="battoituto_fichiers/paint-icon4.png"></div>
+</div>
+
+<div id="colorswatch" style="margin-left:5px;">
+    <input id="color0" name="color0" value="#2C262E" style="display:none; margin: 4px 0 0 0;width:9ex;color:white;background-color:#181818;border:1px solid #777;padding: 2px;" onchange="cs0.setrgb(this.value);" onkeypress="if (event.keyCode == 13){return false;}">
+
+    <div id="color_select_icon0" class="color_select_icon">
+     <img id="color0_img" src="battoituto_fichiers/color_select_icon2a-dark.png" onclick="SwatchColourSelect(cs0,0);" style="float:left; margin-left:2px; cursor:default;">
+    <div id="color0_display" class="color_display" style="margin: 9px 0px 0px 10px; cursor: default; background: rgb(44, 38, 46);" onclick="SwatchColourSelect(cs0,0);"></div>
+    </div>
+</div>
+
+<div class="clearer" style="height:6px">&nbsp;</div>
+
+<!-- 3rd line of options -->
+
+<div id="checkbox1" class="checkbox_on" onclick="SetCheckboxSelected('1')" onmouseover="SetCheckboxHigh('1')" onmouseout="SetCheckboxLow('1')" style="background-position: 0px 0px;">
+</div>
+<div id="optiontext" style="width:180px; float:left; border:0px solid #f00"><span onclick="SetCheckboxSelected('1'); return false;" onmouseover="SetCheckboxHigh('1')" onmouseout="SetCheckboxLow('1')">3d-style view</span></div>
+									    
+<div id="checkbox5" class="checkbox" onclick="SetCheckboxSelected('5')" onmouseover="SetCheckboxHigh('5')" onmouseout="SetCheckboxLow('5')" style="margin-left: 6px; background-position: 0px 0px;">
+</div>
+<div id="optiontext" style="float:left; border:0px solid #f00"><span onclick="SetCheckboxSelected('5'); return false;" onmouseover="SetCheckboxHigh('5')" onmouseout="SetCheckboxLow('5')">24-bit colour images</span></div>
+
+
+
+<div class="clearer" style="height:9px; border:0px solid #f00;">&nbsp;</div>
+<div id="styledb-save" class="styledb" style="position:relative;">
+<div id="loadsettings-overlay" style="position:absolute;display:none;margin:0px 0 0 250px;z-index:1000;">
+
+<!--
+<img src='https://static1.textcraft.net/img/big-progress.gif' style='margin:-2px 0 0 0;'>
+<img src='https://static1.textcraft.net/img/big-progress.gif' style='margin:34px 0 0 170px;'>
+<img src='https://static1.textcraft.net/img/small-progress.gif' style='margin:34px 0 0 170px;'>
+<div id="loadsettings-img" style='margin:40px 0 0 160px;'>
+-->
+<div id="loadsettings-img" style="margin:0 0 0 282px;">
+<img src="battoituto_fichiers/small-progress.gif">
+</div>
+
+</div>
+
+
+<div id="styledb-text" style="width:550px; height:60px; display:none;">
+<div style="float:left; height:22px;">
+<div style="float:left; width:180px;" id="savestyle-heading">
+Save this style
+</div>
+<div id="savestyle-errormsg" style="width:360px;">
+&nbsp;
+</div>
+</div>
+<div class="clearer" style="height:8px;"></div>
+
+<div id="savestyle-controls" style="border:0px solid #0ff">
+<!-- <form method='POST' action='' onsubmit='SaveStyle(); return false;'> -->
+<div id="savestyle" style="width:80px;">
+<div style="margin-top:7px">Style name:</div>
+</div>
+<div id="savestyle" style="width:200px;">
+ <div id="stylename-bg" style="position:relative;">
+  <div style="position:absolute; top:3px; left:4px;">
+   <input type="text" name="text" value="mystyle" id="stylename" onfocus="ClearSaveStyletext(); return false;" onkeypress="if (event.keyCode == 13){SaveStyle(); return false;}">
+  </div>
+ </div>
+</div>
+<!--
+<div id='savestyle' style="margin-left:3px; width:82px; text-align:right; border:0px solid #fff">
+<div style="margin-top:7px; margin-right:4px;">Your name:</div>
+</div>
+<div id='savestyle' style="width:115px; margin-left:1px;">
+ <div id="yourname-bg" style="position:relative;">
+  <div style="position:absolute; top:3px; left:4px;">
+   <input type='text' name='text' value='myname' id='yourname'" onfocus="ClearSaveStyletext(); return false;" onKeyPress="if (event.keyCode == 13){SaveStyle(); return false;}">
+  </div>
+ </div>
+</div>
+-->
+
+<div id="savestyle-progress">
+&nbsp;
+</div>
+
+<div id="savestyle" style="width:110px; margin-left:7px; margin-top:-1px;">
+<div id="savestylebutton" onmouseover="SetSaveStyleButtonHigh(this)" onmouseout="SetSaveStyleButtonLow(this)" onclick="SaveStyle();">
+<div style="margin-top:8px">
+Save style
+</div>
+</div>
+</div>
+
+<div id="savestyle" style="width:110px; margin-left:7px; margin-top:-1px;">
+<div id="savestylebutton" style="background-position: -220px 0px;" onmouseover="SetProfilePageButtonHigh(this)" onmouseout="SetProfilePageButtonLow(this)" onclick="window.open('/'+_username,'_blank');">
+
+<div style="margin-top:8px">
+Your profile
+</div>
+</div>
+</div>
+
+<div class="clearer">&nbsp;</div>
+</div><!-- end savestyle-controls -->
+
+<div id="savestyle-success" style="border:0px solid #0ff;">
+</div><!-- end savestyle-success -->
+
+</div><!-- end styledb-text -->
+
+<div id="styledb-loaded" style="width:545px; height:60px; border:0px solid #0ff; font-size:.7em; letter-spacing:normal;">Use Textcraft to make your own Minecraft and 8-bit style text and logos.<br><div class="clearer" style="height:1px; width:540px; border-bottom:1px dotted #555;">&nbsp;</div><div style="font-size:12px; letter-spacing:normal; margin-top:2px; border-top:0px solid #888; color:#888;">Click
+ on one of the styles below to load it, or create your own by changing 
+the settings above. See the guide below for more details on each option.</div><script type="text/javascript">_pageloadedstyle=0;</script></div><!-- end styledb-loaded -->
+
+
+</div><!-- end styledb div -->
+
+</div><!-- end textoptions div -->
+<div class="clearer" style="border: solid 0px #f0b;">&nbsp;</div>
+
+<div style="display:none">
+  <div id="optionwidth2a"><label style="cursor:pointer">
+  <input type="checkbox" name="non_trans" onclick="ProcessGen()" style="vertical-align: middle;height:20px">
+  Solid Bg.
+  </label>
+  </div>
+  <div id="optionwidth2a" style="margin-right:0px"><label style="cursor:pointer">
+  <input type="checkbox" name="glitter_border" checked="checked" onclick="ProcessGen()" style="vertical-align: middle;height:20px;">
+  Comment Borders
+  </label>
+  </div>
+</div>
+
+</div> <!-- end of options-box div -->
+
+<div id="multilinesel" style="background-position: -15px 0px;">
+</div>
+<div id="input-box" style="border:0px solid #ff0; min-height:774px; background:url(https://static1.textcraft.net/img/controls-bg2n.png) top left no-repeat;"><div style="margin:16px 0 0 5px; border:0px solid #ff0">
+<div class="clearer">&nbsp;</div>
+ <div id="yourtext-bg" style="border: 0px solid rgb(255, 0, 0); position: relative; background-position: 0px 0px;">
+  <div class="notranslate" style="position:absolute; line-height:38px; height:38px; top:7px; left:7px; border:0px solid #f0f">1.</div>
+  <div style="position:absolute; top:3px; left:27px; border:0px solid #f0f">
+   <input type="text" name="text" value="ET BAT TOI !" placeholder="Your text here" id="yourtext" dir="auto" spellcheck="false" autocomplete="off" oninput="checkUnicode(this,1);" onfocus="UpdateMultiDisplay(1,1); checkUnicode(this,1); return false;" style="background-color: rgb(204, 204, 204); border-color: rgb(204, 204, 204);">
+  </div>
+ </div>
+<div class="clearer">&nbsp;</div>
+<div style="float:left; width:240px; border:0px solid #f00;">
+<div id="yourtext2-bg" style="border: 0px solid rgb(255, 0, 255); position: relative; background-position: -226px 0px;"><!--
+   <div style="display:inline; margin-left:8px;">
+   2. <input type='text' name='text2' value='' id='yourtext2' onfocus="UpdateMultiDisplay(2,1); return false;">
+   </div>
+-->
+  <div class="notranslate" style="position:absolute; line-height:32px; height:32px; top:6px; 
+left:7px; border:0px solid #f0f">2.</div>
+  <div style="position:absolute; top:3px; left:27px; border:0px solid #f0f">
+<input type="text" name="text2" id="yourtext2" dir="auto" spellcheck="false" autocomplete="off" oninput="checkUnicode(this,2);" onfocus="UpdateMultiDisplay(2,1); checkUnicode(this,2); return false;" style="background-color: rgb(138, 138, 138); border-color: rgb(138, 138, 138);">  </div>
+
+  </div>
+ <div class="clearer">&nbsp;</div>
+<div id="yourtext3-bg" style="border: 0px solid rgb(255, 0, 255); position: relative; background-position: -226px 0px;">
+<!--
+   <div style="display:inline; margin-left:8px;">
+   3. <input type='text' name='text3' value='' id='yourtext3' onfocus="UpdateMultiDisplay(3,1); return false;">
+   </div>
+-->
+  <div class="notranslate" style="position:absolute; line-height:32px; height:32px; top:6px; 
+left:7px; border:0px solid #f0f">3.</div>
+  <div style="position:absolute; top:3px; left:27px; border:0px solid #f0f">
+<input type="text" name="text3" id="yourtext3" dir="auto" spellcheck="false" autocomplete="off" oninput="checkUnicode(this,3);" onfocus="UpdateMultiDisplay(3,1); checkUnicode(this,3); return false;" style="background-color: rgb(138, 138, 138); border-color: rgb(138, 138, 138);">  </div>
+
+  </div>
+</div>
+<div id="createbutton" onmouseover="SetCreateButtonHigh(this)" onmouseout="SetCreateButtonLow(this)" onclick="SetCreateSelected(this);" style="background-position: 0px 0px;">
+<div style="margin-top:24px">
+Create
+</div>
+</div>
+
+<input type="hidden" name="submittype" value="text" id="submittype">
+<input type="submit" value="Make text" style="border:0px; width:0px; height:0px; overflow:hidden; font-size:0px; line-height:0px;">
+
+<div class="clearer"></div>
+
+<div id="multiline-bg"><!--
+<div id="multiline-bg">
+-->
+<div id="multibutton" style="background-position: -112px 0px;" onmouseover="SetMultiButtonHigh(this)" onmouseout="SetMultiButtonLow(this)" onclick="SetMultiSelected(this);">
+</div>
+<div id="multiline-text">Use different styles for each line of text</div>
+</div>
+
+<div class="clearer" style="height:0px"></div>
+
+<div id="borderscale-bg" style="display:none"><div id="borderscalebutton" style="" onmouseover="SetBorderscaleButtonHigh(this)" onmouseout="SetBorderscaleButtonLow(this)" onclick="SetBorderscaleSelected();">
+</div>
+<div id="borderscale-text">Adjust border size along with text size</div>
+</div>
+
+<div class="clearer">&nbsp;</div>
+
+<div id="downloadbutton" style="margin-left: 15px; opacity: 1; cursor: pointer; background-position: 0px 0px;" onmouseover="SetDownloadButtonHigh(this)" onmouseout="SetDownloadButtonLow(this)" onclick="SetDownloadSelected(this); return false;">
+<div style="margin-top:15px; margin-left:10px; border:0px solid #5f5; float:left;">
+<img src="battoituto_fichiers/downarrow-green2.png">
+</div>
+<div class="notranslate" style="margin-top:11px; margin-left:4px; border:0px solid #55f; float:left; color: #ccc; /*text-shadow:#aad 0 0 .04em;*/">
+download</div>
+</div>
+
+<div class="extrabutton" id="extrabutton1" onmouseover="SetExtraButtonHigh(this)" onmouseout="SetExtraButtonLow(this)" onclick="SetUploadSelected(this)" style="opacity: 1; cursor: pointer; background-position: 0px 0px;">
+<div style="margin-top:15px; margin-left:10px; border:0px solid #5f5; float:left;">
+<img src="battoituto_fichiers/uparrow-blue2.png">
+<!--
+<div style="margin-top:13px; margin-left:2px; color: #ddd; /*text-shadow:#dad 0 0 .04em;*/">
+<img src='https://static1.textcraft.net/img/imgur-upload2.png'>
+-->
+</div>
+<div class="notranslate" style="margin-top:11px; margin-left:4px; border:0px solid #55f; float:left; color: #ccc; /*text-shadow:#aad 0 0 .04em;*/">
+host</div>
+
+</div>
+
+<div class="extrabutton" id="extrabutton2" onmouseover="SetExtraButtonHigh(this)" onmouseout="SetExtraButtonLow(this)" onclick="SetViewSelected(this);" style="opacity: 1; cursor: pointer; background-position: 0px 0px;">
+<div style="margin-top:15px; margin-left:10px; border:0px solid #5f5; float:left;">
+<img src="battoituto_fichiers/monitor-small.png">
+</div>
+<div class="notranslate" style="margin-top:11px; margin-left:6px; float:left; color: #ccc; /*text-shadow:#daa 0 0 .04em;*/">
+view</div>
+</div>
+<div class="clearer" style="height:1px"></div>
+<div id="download-note" style="height:13px; padding-top:1px;">
+<span style="color:#888; tesxt-decoration:underline;">** Note:</span> Please use <span class="notranslate">"download"</span> or <span class="notranslate">"host"</span> to keep your images
+</div>
+
+<div class="clearer" style="height:0px"></div>
+<a href="https://textcraft.net/tx-pro.php" target="_blank" style="outline:none">
+<div id="txpro-small-main" style="border: 0px solid rgb(255, 255, 255); margin: 22px 0px 0px 19px; background-position: 0px 0px;" onmouseover="SetTxproAdHigh(this)" onmouseout="SetTxproAdLow(this)" ontouchstart="SetTxproAdHigh(this)" onclick="SetTxproAdSelected(this)">
+</div>
+</a>
+
+<div id="largerect-main" style="display:block; height:auto; clear:both; float: none; border:0px; margin-top:0px;">
+
+<div id="style-opt-unicode" style="margin-top:28px; border:0px solid #fff;">
+
+<img src="battoituto_fichiers/fontblock6-unicode.png" border="0" alt="font styles" style="width:335px; height:60px; margin-left:5px; -webkit-tap-highlight-color: rgba(0,0,0,0);">
+<div id="fontselleft-unicode" style="display: none;">
+<img src="battoituto_fichiers/fontsel-left2.png">
+</div>
+<div id="fontselright-unicode" style="display: none;">
+<img src="battoituto_fichiers/fontsel-right2.png">
+</div>
+
+<!-- Unicode fonts 9-15,17 -->
+<div class="style-opt-button2" style="top:0px; left:0px; width:74px; height:28px;" onclick='SetFontStyle2("font13",1); return false;'></div>
+<div class="style-opt-button2" style="top:0px; left:75px; width:91px; height:28px;" onclick='SetFontStyle2("font17",1); return false;'></div>
+<div class="style-opt-button2" style="top:0px; left:167px; width:87px; height:28px;" onclick='SetFontStyle2("font12",1); return false;'></div>
+<div class="style-opt-button2" style="top:0px; left:255px; width:82px; height:28px;" onclick='SetFontStyle2("font11",1); return false;'></div>
+<div class="style-opt-button2" style="top:29px; left:0px; width:86px; height:28px;" onclick='SetFontStyle2("font14",1); return false;'></div>
+<div class="style-opt-button2" style="top:29px; left:87px; width:111px; height:28px;" onclick='SetFontStyle2("font15",1); return false;'></div>
+<div class="style-opt-button2" style="top:29px; left:199px; width:80px; height:28px;" onclick='SetFontStyle2("font9",1); return false;'></div>
+<div class="style-opt-button2" style="top:29px; left:280px; width:57px; height:28px;" onclick='SetFontStyle2("font10",1); return false;'></div>
+
+</div><!-- end style-opt-unicode -->
+
+<div class="clearer"></div>
+
+<div id="lighting-opt" style="margin-top:2px; border:1px solid #fff; display:none;">
+
+<!-- 4th line of options -->
+
+<div id="checkbox7" class="checkbox" onclick="SetCheckboxSelected('7')" onmouseover="SetCheckboxHigh('7')" onmouseout="SetCheckboxLow('7')" style="margin-left:6px;">
+</div>
+<div id="optiontext" style="width:120px; float:left; border:0px solid #f00"><span onclick="SetCheckboxSelected('7'); return false;" onmouseover="SetCheckboxHigh('7')" onmouseout="SetCheckboxLow('7')">lighting</span></div>
+
+<div id="lightbutton-1" class="optionwidth6_default" onmouseover="SetLightHigh(this,'1')" onmouseout="SetLightLow(this,'1')" onclick="SetLightSelected(this,'1')">
+<!--
+<div style="position:absolute;top:1px;left:9px;"><img src="https://static1.textcraft.net/img/glow-icon-small3.png"></div>
+-->
+</div>
+<div id="lightbutton-2" class="optionwidth6" onmouseover="SetLightHigh(this,'2')" onmouseout="SetLightLow(this,'2')" onclick="SetLightSelected(this,'2')">
+</div>
+
+<div class="clearer" style="height:2px"></div>
+
+<div id="lightbutton-3" class="optionwidth6" onmouseover="SetLightHigh(this,'3')" onmouseout="SetLightLow(this,'3')" onclick="SetLightSelected(this,'3')">
+</div>
+<div id="lightbutton-4" class="optionwidth6" onmouseover="SetLightHigh(this,'4')" onmouseout="SetLightLow(this,'4')" onclick="SetLightSelected(this,'4')">
+</div>
+<div id="lightbutton-5" class="optionwidth6" onmouseover="SetLightHigh(this,'5')" onmouseout="SetLightLow(this,'5')" onclick="SetLightSelected(this,'5')">
+</div>
+<div id="lightbutton-6" class="optionwidth6" onmouseover="SetLightHigh(this,'6')" onmouseout="SetLightLow(this,'6')" onclick="SetLightSelected(this,'6')">
+</div>
+
+<div class="clearer" style="height:2px"></div>
+
+</div><!-- end lighting-opt -->
+
+<div class="clearer" style="height:12px"></div>
+
+<div id="txpro-block-pro" style="margin-top:9px; border:0px solid #fff; display:none;"><div class="clearer" style="height:6px"></div>
+<span style="font-size:25px; color:#707070; color:#7C80A9;">Image Details</span>
+<div class="clearer" style="height:20px"></div>
+
+<div id="imgdetail">
+dimensions: <div class="imgdetail_value" id="imgdetail_dimensions">n/a</div><br>
+file size: <div class="imgdetail_value" id="imgdetail_filesize">n/a</div><br>
+colour format: <div class="imgdetail_value" id="imgdetail_colourdepth">n/a</div><br>
+<!--
+colour count: <div class="imgdetail_value" id="imgdetail_numcolours">n/a</div><br>
+-->
+</div>
+
+<div class="clearer" style="height:20px"></div>
+<div id="imgdetail-status"><span style="color:#777"></span></div>
+<!--
+<div id="imgdetail-status"><span style="color:#777">Image details are displayed here</span></div>
+-->
+
+</div> <!-- end txpro-block-pro div -->
+
+<!--
+<div id="txpro-block" style="margin-top:5px; border:0px solid #fff;">
+-->
+
+<div id="txpro-block" style="width:340px; height:280px; margin-left:-3px; margin-top:1px; border:0px solid #fff; position:absolute"><script async="" src="battoituto_fichiers/googlesyndication_adsbygoogle.js" crossorigin="anonymous"></script>
+<!-- textcraft-main1a -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8959601970688211" data-ad-slot="8369035851" data-ad-format="auto" data-full-width-responsive="false"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!--
+<a href="/tx-pro.php" target="_blank" style="text-decoration:none">
+<div id="txpro-block-text">
+
+<img src="https://static1.textcraft.net/img/txpro-header-small.png" style="position:absolute; width:340px; height:49px; margin:15px 0 0 2px;">
+<img src="https://static1.textcraft.net/img/new-sticker-small.png" style="position:absolute; width:58px; height:57px; margin:90px 0 0 281px;">
+<div style="position:absolute; margin-left:39px; margin-top:80px; font-size:18px; line-height:26px; color:#aaa">
+<ul>
+<li><span style="color:#eee">3 new extra large font sizes</span></li>
+<li>Hi-res textures & glow</li>
+<li>See more details & examples</li>
+</ul>
+</div>
+
+<div id="txprobutton" style="position:absolute; margin:171px 0 0 104px" onmouseover="SetTxproButtonHigh(this)" onmouseout="SetTxproButtonLow(this)">
+<div style="margin-top:15px; margin-left:10px; width:60px; float:left">
+GO
+</div>
+<div style="margin-top:5px; float:left">
+<img src="https://static1.textcraft.net/img/chevron1.png">
+</div>
+</div>
+
+
+</div>
+</a>
+-->
+
+</div><!-- end txpro-block -->
+<div class="clearer"></div>
+
+
+</div><!-- end largerect_main -->
+
+</div>
+</div> <!-- end of input-box div -->
+
+<div class="clearer">&nbsp;</div>
+
+<div id="topstyles" style="margin:-1px 0 0 5px;">
+<div class="clearer">&nbsp;</div>
+<div id="styledb-search" class="styledb">
+<div style="position:relative; width:930px; height:116px;">
+<div id="styledb-searchprogress" style="width: 930px; height: 94px; position: absolute; top: 0px; left: 0px; z-index: 100; display: none;">
+ <img src="battoituto_fichiers/big-progress.gif" style="margin:30px 0 0 450px;">
+</div>
+<div id="styledb-results" style="width:930px; height:114px; position: absolute; top:0; left:0;"><div class="styleresult notranslate" onclick='SetStyleResultTouch(0); LoadStyleSettings("Youtube%20Thumbnail","youtube-thumbnail","jasonejohnson31","https://static1.textcraft.net/styles/j/a/jasonejohnson31/youtube-thumbnail","3758","https://static1.textcraft.net/styles/j/a/jasonejohnson31/youtube-thumbnail.png","https://static1.textcraft.net/styles/j/a/jasonejohnson31/youtube-thumbnail-thumb.png","https://static1.textcraft.net/styles/j/a/jasonejohnson31/youtube-thumbnail-icon.png","https://static1.textcraft.net/styles/j/a/jasonejohnson31/youtube-thumbnail-yourtext.png?v=1")' onmouseover='SetStyleResultHigh("0")' onmouseout='SetStyleResultLow("0")'><div style="height:60px"><img src="battoituto_fichiers/youtube-thumbnail-thumb.png"></div><div class="clearer"></div><div class="stylestats" id="stylestats-0"><div id="loadedstyle-0" style="vertical-align:top; width:86px; height:23px; overflow:hidden; border:0px solid #f00; font-size:10px; line-height:11px; margin-top:4px;">Youtube Thumbnail</div><div class="clearer"></div><div style="color:#98a; height:11px; line-height:11px; overflow:hidden; font-size:1.0em; margin-top:1px;">by: jasonejohnson31</div><div class="clearer"></div><div style="color:#696990; margin-top:0px; height:13px; line-height:13px; overflow:hidden; font-size:1.1em;">hits: 3758</div></div></div><div class="styleresult notranslate" onclick='SetStyleResultTouch(1); LoadStyleSettings("Chat%20text%20Minecraft","chat-text-minecraft","BoozandTacos","https://static1.textcraft.net/styles/b/o/boozandtacos/chat-text-minecraft","3152","https://static1.textcraft.net/styles/b/o/boozandtacos/chat-text-minecraft.png","https://static1.textcraft.net/styles/b/o/boozandtacos/chat-text-minecraft-thumb.png","https://static1.textcraft.net/styles/b/o/boozandtacos/chat-text-minecraft-icon.png","https://static1.textcraft.net/styles/b/o/boozandtacos/chat-text-minecraft-yourtext.png?v=1")' onmouseover='SetStyleResultHigh("1")' onmouseout='SetStyleResultLow("1")'><div style="height:60px"><img src="battoituto_fichiers/chat-text-minecraft-thumb.png"></div><div class="clearer"></div><div class="stylestats" id="stylestats-1" style="background-position: 0px 0px;"><div id="loadedstyle-1" style="vertical-align: top; width: 86px; height: 23px; overflow: hidden; border: 0px solid rgb(255, 0, 0); font-size: 10px; line-height: 11px; margin-top: 4px; color: rgb(187, 187, 187);">Chat text Minecraft</div><div class="clearer"></div><div style="color:#98a; height:11px; line-height:11px; overflow:hidden; font-size:1.0em; margin-top:1px;">by: BoozandTacos</div><div class="clearer"></div><div style="color:#696990; margin-top:0px; height:13px; line-height:13px; overflow:hidden; font-size:1.1em;">hits: 3152</div></div></div><div class="styleresult notranslate" onclick='SetStyleResultTouch(2); LoadStyleSettings("Pokemon","pokemon","Textcraft","https://static1.textcraft.net/styles/t/e/textcraft/pokemon","2332","https://static1.textcraft.net/styles/t/e/textcraft/pokemon.png","https://static1.textcraft.net/styles/t/e/textcraft/pokemon-thumb.png","https://static1.textcraft.net/styles/t/e/textcraft/pokemon-icon.png","https://static1.textcraft.net/styles/t/e/textcraft/pokemon-yourtext.png?v=1")' onmouseover='SetStyleResultHigh("2")' onmouseout='SetStyleResultLow("2")'><div style="height:60px"><img src="battoituto_fichiers/pokemon-thumb.png"></div><div class="clearer"></div><div class="stylestats" id="stylestats-2" style="background-position: 0px 0px;"><div id="loadedstyle-2" style="vertical-align: top; width: 86px; height: 23px; overflow: hidden; border: 0px solid rgb(255, 0, 0); font-size: 14px; line-height: 16px; margin-top: 3px; color: rgb(187, 187, 187);">Pokemon</div><div class="clearer"></div><div style="color:#98a; height:11px; line-height:11px; overflow:hidden; font-size:1.1em; margin-top:2px;">by: Textcraft</div><div class="clearer"></div><div style="color:#696990; margin-top:0px; height:13px; line-height:13px; overflow:hidden; font-size:1.1em;">hits: 2332</div></div></div><div class="styleresult notranslate" onclick='SetStyleResultTouch(3); LoadStyleSettings("GTA%20Wasted","gta-wasted","PedroBlocks24","https://static1.textcraft.net/styles/p/e/pedroblocks24/gta-wasted","1607","https://static1.textcraft.net/styles/p/e/pedroblocks24/gta-wasted.png","https://static1.textcraft.net/styles/p/e/pedroblocks24/gta-wasted-thumb.png","https://static1.textcraft.net/styles/p/e/pedroblocks24/gta-wasted-icon.png","https://static1.textcraft.net/styles/p/e/pedroblocks24/gta-wasted-yourtext.png?v=1")' onmouseover='SetStyleResultHigh("3")' onmouseout='SetStyleResultLow("3")'><div style="height:60px"><img src="battoituto_fichiers/gta-wasted-thumb.png"></div><div class="clearer"></div><div class="stylestats" id="stylestats-3" style="background-position: 0px 0px;"><div id="loadedstyle-3" style="vertical-align: top; width: 86px; height: 23px; overflow: hidden; border: 0px solid rgb(255, 0, 0); font-size: 14px; line-height: 16px; margin-top: 3px; color: rgb(187, 187, 187);">GTA Wasted</div><div class="clearer"></div><div style="color:#98a; height:11px; line-height:11px; overflow:hidden; font-size:1.0em; margin-top:2px;">by: PedroBlocks24</div><div class="clearer"></div><div style="color:#696990; margin-top:0px; height:13px; line-height:13px; overflow:hidden; font-size:1.1em;">hits: 1607</div></div></div><div class="styleresult notranslate" onclick='SetStyleResultTouch(4); LoadStyleSettings("Gta%20vice%20city","gta-vice-city","ayoub26","https://static1.textcraft.net/styles/a/y/ayoub26/gta-vice-city","1489","https://static1.textcraft.net/styles/a/y/ayoub26/gta-vice-city.png","https://static1.textcraft.net/styles/a/y/ayoub26/gta-vice-city-thumb.png","https://static1.textcraft.net/styles/a/y/ayoub26/gta-vice-city-icon.png","https://static1.textcraft.net/styles/a/y/ayoub26/gta-vice-city-yourtext.png?v=1")' onmouseover='SetStyleResultHigh("4")' onmouseout='SetStyleResultLow("4")'><div style="height:60px"><img src="battoituto_fichiers/gta-vice-city-thumb.png"></div><div class="clearer"></div><div class="stylestats" id="stylestats-4"><div id="loadedstyle-4" style="vertical-align:top; width:86px; height:23px; overflow:hidden; border:0px solid #f00; font-size:10px; line-height:11px; margin-top:4px;">Gta vice city</div><div class="clearer"></div><div style="color:#98a; height:11px; line-height:11px; overflow:hidden; font-size:1.1em; margin-top:1px;">by: ayoub26</div><div class="clearer"></div><div style="color:#696990; margin-top:0px; height:13px; line-height:13px; overflow:hidden; font-size:1.1em;">hits: 1489</div></div></div><div class="styleresult notranslate" onclick='SetStyleResultTouch(5); LoadStyleSettings("Grand%20Theft%20Auto","grand-theft-auto","GWSheridan","https://static1.textcraft.net/styles/g/w/gwsheridan/grand-theft-auto","1211","https://static1.textcraft.net/styles/g/w/gwsheridan/grand-theft-auto.png","https://static1.textcraft.net/styles/g/w/gwsheridan/grand-theft-auto-thumb.png","https://static1.textcraft.net/styles/g/w/gwsheridan/grand-theft-auto-icon.png","https://static1.textcraft.net/styles/g/w/gwsheridan/grand-theft-auto-yourtext.png?v=1")' onmouseover='SetStyleResultHigh("5")' onmouseout='SetStyleResultLow("5")'><div style="height:60px"><img src="battoituto_fichiers/grand-theft-auto-thumb.png"></div><div class="clearer"></div><div class="stylestats" id="stylestats-5" style="background-position: 0px 0px;"><div id="loadedstyle-5" style="vertical-align: top; width: 86px; height: 23px; overflow: hidden; border: 0px solid rgb(255, 0, 0); font-size: 10px; line-height: 11px; margin-top: 4px; color: rgb(187, 187, 187);">Grand Theft Auto</div><div class="clearer"></div><div style="color:#98a; height:11px; line-height:11px; overflow:hidden; font-size:1.1em; margin-top:1px;">by: GWSheridan</div><div class="clearer"></div><div style="color:#696990; margin-top:0px; height:13px; line-height:13px; overflow:hidden; font-size:1.1em;">hits: 1211</div></div></div><div class="styleresult notranslate" onclick='SetStyleResultTouch(6); LoadStyleSettings("Roblox","roblox","25LiRuimin","https://static1.textcraft.net/styles/2/5/25liruimin/roblox","1002","https://static1.textcraft.net/styles/2/5/25liruimin/roblox.png","https://static1.textcraft.net/styles/2/5/25liruimin/roblox-thumb.png","https://static1.textcraft.net/styles/2/5/25liruimin/roblox-icon.png","https://static1.textcraft.net/styles/2/5/25liruimin/roblox-yourtext.png?v=1")' onmouseover='SetStyleResultHigh("6")' onmouseout='SetStyleResultLow("6")'><div style="height:60px"><img src="battoituto_fichiers/roblox-thumb.png"></div><div class="clearer"></div><div class="stylestats" id="stylestats-6"><div id="loadedstyle-6" style="vertical-align:top; width:86px; height:23px; overflow:hidden; border:0px solid #f00; font-size:14px; line-height:16px; margin-top:3px;">Roblox</div><div class="clearer"></div><div style="color:#98a; height:11px; line-height:11px; overflow:hidden; font-size:1.1em; margin-top:2px;">by: 25LiRuimin</div><div class="clearer"></div><div style="color:#696990; margin-top:0px; height:13px; line-height:13px; overflow:hidden; font-size:1.1em;">hits: 1002</div></div></div><div class="styleresult notranslate" onclick='SetStyleResultTouch(7); LoadStyleSettings("Undertale","undertale","LittleSMc","https://static1.textcraft.net/styles/l/i/littlesmc/undertale","927","https://static1.textcraft.net/styles/l/i/littlesmc/undertale.png","https://static1.textcraft.net/styles/l/i/littlesmc/undertale-thumb.png","https://static1.textcraft.net/styles/l/i/littlesmc/undertale-icon.png","https://static1.textcraft.net/styles/l/i/littlesmc/undertale-yourtext.png?v=1")' onmouseover='SetStyleResultHigh("7")' onmouseout='SetStyleResultLow("7")'><div style="height:60px"><img src="battoituto_fichiers/undertale-thumb.png"></div><div class="clearer"></div><div class="stylestats" id="stylestats-7"><div id="loadedstyle-7" style="vertical-align:top; width:86px; height:23px; overflow:hidden; border:0px solid #f00; font-size:14px; line-height:16px; margin-top:3px;">Undertale</div><div class="clearer"></div><div style="color:#98a; height:11px; line-height:11px; overflow:hidden; font-size:1.1em; margin-top:2px;">by: LittleSMc</div><div class="clearer"></div><div style="color:#696990; margin-top:0px; height:13px; line-height:13px; overflow:hidden; font-size:1.1em;">hits: 927</div></div></div><div class="styleresult notranslate" onclick='SetStyleResultTouch(8); LoadStyleSettings("gta%20mission%20passed","gta-mission-passed","eminzorla","https://static1.textcraft.net/styles/e/m/eminzorla/gta-mission-passed","853","https://static1.textcraft.net/styles/e/m/eminzorla/gta-mission-passed.png","https://static1.textcraft.net/styles/e/m/eminzorla/gta-mission-passed-thumb.png","https://static1.textcraft.net/styles/e/m/eminzorla/gta-mission-passed-icon.png","https://static1.textcraft.net/styles/e/m/eminzorla/gta-mission-passed-yourtext.png?v=1")' onmouseover='SetStyleResultHigh("8")' onmouseout='SetStyleResultLow("8")'><div style="height:60px"><img src="battoituto_fichiers/gta-mission-passed-thumb.png"></div><div class="clearer"></div><div class="stylestats" id="stylestats-8"><div id="loadedstyle-8" style="vertical-align:top; width:86px; height:23px; overflow:hidden; border:0px solid #f00; font-size:10px; line-height:11px; margin-top:4px;">gta mission passed</div><div class="clearer"></div><div style="color:#98a; height:11px; line-height:11px; overflow:hidden; font-size:1.1em; margin-top:1px;">by: eminzorla</div><div class="clearer"></div><div style="color:#696990; margin-top:0px; height:13px; line-height:13px; overflow:hidden; font-size:1.1em;">hits: 853</div></div></div><div class="styleresult notranslate" onclick='SetStyleResultTouch(9); LoadStyleSettings("Roblox%20Piggy","roblox-piggy","AidanYT55","https://static1.textcraft.net/styles/a/i/aidanyt55/roblox-piggy","831","https://static1.textcraft.net/styles/a/i/aidanyt55/roblox-piggy.png","https://static1.textcraft.net/styles/a/i/aidanyt55/roblox-piggy-thumb.png","https://static1.textcraft.net/styles/a/i/aidanyt55/roblox-piggy-icon.png","https://static1.textcraft.net/styles/a/i/aidanyt55/roblox-piggy-yourtext.png?v=1")' onmouseover='SetStyleResultHigh("9")' onmouseout='SetStyleResultLow("9")'><div style="height:60px"><img src="battoituto_fichiers/roblox-piggy-thumb.png"></div><div class="clearer"></div><div class="stylestats" id="stylestats-9"><div id="loadedstyle-9" style="vertical-align:top; width:86px; height:23px; overflow:hidden; border:0px solid #f00; font-size:10px; line-height:11px; margin-top:4px;">Roblox Piggy</div><div class="clearer"></div><div style="color:#98a; height:11px; line-height:11px; overflow:hidden; font-size:1.1em; margin-top:1px;">by: AidanYT55</div><div class="clearer"></div><div style="color:#696990; margin-top:0px; height:13px; line-height:13px; overflow:hidden; font-size:1.1em;">hits: 831</div></div></div></div>
+</div>
+
+<div class="clearer" style="height:3px; width:919px; margin-left:4px; border-bottom:1px dotted #3b3b3b;">&nbsp;</div>
+<div id="styledb-text" style="width:617px; height:40px; margin-left:4px; margin-top:1px; font-size:1em; border:0px solid #fff;">
+
+<div id="yourstyles" style="display:none;"><div id="dbopt4" class="styledb-option" onmouseover="SetStyleListOptHigh(this,4)" onmouseout="SetStyleListOptLow(this,4)" onclick="SetStyleListOptSelected(4,1)">
+your styles
+</div>
+<div id="styledb-separator">
+<img src="battoituto_fichiers/separator.png">
+</div>
+</div>
+
+<div id="dbopt1" class="styledb-option" style="color:#969;" onmouseover="SetStyleListOptHigh(this,1)" onmouseout="SetStyleListOptLow(this,1)" onclick="SetStyleListOptSelected(1,1)">
+most popular
+</div>
+<div id="styledb-separator">
+<img src="battoituto_fichiers/separator.png">
+</div>
+
+<div style="display:none">
+<div id="dbopt5" class="styledb-option" onmouseover="SetStyleListOptHigh(this,5)" onmouseout="SetStyleListOptLow(this,5)" onclick="SetStyleListOptSelected(5,1)">
+most popular all
+</div>
+<div id="styledb-separator">
+<img src="battoituto_fichiers/separator.png">
+</div>
+
+<div id="dbopt6" class="styledb-option" onmouseover="SetStyleListOptHigh(this,6)" onmouseout="SetStyleListOptLow(this,6)" onclick="SetStyleListOptSelected(6,1)">
+random
+</div>
+<div id="styledb-separator">
+<img src="battoituto_fichiers/separator.png">
+</div>
+</div>
+
+<div id="dbopt2" class="styledb-option" onmouseover="SetStyleListOptHigh(this,2)" onmouseout="SetStyleListOptLow(this,2)" onclick="SetStyleListOptSelected(2,1)">
+newest
+</div>
+<div id="styledb-separator">
+<img src="battoituto_fichiers/separator.png">
+</div>
+
+<a href="https://textcraft.net/styles.php" target="top200" style="color:#999; text-decoration:none;" onmouseover="this.style.color='#ddd';" onmouseout="this.style.color='#999';"><div id="dbopt5" class="styledb-option" onmouseover="SetStyleListOptHigh(this,5)" onmouseout="SetStyleListOptLow(this,5)">
+all top styles
+</div>
+</a>
+</div><!-- end styledb-text div -->
+
+<!--
+<div id='styledb-text' style="width:246px; height:40px; font-size:1em; border:0px solid #f00;">
+-->
+<div id="styledb-text" style="width:308px; height:40px; margin-top:1px; font-size:1em; border:0px solid #f00;">
+<div id="dbopt3" class="styledb-option" style="width:120px; text-align:right; cursor:default;">
+search:
+</div>
+<div id="searchbox-bg" style="position:relative;margin-left:3px;margin-top:3px;">
+ <div style="position:absolute; top:3px; left:4px;">
+  <input type="text" name="text" id="searchbox" onfocus="DisplayLastSearch(); return false;" onkeypress="if (event.keyCode == 13){SetStyleListOptSelected(3,1); return false;}">
+ </div>
+</div>
+
+<div id="searchboxbutton" onmouseover="SetSearchboxButtonHigh(this)" onmouseout="SetSearchboxButtonLow(this)" onclick="SetSearchboxButtonSelected(this)">
+</div>
+
+</div><!-- end styledb-text div -->
+
+</div><!-- end styledb div -->
+
+</div>
+
+<div id="leaderboard-mid" style="position:relative;">
+<div class="clearer" style="height:13px"></div>
+<div id="featured-style-results" style="width:930px; height:114px; position: absolute; top:16px; left:20px;"><div class="styleresult notranslate" onclick='LoadStyleSettings("FriDAY%20NiGHT%20FUNKiN%27","friday-night-funkin-","kalmax0328","https://static1.textcraft.net/styles/k/a/kalmax0328/friday-night-funkin-","809","https://static1.textcraft.net/styles/k/a/kalmax0328/friday-night-funkin-.png","https://static1.textcraft.net/styles/k/a/kalmax0328/friday-night-funkin--thumb.png","https://static1.textcraft.net/styles/k/a/kalmax0328/friday-night-funkin--icon.png","https://static1.textcraft.net/styles/k/a/kalmax0328/friday-night-funkin--yourtext.png?v=1")'><div style="height:60px"><img src="battoituto_fichiers/friday-night-funkin--thumb.png"></div><div class="clearer"></div><div class="stylestats-basic" id="stylestats-0"><div id="loadedstyle-0" style="vertical-align:top; width:86px; height:27px; overflow:hidden; border:0px solid #f00; font-size:12px; line-height:13px; margin-top:4px;">FriDAY NiGHT FUNKiN'</div><div class="clearer"></div></div></div><div class="styleresult notranslate" onclick='LoadStyleSettings("Terraria","terraria","ody164","https://static1.textcraft.net/styles/o/d/ody164/terraria","682","https://static1.textcraft.net/styles/o/d/ody164/terraria.png","https://static1.textcraft.net/styles/o/d/ody164/terraria-thumb.png","https://static1.textcraft.net/styles/o/d/ody164/terraria-icon.png","https://static1.textcraft.net/styles/o/d/ody164/terraria-yourtext.png?v=1")'><div style="height:60px"><img src="battoituto_fichiers/terraria-thumb.png"></div><div class="clearer"></div><div class="stylestats-basic" id="stylestats-1"><div id="loadedstyle-1" style="vertical-align:top; width:86px; height:27px; overflow:hidden; border:0px solid #f00; font-size:14px; line-height:16px; margin-top:3px;">Terraria</div><div class="clearer"></div></div></div><div class="styleresult notranslate" onclick='LoadStyleSettings("Poppy%20Playtime","poppy-playtime","Zoolog","https://static1.textcraft.net/styles/z/o/zoolog/poppy-playtime","599","https://static1.textcraft.net/styles/z/o/zoolog/poppy-playtime.png","https://static1.textcraft.net/styles/z/o/zoolog/poppy-playtime-thumb.png","https://static1.textcraft.net/styles/z/o/zoolog/poppy-playtime-icon.png","https://static1.textcraft.net/styles/z/o/zoolog/poppy-playtime-yourtext.png?v=1")'><div style="height:60px"><img src="battoituto_fichiers/poppy-playtime-thumb.png"></div><div class="clearer"></div><div class="stylestats-basic" id="stylestats-2"><div id="loadedstyle-2" style="vertical-align:top; width:86px; height:27px; overflow:hidden; border:0px solid #f00; font-size:12px; line-height:13px; margin-top:4px;">Poppy Playtime</div><div class="clearer"></div></div></div><div class="styleresult notranslate" onclick='LoadStyleSettings("fnaf%202%20letter","fnaf-2-letter","dic-doh","https://static1.textcraft.net/styles/d/i/dic-doh/fnaf-2-letter","581","https://static1.textcraft.net/styles/d/i/dic-doh/fnaf-2-letter.png","https://static1.textcraft.net/styles/d/i/dic-doh/fnaf-2-letter-thumb.png","https://static1.textcraft.net/styles/d/i/dic-doh/fnaf-2-letter-icon.png","https://static1.textcraft.net/styles/d/i/dic-doh/fnaf-2-letter-yourtext.png?v=1")'><div style="height:60px"><img src="battoituto_fichiers/fnaf-2-letter-thumb.png"></div><div class="clearer"></div><div class="stylestats-basic" id="stylestats-3"><div id="loadedstyle-3" style="vertical-align:top; width:86px; height:27px; overflow:hidden; border:0px solid #f00; font-size:12px; line-height:13px; margin-top:4px;">fnaf 2 letter</div><div class="clearer"></div></div></div><div class="styleresult notranslate" onclick='LoadStyleSettings("FamilyFeud","familyfeud","Gone_Gold","https://static1.textcraft.net/styles/g/o/gone_gold/familyfeud","561","https://static1.textcraft.net/styles/g/o/gone_gold/familyfeud.png","https://static1.textcraft.net/styles/g/o/gone_gold/familyfeud-thumb.png","https://static1.textcraft.net/styles/g/o/gone_gold/familyfeud-icon.png","https://static1.textcraft.net/styles/g/o/gone_gold/familyfeud-yourtext.png?v=1")'><div style="height:60px"><img src="battoituto_fichiers/familyfeud-thumb.png"></div><div class="clearer"></div><div class="stylestats-basic" id="stylestats-4"><div id="loadedstyle-4" style="vertical-align:top; width:86px; height:27px; overflow:hidden; border:0px solid #f00; font-size:14px; line-height:16px; margin-top:3px;">FamilyFeud</div><div class="clearer"></div></div></div><div class="styleresult notranslate" onclick='LoadStyleSettings("Horror%20Text","horror-text","xwoo","https://static1.textcraft.net/styles/x/w/xwoo/horror-text","519","https://static1.textcraft.net/styles/x/w/xwoo/horror-text.png","https://static1.textcraft.net/styles/x/w/xwoo/horror-text-thumb.png","https://static1.textcraft.net/styles/x/w/xwoo/horror-text-icon.png","https://static1.textcraft.net/styles/x/w/xwoo/horror-text-yourtext.png?v=1")'><div style="height:60px"><img src="battoituto_fichiers/horror-text-thumb.png"></div><div class="clearer"></div><div class="stylestats-basic" id="stylestats-5"><div id="loadedstyle-5" style="vertical-align:top; width:86px; height:27px; overflow:hidden; border:0px solid #f00; font-size:12px; line-height:13px; margin-top:4px;">Horror Text</div><div class="clearer"></div></div></div><div class="styleresult notranslate" onclick='LoadStyleSettings("MEGA%20MAN%20X%20STYLE","mega-man-x-style","pixelizer","https://static1.textcraft.net/styles/p/i/pixelizer/mega-man-x-style","517","https://static1.textcraft.net/styles/p/i/pixelizer/mega-man-x-style.png","https://static1.textcraft.net/styles/p/i/pixelizer/mega-man-x-style-thumb.png","https://static1.textcraft.net/styles/p/i/pixelizer/mega-man-x-style-icon.png","https://static1.textcraft.net/styles/p/i/pixelizer/mega-man-x-style-yourtext.png?v=1")'><div style="height:60px"><img src="battoituto_fichiers/mega-man-x-style-thumb.png"></div><div class="clearer"></div><div class="stylestats-basic" id="stylestats-6"><div id="loadedstyle-6" style="vertical-align:top; width:86px; height:27px; overflow:hidden; border:0px solid #f00; font-size:12px; line-height:13px; margin-top:4px;">MEGA MAN X STYLE</div><div class="clearer"></div></div></div><div class="styleresult notranslate" onclick='LoadStyleSettings("Clash%20of%20Clans","clash-of-clans","Asdort","https://static1.textcraft.net/styles/a/s/asdort/clash-of-clans","421","https://static1.textcraft.net/styles/a/s/asdort/clash-of-clans.png","https://static1.textcraft.net/styles/a/s/asdort/clash-of-clans-thumb.png","https://static1.textcraft.net/styles/a/s/asdort/clash-of-clans-icon.png","https://static1.textcraft.net/styles/a/s/asdort/clash-of-clans-yourtext.png?v=1")'><div style="height:60px"><img src="battoituto_fichiers/clash-of-clans-thumb.png"></div><div class="clearer"></div><div class="stylestats-basic" id="stylestats-7"><div id="loadedstyle-7" style="vertical-align:top; width:86px; height:27px; overflow:hidden; border:0px solid #f00; font-size:12px; line-height:13px; margin-top:4px;">Clash of Clans</div><div class="clearer"></div></div></div><div class="styleresult notranslate" onclick='LoadStyleSettings("Dark%20Souls","dark-souls","Gone_Gold","https://static1.textcraft.net/styles/g/o/gone_gold/dark-souls","398","https://static1.textcraft.net/styles/g/o/gone_gold/dark-souls.png","https://static1.textcraft.net/styles/g/o/gone_gold/dark-souls-thumb.png","https://static1.textcraft.net/styles/g/o/gone_gold/dark-souls-icon.png","https://static1.textcraft.net/styles/g/o/gone_gold/dark-souls-yourtext.png?v=1")'><div style="height:60px"><img src="battoituto_fichiers/dark-souls-thumb.png"></div><div class="clearer"></div><div class="stylestats-basic" id="stylestats-8"><div id="loadedstyle-8" style="vertical-align:top; width:86px; height:27px; overflow:hidden; border:0px solid #f00; font-size:14px; line-height:16px; margin-top:3px;">Dark Souls</div><div class="clearer"></div></div></div></div>
+<!--
+<div id='featured-style-text'>new<br>featured<br>styles</div>
+-->
+<div id="featured-style-text">other<br>popular<br>styles</div>
+</div> <!-- end leaderboard-mid div -->
+
+<div class="clearer">&nbsp;</div>
+
+<!--
+<div class='clearer' style="height:13px">&nbsp;</div>
+
+<div style="width:179px; border:0px solid #fff; height:80px; margin-left:23px; margin-top:5px; float:left; font-size:11px; 
+color:#777;">
+Advertisements
+<div class='clearer' style="height:6px;">&nbsp;</div>
+<a href="https://www.projectwonderful.com/advertisehere.php?id=70024&type=5&tag=33544" id="advertise-here" 
+style="font-size:13px; color:#aaa;" target="_blank">Advertise your Minecraft server on Textcraft!<br><span style="color:#a79; margin-top:3px; 
+display:block; ">Click here for details</span></a>
+</div>
+
+<div style="width:728px; height:90px; float:left; border:0px solid #0ff; margin:0 0 0 15px; opacity:.9;">
+-->
+<!--
+</div>
+</div> 
+-->
+
+<div class="clearer">&nbsp;</div>
+
+<style>
+#leaderboard-mid2 {
+width:967px;
+width:959px;
+height:auto;
+margin: 7px 0 0 5px;
+border:4px solid rgba(60,60,60,0.7);
+border:4px solid rgba(60,60,60,1);
+border-radius:20px;
+background:none;
+background-color: rgba(44,44,44,1);
+}
+
+</style>
+<div id="leaderboard-mid2">
+  <div class="clearer" style="height:1px"></div>
+<!--  
+<div style="width:728px; margin-top:5px; margin-left:11px; padding:2px 10px 8px 12px; border:0px solid #fff">
+-->
+  <div style="width:959px; margin-top:5px; margin-left:11px; padding:2px 10px 8px 12px; border:0px solid #fff">
+    <ins class="adsbygoogle" style="display:block; width:927px; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8959601970688211" data-ad-slot="4300507472"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div> 
+  <div class="clearer" style="height:1px"></div>
+</div> 
+<div class="clearer">&nbsp;</div>
+
+
+<div id="howto" style="margin:0 0 0 5px; text-align:right;">
+<div id="howto-top"></div>
+<div class="clearer"></div>
+<div id="howto-mid">
+&nbsp; <!-- weird hack -->
+<div id="howto-mid-inner">
+
+<div id="your-loc"><div style="float:left; margin-left:10px; margin-top:5px; margin-bottom:5px;"><img src="battoituto_fichiers/info-small2a.png"></div><div style="float:left; margin-left:15px; margin-top:4px; margin-right:10px; color:#ccc; font-size:11px; line-height:13px; width:200px; text-align:left;">Your location: <span style="color:#a8d">FR</span><div class="clearer" style="border-bottom:1px dotted #777"></div><span style="color:#858585;">You can write using French characters with the 'Designosaur' font.<br><br></span></div></div>
+<div class="clearer">&nbsp;</div>
+ <div id="howto-welcome"> 
+  <div style="font-size:1.9em;color:#ccc;text-shadow:0.05em 0.05em 0.05em #606060;">Welcome to Textcraft</div>
+ </div>
+
+<div class="clearer" style="height:5px;">&nbsp;</div>
+
+<div style="width:510px; font-size:12px; line-height:16px; color:#aaa; margin:5px 20px 0 0; float:right;">
+Design your own logo or text for your website, blog, YouTube videos, 
+screenshots, forum sig., artwork, Minecraft server, wallpaper, 
+computer games etc. 
+<span style="color:#777;">
+Textcraft is a free online text and logo maker, and is also compatible with iPad and Android tablets.</span>
+<br>
+See the guide below and also the <a href="https://textcraft.net/faq.php" style="color:#769; text-decoration:none;" onmouseover='this.style.textDecoration="underline";' onmouseout='this.style.textDecoration="none";'>faq</a> for more details.
+<br>
+<br>
+<span style="color:#cc7">New!</span>&nbsp;<span style="color:#888; font-size:10px">v2.1</span> Added Pokémon and GTA fonts, some bugfixes (see <a href="https://textcraft.net/about.php" style="color:#769; text-decoration:none;" onmouseover='this.style.textDecoration="underline";' onmouseout='this.style.textDecoration="none";'>about</a> page for details).
+<br>
+<span style="color:#888; font-size:10px">v2.0</span> More fonts, textures, and Textcraft Pro option for extra large font sizes.
+<br>
+<span style="color:#888; font-size:10px">v1.1</span> Added Chinese, Japanese, Korean, Hindi, Arabic, Greek and Cyrillic fonts.
+<!--
+See the FAQ page for 
+more information.
+We have used some resources 
+kindly made available by others, please see the credits section below for details. If you like this site, please consider mentioning or 
+linking back to us. Thank you!
+(We'll be adding more fonts based on your feedback).-->
+</div>
+<div class="clearer">&nbsp;</div>
+
+<!--
+<div class='clearer' style="border-top:1px dashed #555">&nbsp;</div>
+-->
+<div id="howto-block"> 
+<!--
+<span id="toggle_all" style="position:absolute; bottom:5px; right:10px;"></span>
+-->
+<span id="toggle_all" style="position:absolute; bottom:5px; right:12px;"><span class="toggle-all notranslate">Show all text</span></span>
+ <div id="howto1"> 
+  <div id="howto-icon"></div>
+  <div id="howto-textheading">Enter your text</div>
+  <div class="clearright">&nbsp;</div>
+  <div id="howto-text" class="toggle">
+  Type your text into the box shown as <span class="notranslate">"Your text here"</span>. You can have a single line of text, or up to 3 lines. 
+Press "Create" to create your graphic using the current settings. When you're happy with the result, click on 
+<span class="notranslate">"Download"</span> to download the file.
+<div class="toggle-text" style="display: none;">
+<div class="howto-clearer2"></div>
+Use the <span class="notranslate">"host"</span> button to upload the image to Imgur, or you can also click on 
+<span class="notranslate">"View"</span> while you're designing your text to see how it looks like against different types of backgrounds.
+</div>
+  <span class="toggle-control-show notranslate">(more.. )</span></div>
+  <div class="howto-clearer"></div>
+
+  <div id="howto-icon" style="background-position:-64px 0px;"></div>
+  <div id="howto-textheading">Text &amp; Border Size</div>
+  <div class="clearright">&nbsp;</div>
+  <div id="howto-text" class="toggle">
+  Use the text size buttons to change the size of each line of text. You can change the size of each line by first 
+clicking on the text box for that line, and then using the size buttons.
+<span class="howto-clearer2" style="display:block;"></span>
+Change the size of the border around the text by using the border size buttons.
+<div class="toggle-text" style="display: none;">
+<div class="howto-clearer2"></div>
+You can also change the colour of the border by clicking on the 
+colour swatch here. Whenever you change the font size or border size of the text, the image will 
+automatically update.</div>
+  <span class="toggle-control-show notranslate">(more.. )</span></div>
+  <div class="howto-clearer"></div>
+
+  <div id="howto-icon" style="background-position:-128px 0px;"></div>
+  <div id="howto-textheading">Text Styles</div>
+  <div class="clearright">&nbsp;</div>
+  <div id="howto-text" class="toggle">
+  You can choose a different colour and font style for each line of text. Select a font by 
+clicking on the font name, eg. "Square". The available colour and texture styles for that font 
+will appear. 
+<span class="howto-clearer2" style="display:block;"></span>
+Scroll through the styles by using the right and left arrows.
+<span class="howto-clearer2" style="display:block;"></span>
+Select a style by clicking on it, and press the "Create" button to update your text using your new selection. 
+<span class="howto-clearer2" style="display:block;"></span>
+<span class="howto-item">Hint: </span> Styles for each font are a 
+combination of textures and solid colours. Click on the right or left 
+arrows to get to the page with solid colours.
+<div class="toggle-text" style="display: none;">
+<div class="howto-clearer2"></div>
+You can have different font styles and colours for each line of text - see details for the "Multiline" option.
+</div>
+  <span class="toggle-control-show notranslate">(more.. )</span></div>
+  <div class="howto-clearer"></div>
+
+  <div id="howto-icon" style="background-position:-192px 0px;"></div>
+  <div id="howto-textheading">Settings</div>
+  <div class="clearright">&nbsp;</div>
+  <div id="howto-text" class="toggle">
+  Textcraft lets you apply some special settings to add some wow to your text. 
+Click the "Create" button after changing these settings to update your text.<span class="howto-clearer2" style="display:block;"></span>
+<span class="howto-item">drop shadow: </span>The drop shadow option creates a darker shadow underneath your text. This 
+can really help add depth to your text.
+
+<span class="howto-clearer2" style="display:block;"></span>
+<span class="howto-item">3d style: </span>This option will change the perspective of the text to look as if it's 
+receding into the distance. It's not the same as a full 3d render, but can look good for Minecraft and some other 
+styles of text.
+
+<span class="howto-clearer2" style="display:block;"></span>
+<span class="howto-item notranslate">glow: </span>Two different glow options are available: 
+<span class="howto-clearer2" style="display:block;"></span>
+
+<span style="float:left;"><img src="battoituto_fichiers/small-glow-icon.png"></span>
+<span style="float:left; margin:2px 0 0 7px; color:#bbb">Localized Glow</span>
+<span class="howto-clearer" style="display:block; height:0px;"></span>
+<span style="margin-left:28px; display:block;">
+This creates an unusual glow that takes 
+it's colour from the nearby edges of your text. This can look great with some styles such as 
+lava, but may need some experimenting with. </span>
+<span class="howto-clearer2" style="display:block;"></span>
+
+<span style="float:left; margin-left:-6px;"><img src="battoituto_fichiers/small-paint-icon.png"></span>
+<span style="float:left; margin:3px 0 0 0px; color:#bbb">Coloured Glow</span>
+<span class="howto-clearer" style="display:block; height:0px;"></span>
+<span style="margin-left:29px; display:block;">
+This is a glow using a specified colour. Select the colour you want to use with the swatch to the right. 
+<span class="howto-clearer2" style="display:block;"></span>
+Note that very dark colours won't work here since the colour selected is
+ an "addition" to the overall glow, so you may need to use a strong 
+colour with this option.
+</span>
+
+<span class="howto-clearer2" style="display:block; height:10px;"></span>
+Note: Glow will usually only apply to the first line of text - see the multi-line option for more details.
+
+<div class="toggle-text" style="display: none;">
+<span class="howto-clearer2" style="display:block;"></span>
+<span class="howto-item">fit lines to max width: </span>This is a useful
+ setting if you need your text to be created 
+at a specific width, for example to fit as a logo on a page. This 
+setting will ensure that the longest line of text is no bigger than the 
+width you 
+specify. Click to enable this option, then use the slider beside it to 
+select your maximum width. A ruler will appear 
+underneath your text as a guide to the selected width.
+
+<span class="howto-clearer2" style="display:block;"></span>
+<span class="howto-item">24-bit colour images: </span>Specifies whether to create the image with 
+24-bit colour. Leave it turned off for smaller, optimized file sizes, or enable it for higher colour fidelity 
+in large images.
+</div>
+  <span class="toggle-control-show notranslate">(more.. )</span></div>
+  <div class="clearer">&nbsp;</div>
+
+ </div>
+ <div id="howto2"> 
+  <div id="howto-icon" style="background-position:-256px 0px;"></div>
+  <div id="howto-textheading">Minecraft style text</div>
+  <div class="clearright">&nbsp;</div>
+  <div id="howto-text">
+  Use the Minecrafter and Minecraftia fonts for classical Minecraft style text, or use one of the existing text styles
+  such as "Minescript" or "Achievement Get". 
+<span class="howto-clearer2" style="display:block;"></span>
+Hint: You can get the Creeper face using the Minecrafter font by entering an upper-case "A".  
+  </div>
+  <div class="howto-clearer"></div>
+
+  <div id="howto-icon" style="background-position:-320px 0px;"></div>
+  <div id="howto-textheading">Other text styles</div>
+  <div class="clearright">&nbsp;</div>
+  <div id="howto-text">
+  Textcraft has a built-in style database which you can search or add to with your own style settings. 
+
+<span class="howto-clearer2" style="display:block;"></span>
+The most popular styles for this month are displayed initially, or you can view the newest or top 200 styles in 
+addition to searching by style name or submitter name. Click on the sample "Tt" text icon to load that specific style.
+
+<span class="howto-clearer2" style="display:block;"></span>
+<a href="https://textcraft.net/signup.php" style="color:#769; text-decoration:none;" onmouseover='this.style.textDecoration="underline";' onmouseout='this.style.textDecoration="none";'>Signup</a> for a free 
+account to save new styles you create.
+<div class="howto-clearer"></div>
+After logging in, you  have the option of saving new styles by using the "Save style" dialog box.
+<span class="howto-clearer2" style="display:block;"></span>
+Enter a stylename of your choice, then click the Save button. The style 
+will be 
+saved to your profile, so you can access it later. You can currently 
+save up to 50 styles, but there is no limit on the amount of text you 
+can create using these styles.
+<span class="howto-clearer2" style="display:block;"></span>
+You can also share the URL of your profile page to show your creations to others, or use it as a group page.
+  </div>
+  <div class="howto-clearer"></div>
+
+  <div id="howto-icon" style="background-position:-384px 0px;"></div>
+  <div id="howto-textheading">Multi-line option</div>
+  <div class="clearright">&nbsp;</div>
+  <div id="howto-text" class="toggle">
+  This buttons controls whether "multi-line" mode is enabled or not. The default is switched on for multi-line mode. 
+This means that you can have different styles of text on each line 1 to 3. 
+
+<span class="howto-clearer2" style="display:block;"></span>
+Click on the text input box for each line to indicate that you want to 
+change settings for that line. The styles box to the left will update 
+with the current 
+style for that particular line. You can change the text style and size 
+settings individually for each line.
+
+<div class="toggle-text" style="display: none;">
+<div class="howto-clearer2"></div>
+Multi-line mode off - Click the multi-line button to switch it off. Now 
+any style settings you select will apply the 
+same to each line of text, so for example, each line will have the same 
+font size, font style, border size and colour etc. Also each line will 
+have glow, if glow was selected. When multi-line mode is switched on, 
+for stylistic reasons, only the first line may have a glow effect.
+</div>
+  <span class="toggle-control-show notranslate">(more.. )</span></div>
+  <div class="howto-clearer"></div>
+
+  <div id="howto-icon" style="background-position:-448px 0px;"></div>
+  <div id="howto-textheading">Hints &amp; Tips</div>
+  <div class="clearright">&nbsp;</div>
+  <div id="howto-text" class="toggle">
+  <span class="howto-item">* </span>Keep transparency details by saving the file instead of copying and 
+pasting - each image created on Textcraft contains a .PNG alpha channel which means it will smoothly blend into 
+any other graphic, as long as you save the file directly from Textcraft (either using the <span class="notranslate">"Download"</span> button or right-click and "Save as.." in your web browser). 
+<span class="howto-clearer2" style="display:block;"></span>
+  <span class="howto-item">* </span>Not happy with the available sizes of text, or need to slightly tweak the font size? 
+<span class="howto-clearer2" style="display:block;"></span>
+First select a large text size, then use the "fit to max. width" option 
+to reduce the generated text size down to the right size.
+<span class="howto-clearer2" style="display:block;"></span>
+  <span class="howto-item">* </span>Need hex colours? - you can specify 
+the exact colour you want for borders and glow by editing the hex value 
+displayed in the colour swatch popup.
+<div class="toggle-text" style="display: none;">
+<div class="howto-clearer2"></div>
+  <span class="howto-item">* </span>Use 24-bit colour images for 
+hi-fidelity work and extra 
+software compatibility - usually having the 24-bit colour option off is 
+better for web optimized images, however you might want to use the 
+24-bit option for large images with dropshadows or if you're using older
+ graphics applications which don't 
+fully support 8-bit PNG files with transparency (eg. old versions of 
+Paint Shop Pro and Photoshop).
+  </div>
+
+ <span class="toggle-control-show notranslate">(more.. )</span></div>
+<span class="howto-clearer2" style="display:block;"></span>
+<br>
+</div>
+
+<div class="clearer" style="height:15px;"></div>
+</div> <!-- end howto-block -->
+<div class="clearer"></div>
+<div id="attribution-new">
+
+<div class="clearer" style="height:10px;">&nbsp;</div>
+
+<div style="float:left; width:20px; border:0px solid;">&nbsp;
+</div>
+
+<div style="float:left;">
+
+
+<div style="float:left">
+<div id="attrib-heading">
+Font list
+</div>
+
+<div id="attrib-block2" style="margin-top:1px;">
+<div id="fontcredit-list" class="notranslate">
+Minecraft, 8-bit and blocky fonts:
+<div id="fontcredit-listitem">
+Minecrafter v3, Zephyrean, Stonecraft, Square, ArcadePix, Minecraftia, Blocked, Umbrage, White Rabbit, Karmatic Arcade, Gputeks</div>
+</div>
+
+<div id="fontcredit-list" class="notranslate">
+Unicode fonts:
+<div id="fontcredit-listitem">
+Japanese, Chinese (Simplified), Korean, Arabic, Hindi, Greek, Cyrillic, Hebrew, Chinese (Traditional)</div>
+</div>
+
+<div id="fontcredit-list" class="notranslate">
+Misc fonts:
+<div id="fontcredit-listitem">
+Designosaur, Flipbash, League Gothic, Augustus, Metro, Telegrafico, 
+ChunkFive, Helsinki, Minstrel, Osaka, Pacifico, Pokémon, Swagger, 
+Pokémin, Aero, Pricedown</div>
+</div>
+
+</div> <!-- end attrib-block div -->
+
+<!--
+<div class='clearer'>&nbsp;</div>
+<div id="fontdl">
+See the <a href="/download-fonts.php" target="_blank">font download page</a> for full credits<br> and download links</div>
+-->
+</div> <!-- end float left div -->
+</div> <!-- end outer float left div -->
+
+<div style="float:left;">
+
+<div style="float:left; margin-left:35px;">
+
+<div id="attrib-heading">
+Image credits
+</div>
+
+<div id="attrib-block" style="width:280px; border:0px solid #f00;">
+
+<div id="fontcredit-font" style="width:140px; border:0px solid #f00">
+Background pic No.12:
+</div>
+<div id="fontcredit-source" class="notranslate" style="width:140px;">
+<span style="color:#779">rayced</span><br>
+</div>
+
+<div class="clearer">&nbsp;</div>
+<div id="fontcredit-font" style="width:140px; border:0px solid #f00; margin-top:1px;">
+Textures:
+</div>
+<div id="fontcredit-source" class="notranslate" style="width:140px; margin-top:1px; color:#bbb">
+<a href="https://web.archive.org/web/20220518115708/http://spiralgraphics.biz/packs/" target="_blank">Spiral Graphics</a><br>
+<a href="https://web.archive.org/web/20210211055809if_/http://www.grsites.com/archive/textures/" target="_blank">GR Sites</a><br>
+<a href="https://forum.minetest.net/viewtopic.php?t=16" target="_blank">Cisoun's Texture Pack </a><br>
+ (via <a href="https://www.minetest.net/" target="_blank">Minetest</a>)
+</div>
+
+</div> <!-- end attrib-block div -->
+
+</div> <!-- end float left div -->
+
+<div style="float:left; margin-left:0px;">
+
+<div id="attrib-heading">
+Other credits
+</div>
+
+<div id="attrib-block" style="width:265px; border:0px solid #f00;">
+
+<div id="fontcredit-font" style="width:50px; border:0px solid #f00; margin-top:1px;">
+Misc.:
+</div>
+<div id="fontcredit-source" class="notranslate" style="width:100px; border:0px solid #0f0; margin-top:1px;">
+<!--<a href="http://webtreats.mysitemyway.com" target="_blank">Webtreats</a><br>-->
+<span style="color:#779">Webtreats</span><br>
+<a href="https://icons8.com/" target="_blank">icons8</a><br>
+<a href="https://web.archive.org/web/20230109095739/http://www.famfamfam.com/" target="_blank">famfamfam</a><br>
+<a href="https://dribbble.com/loriskumo" target="_blank">Loris Grillet</a><br>
+<a href="https://www.minecraftforum.net/topic/892789-minecrafter-3-font-simply-easy/" target="_blank">MadPixel</a><br>
+</div>
+<div id="fontcredit-source" class="notranslate" style="width:100px; border:0px solid #0f0; margin-top:1px;">
+<a href="https://minecraftforum.net/" target="_blank">Minecraft forum</a><br>
+<a href="https://imgur.com/" target="_blank">Imgur</a><br>
+<a href="https://mojang.com/" target="_blank">Mojang</a><br>
+<a href="https://dafont.com/" target="_blank">dafont</a><br>
+</div>
+
+</div> <!-- end attrib-block div -->
+
+</div> <!-- end float left div -->
+
+<div class="clearer" style="height:12px;"></div>
+<div id="fontdl2" style="margin-top:10px; margin-left:51px;">
+See the <a href="https://textcraft.net/download-fonts.php" target="_blank">font download page</a> for full credits and font download links
+</div>
+<div class="clearer" style="height:4px;"></div>
+<div id="fontdl2" style="margin-top:10px; margin-left:96px;">
+Visit the <a href="https://www.facebook.com/textcraft.net/">
+Textcraft Facebook page</a> for news &amp; updates
+<a href="https://www.facebook.com/textcraft.net/">
+<img src="battoituto_fichiers/square-facebook-40.png" style="vertical-align:middle; margin-left:10px;"> 
+</a>
+<!--
+<div style="width:468px; height:60px; margin:13px 0 0px 35px; border:0px solid #fff;">
+</div>
+-->
+</div>
+</div> <!-- end outer float left div -->
+
+<div class="clearer" style="height:10px; border-bottom:1px dashed #444">&nbsp;</div>
+
+<div id="lower-badges"> 
+<div style="float:left; margin-top:17px; margin-top:4px;"> 
+<div style="float:left;"> 
+<a href="https://textcraft.net/faq.php#touchscreen">
+<img src="battoituto_fichiers/pixel-android-small.png">
+<img src="battoituto_fichiers/tablet-icon-small2.png" style="margin:0px 0 0 2px">
+</a>
+</div>
+<div id="debug-android" style="float:left; margin-left:10px; vertical-align:middle; margin-top:5px; font-size:14px;"> 
+<a href="https://textcraft.net/faq.php#touchscreen">
+Android/iPad and touchscreen compatible
+</a>
+</div>
+
+</div> <!-- end float -->
+
+
+<div style="float:left; margin-top:17px; margin-top:4px; margin-left:175px;"> 
+<div id="debug-android" style="float:left; margin-left:10px; vertical-align:middle; margin-top:5px; font-size:14px;"> 
+<a href="https://glowtxt.com/">
+Check out our Glowtxt text generator:
+</a>
+</div>
+<div style="float:left; margin-top:-2px;"> 
+<a href="https://glowtxt.com/" target="_blank">
+<img src="battoituto_fichiers/glowtxt-small.png">
+</a>
+</div>
+
+</div> <!-- end float -->
+
+</div> <!-- end float left div -->
+<div class="clearer">&nbsp;</div>
+</div><!-- end attribution div -->
+
+</div> <!-- end howto-mid-inner -->
+<div class="clearer"></div>
+</div> <!-- end howto-mid -->
+</div> <!-- end howto div -->
+<div class="clearer"></div>
+
+<div id="howto-footer" style="margin-left:5px;"></div>
+
+
+<div class="footer" align="center" style="margin-top:-5px">
+<br>
+<a href="https://textcraft.net/about.php">about</a>
+ - 
+<a href="https://textcraft.net/faq.php">faq</a>
+ - 
+<a href="https://textcraft.net/contact.php">contact</a>
+ - 
+<a href="https://textcraft.net/privacy.php">usage terms / privacy</a>
+ - 
+<a href="https://textcraft.net/styles.php">popular styles</a>
+ - 
+<a href="https://textcraft.net/download-fonts.php">download fonts</a>
+ -
+<a href="https://textcraft.net/tx-pro.php">textcraft pro</a>
+
+<br>
+<div class="footer-copy">
+© 2025 moonstarnetworks.com
+</div>
+</div>
+
+<div class="clearer" style="height:0px">&nbsp;</div>
+<div class="clearer" style="height:12px">&nbsp;</div>
+<!-- end of container -->
+
+<!-- Google Analytics -->
+<script type="text/plain" data-category="analytics">
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-3301414-7', 'auto');
+
+var pixelRatio = (window.devicePixelRatio >= 1.5) ? "retina" : "normal";
+//ga('set', 'Pixel Ratio', pixelRatio);
+ga('set', 'dimension1', pixelRatio);
+ga('send', 'pageview');
+</script>
+<script async="" src="battoituto_fichiers/google-analytics_analytics.js" type="text/plain" data-category="analytics"></script>
+<!-- End Google Analytics -->
+
+<script type="text/plain" data-category="analytics">
+(function() {
+  var script = document.createElement('script');
+  script.src = '/corewebvitals.js';
+  script.onload = function() {
+    // When loading `web-vitals` using a classic script, all the public
+    // methods can be found on the `webVitals` global namespace.
+//    webVitals.onCLS(console.log);
+//    webVitals.onFID(console.log);
+//    webVitals.onLCP(console.log);
+    webVitals.onCLS(sendToGoogleAnalytics);
+    webVitals.onFID(sendToGoogleAnalytics);
+    webVitals.onLCP(sendToGoogleAnalytics);
+  }
+  document.head.appendChild(script);
+}())
+
+function sendToGoogleAnalytics({name, delta, id}) {
+  // Assumes the global `ga()` function exists, see:
+  // https://developers.google.com/analytics/devguides/collection/analyticsjs
+  ga('send', 'event', {
+    eventCategory: 'Web Vitals',
+    eventAction: name,
+    // The `id` value will be unique to the current page load. When sending
+    // multiple values from the same page (e.g. for CLS), Google Analytics can
+    // compute a total by grouping on this ID (note: requires `eventLabel` to
+    // be a dimension in your report).
+    eventLabel: id,
+    // Google Analytics metrics must be integers, so the value is rounded.
+    // For CLS the value is first multiplied by 1000 for greater precision
+    // (note: increase the multiplier for greater precision if needed).
+    eventValue: Math.round(name === 'CLS' ? delta * 1000 : delta),
+    // Use a non-interaction event to avoid affecting bounce rate.
+    nonInteraction: true,
+    // Use `sendBeacon()` if the browser supports it.
+    transport: 'beacon',
+
+    // OPTIONAL: any additional attribution params here.
+    // See: https://web.dev/debug-performance-in-the-field/
+    // dimension1: '...',
+    // dimension2: '...',
+    // ...
+  });
+}
+
+</script>
+
+</div> <!-- end lower_outerbox -->
+
+
+</form>
+<form name="download_fields" id="download_fields" action="download.php" method="GET" style="display:inline">
+<input type="hidden" name="filename" id="filename" value="32eafc8eb54fbe2d733b998c025c5452010dc440da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd80709e79654875183cd16b72db34881a537f0">
+<input type="hidden" name="downloadname" id="downloadname" value="ET-BAT-TOI-">
+<input type="hidden" name="animtype" id="animtype" value="none">
+</form>
+
+<br clear="all">
+
+<div class="clearer" style="height:2px"></div>
+
+<div id="output-wrapper" align="center" style="position: relative; height: 118px;">
+<div id="output-overlay" align="center" style="position: absolute; width: 100%; margin: 10px 0px 0px; display: none;">
+
+<!--[if IE 6]>
+<img src='https://static1.textcraft.net/img/big-progress.gif' style='margin:0px 0 0 0;/* filter: alpha(opacity = 85);*/'>
+<![endif]-->
+
+<!--[if !IE 6]><!-->
+<script language="JavaScript">
+wheelAnim = new AnimatedPNG('anim', 'https://static1.textcraft.net/img/progress-b-1.png', 9, 60);
+wheelAnim.draw(false);
+</script><img id="anim1" src="battoituto_fichiers/progress-b-1.png" style="display: none;">
+<img id="anim2" src="battoituto_fichiers/progress-b-2.png" style="display: none;">
+<img id="anim3" src="battoituto_fichiers/progress-b-3.png" style="display: none;">
+<img id="anim4" src="battoituto_fichiers/progress-b-4.png" style="display: none;">
+<img id="anim5" src="battoituto_fichiers/progress-b-5.png" style="display: none;">
+<img id="anim6" src="battoituto_fichiers/progress-b-6.png" style="display: none;">
+<img id="anim7" src="battoituto_fichiers/progress-b-7.png" style="display: none;">
+<img id="anim8" src="battoituto_fichiers/progress-b-8.png" style="">
+<img id="anim9" src="battoituto_fichiers/progress-b-9.png" style="display: none;">
+
+<!--<![endif]-->
+
+</div>
+
+<div id="output" align="center" style="border: 0px solid rgb(255, 255, 255); height: 118px;"><table height="100%"><tbody><tr valign="center"><td><img src="battoituto_fichiers/32eafc8eb54fbe2d733b998c025c5452010dc440da39a3ee5e6b4b0d3255.png" id="displayimg" style="-webkit-user-select: none;"></td></tr></tbody></table></div>
+
+</div> <!-- end output overlay div -->
+
+<div id="hidden_output"></div>
+<div id="hidden_output2">
+</div>
+
+<!--
+<div id='modal-results' style="display:none">
+</div>
+</div>
+-->
+
+
+</div> <!-- end of gen div -->
+
+<!-- This needs to be here instead of header so that it can reference the loaded text blocks -->
+<script type="text/javascript" src="battoituto_fichiers/expand.js"></script>
+
+<script language="JavaScript">
+_proaccount=0;
+var _numcolours=new Array();
+_numcolours['font1']=128;
+_numcolours['font2']=128;
+_numcolours['font3']=128;
+_numcolours['font4']=128;
+_numcolours['font5']=128;
+_numcolours['font6']=128;
+_numcolours['font7']=128;
+_numcolours['font8']=128;
+_numcolours['font9']=128;
+_numcolours['font10']=128;
+_numcolours['font11']=128;
+_numcolours['font12']=128;
+_numcolours['font13']=128;
+_numcolours['font14']=128;
+_numcolours['font15']=128;
+_numcolours['font16']=128;
+_numcolours['font17']=128;
+_numcolours['font18']=128;
+_numcolours['font19']=128;
+_numcolours['font20']=128;
+_numcolours['font21']=128;
+_numcolours['font22']=128;
+_numcolours['font23']=128;
+_numcolours['font24']=128;
+_numcolours['font25']=128;
+_numcolours['font26']=128;
+_numcolours['font27']=128;
+_numcolours['font28']=128;
+_numcolours['font29']=128;
+_numcolours['font30']=128;
+_numcolours['font31']=128;
+_numcolours['font32']=128;
+_numcolours['font33']=128;
+_numcolours['font34']=128;
+_numcolours['font35']=128;
+_numcolours['font36']=128;
+
+var textures=new Array();
+var textures_displaypos=new Array();
+var textures_displaypos_lookup=new Array();
+
+textures_displaypos['font1']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font1']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font2']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font2']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font3']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font3']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font4']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font4']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font5']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font5']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font6']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font6']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font7']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font7']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font8']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font8']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font9']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font9']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font10']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font10']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font11']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font11']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font12']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font12']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font13']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font13']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font14']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font14']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font15']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font15']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font16']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font16']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font17']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font17']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font18']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font18']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font19']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font19']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font20']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font20']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font21']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font21']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font22']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font22']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font23']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font23']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font24']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font24']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font25']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font25']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font26']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font26']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font27']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font27']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font28']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font28']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font29']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font29']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font30']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font30']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font31']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font31']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font32']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font32']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font33']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font33']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font34']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font34']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font35']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font35']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+textures_displaypos['font36']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79');
+textures_displaypos_lookup['font36']=new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111');
+</script>
+<!--
+<div class='preload-font1'></div>
+<div class='preload-font2'></div>
+-->
+<div style="width:0px; height:0px; line-height:0px; font-size:0px; overflow: hidden;">
+<img src="battoituto_fichiers/small-progress.gif">
+<img src="battoituto_fichiers/big-progress.gif">
+</div>
+<!--hyp-->
+
+</div>
+<!-- end of container -->
+
+<script async="" src="battoituto_fichiers/googlesyndication_adsbygoogle.js" crossorigin="anonymous" trype="text/plain" data-category="targeting"></script>
+<link rel="stylesheet" href="battoituto_fichiers/color_select.css" type="text/css">
+<script type="text/javascript" src="battoituto_fichiers/color_select.js"></script>
+<script type="text/javascript" src="battoituto_fichiers/tinybox3.js"></script>
+
+<script type="text/javascript" src="battoituto_fichiers/ajax.js"></script>
+<script type="text/javascript" src="battoituto_fichiers/ajax-post.js"></script>
+<script type="text/javascript" src="battoituto_fichiers/textgen2e.js"></script>
+
+
+<script type="text/javascript">
+ cs_init();
+ ClickHandler();
+</script><div id="cs0_color_select_box" class="color_select_box" style="display: none;"><div id="cs0_sv_crosshair_horiz_cursor" class="sv_crosshair_horiz_cursor" style="visibility: hidden;"></div><div id="cs0_sv_crosshair_vert_cursor" class="sv_crosshair_vert_cursor" style="visibility: hidden;"></div><div id="cs0_sv_crosshair_center_cursor" class="sv_crosshair_center_cursor" style="visibility: hidden;"></div><div id="cs0_sv_select_box_bg" class="sv_select_box_bg" style="height: 192px; width: 192px;"><div id="cs0_sv_select_box" class="sv_select_box" style="height: 192px; width: 192px;"></div></div><div id="cs0_h_select_box" class="h_select_box"><div id="cs0_hue_cursor" class="hue_cursor"></div></div><div id="cs0_color_box" class="color_box" style="background: rgb(44, 38, 46);"><input type="text" spellcheck="false" id="cs0_color_value_box" class="color_value_box" value="2C262E"><div id="cs0_color_value_prefix" class="color_value_prefix">#</div></div><div id="cs0_ok_button" class="ok_button notranslate">ok</div></div><div id="cs1_color_select_box" class="color_select_box" style="display: none;"><div id="cs1_sv_crosshair_horiz_cursor" class="sv_crosshair_horiz_cursor" style="visibility: hidden;"></div><div id="cs1_sv_crosshair_vert_cursor" class="sv_crosshair_vert_cursor" style="visibility: hidden;"></div><div id="cs1_sv_crosshair_center_cursor" class="sv_crosshair_center_cursor" style="visibility: hidden;"></div><div id="cs1_sv_select_box_bg" class="sv_select_box_bg" style="height: 192px; width: 192px;"><div id="cs1_sv_select_box" class="sv_select_box" style="height: 192px; width: 192px;"></div></div><div id="cs1_h_select_box" class="h_select_box"><div id="cs1_hue_cursor" class="hue_cursor"></div></div><div id="cs1_color_box" class="color_box" style="background: rgb(44, 38, 46);"><input type="text" spellcheck="false" id="cs1_color_value_box" class="color_value_box" value="2C262E"><div id="cs1_color_value_prefix" class="color_value_prefix">#</div></div><div id="cs1_ok_button" class="ok_button notranslate">ok</div></div><div id="cs2_color_select_box" class="color_select_box" style="display: none;"><div id="cs2_sv_crosshair_horiz_cursor" class="sv_crosshair_horiz_cursor" style="visibility: hidden;"></div><div id="cs2_sv_crosshair_vert_cursor" class="sv_crosshair_vert_cursor" style="visibility: hidden;"></div><div id="cs2_sv_crosshair_center_cursor" class="sv_crosshair_center_cursor" style="visibility: hidden;"></div><div id="cs2_sv_select_box_bg" class="sv_select_box_bg" style="height: 192px; width: 192px;"><div id="cs2_sv_select_box" class="sv_select_box" style="height: 192px; width: 192px;"></div></div><div id="cs2_h_select_box" class="h_select_box"><div id="cs2_hue_cursor" class="hue_cursor"></div></div><div id="cs2_color_box" class="color_box" style="background: rgb(33, 30, 78);"><input type="text" spellcheck="false" id="cs2_color_value_box" class="color_value_box" value="211E4E"><div id="cs2_color_value_prefix" class="color_value_prefix">#</div></div><div id="cs2_ok_button" class="ok_button notranslate">ok</div></div><div id="cs3_color_select_box" class="color_select_box" style="display: none;"><div id="cs3_sv_crosshair_horiz_cursor" class="sv_crosshair_horiz_cursor" style="visibility: hidden;"></div><div id="cs3_sv_crosshair_vert_cursor" class="sv_crosshair_vert_cursor" style="visibility: hidden;"></div><div id="cs3_sv_crosshair_center_cursor" class="sv_crosshair_center_cursor" style="visibility: hidden;"></div><div id="cs3_sv_select_box_bg" class="sv_select_box_bg" style="height: 192px; width: 192px;"><div id="cs3_sv_select_box" class="sv_select_box" style="height: 192px; width: 192px;"></div></div><div id="cs3_h_select_box" class="h_select_box"><div id="cs3_hue_cursor" class="hue_cursor"></div></div><div id="cs3_color_box" class="color_box" style="background: rgb(235, 212, 6);"><input type="text" spellcheck="false" id="cs3_color_value_box" class="color_value_box" value="EBD406"><div id="cs3_color_value_prefix" class="color_value_prefix">#</div></div><div id="cs3_ok_button" class="ok_button notranslate">ok</div></div><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: 'Google Sans', Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class="VIpgJd-yAWNEb-hvhgNd-Ud7fr"><img src="battoituto_fichiers/24px.svg" width="24" height="24" alt=""><div class=" VIpgJd-yAWNEb-hvhgNd-IuizWc-i3jM8c " dir="ltr">Texte d'origine</div></div><div class="VIpgJd-yAWNEb-hvhgNd-k77Iif"><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Évaluez cette traduction</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">Votre avis nous aidera à améliorer Google&nbsp;Traduction</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Bonne traduction" aria-label="Bonne traduction" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Mauvaise traduction" aria-label="Mauvaise traduction" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="//translate.googleapis.com/translate_voting?client=te" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0"></iframe></div></div></div>
+
+
+
+<div class="VIpgJd-ZVi9od-aZ2wEe-wOHMyf"><div class="VIpgJd-ZVi9od-aZ2wEe-OiiCO"><svg xmlns="http://www.w3.org/2000/svg" class="VIpgJd-ZVi9od-aZ2wEe" width="96px" height="96px" viewBox="0 0 66 66"><circle class="VIpgJd-ZVi9od-aZ2wEe-Jt5cK" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe frameborder="0" class="VIpgJd-ZVi9od-xl07Ob-OEVmcd skiptranslate" title="Widget de traduction" style="visibility: visible; box-sizing: content-box; width: 465px; height: 274px; display: none;"></iframe><iframe frameborder="0" class="VIpgJd-ZVi9od-xl07Ob-OEVmcd skiptranslate" title="Widget de traduction" style="visibility: visible; box-sizing: content-box; width: 433px; height: 274px; display: none;"></iframe><iframe frameborder="0" class="VIpgJd-ZVi9od-xl07Ob-OEVmcd skiptranslate" title="Widget de traduction" style="visibility: visible; box-sizing: content-box; width: 230px; height: 71px; display: none;"></iframe><div class="tmask" id="" style="opacity: 0; display: none;"></div><div class="tbox" style="position: absolute; opacity: 0; display: none; top: 70px; left: 452px;"><div class="tinner" id="modalframe" style="width: 940px; height: 670px;"><div class="tcontent" style=""></div><div class="tclose"></div></div></div></body></html>

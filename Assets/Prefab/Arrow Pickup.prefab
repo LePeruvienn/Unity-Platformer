@@ -133,5 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71e445ffa5491902b4ed925602cc5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupSFX: {fileID: 0}
-  gameSession: {fileID: 0}
+  pickupSFX: {fileID: 8300000, guid: fff4e108a88fc922bbe9e4fd3672eabe, type: 3}

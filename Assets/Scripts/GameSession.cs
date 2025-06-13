@@ -148,10 +148,9 @@ public class GameSession : MonoBehaviour
 	public void takeLife() {
 
 		// If player has no lives return
-		if (playerLives == 0) return;
-
 		// If player is immmune dont handle takeLife
-		if (_playerMovement.isImmune()) return;
+		// If player is rolling dont takeLife
+		if (playerLives == 0 || _playerMovement.isImmune() || _playerMovement.isRolling()) return;
 
 		// Play life pickup SFX
 		AudioSource.PlayClipAtPoint(lifePickupSFX, Camera.main.transform.position);

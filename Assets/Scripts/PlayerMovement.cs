@@ -70,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
 	[Header("Movement values")]
 	[SerializeField] private float moveSpeed = 5f;
 	[SerializeField] private float runSpeed = 8f;
+	[SerializeField] private float rollSpeed = 12f;
 	[SerializeField] private float coyoteDuration = 0.2f;
 	[SerializeField] private float climbingSpeed = 3f;
 
@@ -161,6 +162,18 @@ public class PlayerMovement : MonoBehaviour
 	 * @memberOf : PlayerMovement
 	 */
 	private void handleMovements() {
+
+		// If player is rolling just make it roll and return
+		if (_isRolling) {
+
+			// Compute direction
+			float direction = (_spriteRenderer.flipX) ? - 1f : 1f;
+	
+			// Set velocity
+			_rigidbody.velocity = new Vector2 (rollSpeed * direction, 0);
+			
+			return;
+		}
 
 		// Get current Rigidbody velocity
 		Vector2 velocity = _rigidbody.velocity;
@@ -280,6 +293,25 @@ public class PlayerMovement : MonoBehaviour
 			// Stop here when shooting we dont want to player other animation
 			return;
 		}
+		// Handle shooting animation
+		else if (_isRolling) {
+
+			// Set shoot animator to true and running to false !
+			_animator.SetBool("isRolling", true);
+			_animator.SetBool("isRunning", false);
+
+			// Get animation state
+			AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+
+			// If animation has ended reset _isShooting
+			if (stateInfo.IsName("Roll") && stateInfo.normalizedTime >= 1f) {
+				_animator.SetBool("isRolling", false);
+				_isRolling = false;
+			}
+
+			// Stop here when shooting we dont want to player other animation
+			return;
+		}
 
 		// Update animator values
 		_animator.SetBool("isRunning", (_moveInput.x != 0f || _isJumping) && !_isClimbing);
@@ -326,8 +358,8 @@ public class PlayerMovement : MonoBehaviour
 	 */
 	private void OnJump(InputValue value) {
 
-		// If player is dead there is nothing to do
-		if (_isDead || _isShooting) return;
+		// If player is not allowed to jump stop here
+		if (_isDead || _isShooting || _isRolling || _isShooting) return;
 
 		// Get input value
 		bool isPressed = value.isPressed;
@@ -450,6 +482,19 @@ public class PlayerMovement : MonoBehaviour
 		
 		// Set arrow velocity
 		arrowRigidBody.velocity = new Vector2 (computedSpeed, 0);
+	}
+
+	private void OnRoll() {
+
+		// If we are not allowed to do a roll stop here
+		if (_isInAir || _isDead || _isJumping || _isRolling || _isClimbing) return;
+
+		// Set is rolling status
+		_isRolling = true;
+
+		// Remove is running status if needed
+		if (_isRunning)
+			_isRunning = false;
 	}
 	
 	/*
@@ -605,6 +650,16 @@ public class PlayerMovement : MonoBehaviour
 	public bool isImmune() {
 
 		return _isImmune;
+	}
+
+	/*
+	 * Getter of player rolling status
+	 * @return player's immune status
+	 * @memberOf : PlayerMovement
+	 */
+	public bool isRolling() {
+
+		return _isRolling;
 	}
 
 	private void handleBlink() {

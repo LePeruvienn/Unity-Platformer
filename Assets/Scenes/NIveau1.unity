@@ -27870,7 +27870,7 @@ RectTransform:
   - {fileID: 1640738224}
   - {fileID: 1610287880}
   - {fileID: 194219970}
-  m_Father: {fileID: 678174035}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -28695,8 +28695,7 @@ Transform:
   m_LocalPosition: {x: -0.69000006, y: -1.2674272, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 45132507}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &678174036
@@ -29031,7 +29030,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 733870201}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 678174036}
+        m_TargetAssemblyTypeName: GameSession, Assembly-CSharp
+        m_MethodName: quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &733870201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81355,6 +81366,10 @@ MonoBehaviour:
     m_ParentHash: 756556552
   - m_Hash: -1546996312
     m_ParentHash: 756556552
+  - m_Hash: 113826098
+    m_ParentHash: 756556552
+  - m_Hash: -1476868190
+    m_ParentHash: 756556552
 --- !u!1 &1331000261
 GameObject:
   m_ObjectHideFlags: 0
@@ -83263,7 +83278,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1968025760}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 678174036}
+        m_TargetAssemblyTypeName: GameSession, Assembly-CSharp
+        m_MethodName: resetGameSession
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1968025760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84651,6 +84678,7 @@ SceneRoots:
   - {fileID: 8251909306077814817}
   - {fileID: 2964302786659900175}
   - {fileID: 367716147}
+  - {fileID: 45132507}
   - {fileID: 678174035}
   - {fileID: 972645698}
   - {fileID: 8141338617041145451}

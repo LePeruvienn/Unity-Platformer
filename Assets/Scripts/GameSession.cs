@@ -53,6 +53,10 @@ public class GameSession : MonoBehaviour
 	 */
 	void Awake() {
 
+		/*
+
+		I wanna make each level reset all game session (lives ect) so i think it is better to let it like this.
+
 		// Get numbers of game session in scene
 		int numberOfGameSessions = FindObjectsOfType<GameSession>().Length;
 
@@ -62,6 +66,8 @@ public class GameSession : MonoBehaviour
 		// Else we dont destory it
 		else
 			DontDestroyOnLoad(gameObject);
+
+		*/
 	}
 
 	/*
@@ -255,15 +261,28 @@ public class GameSession : MonoBehaviour
 	}
 
 	/*
-	 * Reset current game session and go back to start of the game
+	 * Restart current level
 	 * @memberOf : GameSession
 	 */
-	private void resetGameSession() {
+	public void resetGameSession() {
 
 		// Reset Scene Persist
-		FindObjectOfType<ScenePersist>().resetScenePersist();
+		// FindObjectOfType<ScenePersist>().resetScenePersist();
 
-		// Load scene 0
-		SceneManager.LoadScene(0);
+		// Reload Current scene
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	/*
+	 * Make the game quit
+	 * @memberOf : GameSession
+	 */
+	public void quit() {
+
+		// ⚠️ For Debug
+		Debug.Log("QUITTING GAME");
+
+		// Quit application
+		Application.Quit();
 	}
 }

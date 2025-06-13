@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelExit : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class LevelExit : MonoBehaviour
 
 	[SerializeField] private AudioClip nextLevelSFX;
 	[SerializeField] private int delayInSeconds = 1;
+
+	[Header("In Case this is the last Level")]
+	[SerializeField] private bool isTheLastLevel = false;
+	[SerializeField] private GameObject winCanvas;
+	[SerializeField] private TMP_Text scoreText;
 
 	/*
 	 * Start called before the first frame
@@ -36,6 +42,14 @@ public class LevelExit : MonoBehaviour
 
 		// If not triggered by a player stop here
 		if (other.gameObject.layer != LayerMask.NameToLayer("Player")) return;
+
+		if (isTheLastLevel) {
+
+			winCanvas.SetActive(true);
+			scoreText.SetText("GG ! Your score is " + ScoreManager.Instance.getScore());
+			ScoreManager.Instance.reset();
+			return;
+		};
 
 		// Play next level sfx
 		AudioSource.PlayClipAtPoint(nextLevelSFX, Camera.main.transform.position);

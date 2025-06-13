@@ -12,8 +12,6 @@ public class GameSession : MonoBehaviour
 
 	private int playerLives;
 
-	private int score = 0;
-
 	private int arrowAmount = 0;
 
 	private float showGameOverTime = 0f;
@@ -92,7 +90,7 @@ public class GameSession : MonoBehaviour
 		initHealthBar();
 
 		// Update score text
-		scoreText.SetText("x " + score);
+		scoreText.SetText("x " + ScoreManager.Instance.getScore());
 
 		// Update arrows text
 		arrowsText.SetText("x " + arrowAmount);
@@ -199,10 +197,10 @@ public class GameSession : MonoBehaviour
 	public void addScore() {
 
 		// Add 1 to score
-		score++;
+		ScoreManager.Instance.addScore();
 
 		// Update score text
-		scoreText.SetText("x " + score);
+		scoreText.SetText("x " + ScoreManager.Instance.getScore());
 	}
 
 	/*
@@ -279,8 +277,24 @@ public class GameSession : MonoBehaviour
 		// Reset Scene Persist
 		// FindObjectOfType<ScenePersist>().resetScenePersist();
 
+		// Reset Score
+		ScoreManager.Instance.reset();
+
 		// Reload Current scene
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	/*
+	 * Make the game quit
+	 * @memberOf : GameSession
+	 */
+	public void backToMenu() {
+
+		// Reset Score
+		ScoreManager.Instance.reset();
+
+		// Load Menu Scene
+		SceneManager.LoadScene(0);
 	}
 
 	/*

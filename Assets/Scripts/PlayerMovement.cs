@@ -4,11 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
 
-/*
- * TODO:
- * - Improve Ladder System
- */
-
 public class PlayerMovement : MonoBehaviour
 {
 	// Components

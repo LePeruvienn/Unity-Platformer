@@ -47,7 +47,6 @@ public class LevelExit : MonoBehaviour
 
 			winCanvas.SetActive(true);
 			scoreText.SetText("GG ! Your score is " + ScoreManager.Instance.getScore());
-			ScoreManager.Instance.reset();
 			return;
 		};
 

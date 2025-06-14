@@ -8,6 +8,9 @@ public class Pickup : MonoBehaviour
 	// SFX to play when picking up the item
 	[SerializeField] private AudioClip pickupSFX;
 
+	// State
+	private bool _isPickedUp = false;
+
 	// GameSession script
 	private GameSession _gameSession;
 
@@ -35,8 +38,13 @@ public class Pickup : MonoBehaviour
 	 */
 	void OnTriggerEnter2D(Collider2D other) {
 
+		// If Item is already PickedUp or
 		// If his is not a player stop here
-		if (other.gameObject.layer != LayerMask.NameToLayer("Player")) return;
+		if (_isPickedUp || other.gameObject.layer != LayerMask.NameToLayer("Player")) return;
+
+
+		// Set picked up status
+		_isPickedUp = true;
 
 		// Play pickyp SFX
 		AudioSource.PlayClipAtPoint(pickupSFX, Camera.main.transform.position);

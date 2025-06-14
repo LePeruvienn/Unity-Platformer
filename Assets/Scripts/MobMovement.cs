@@ -31,6 +31,9 @@ public class MobMovement : MonoBehaviour
 	[SerializeField] private float deathJumpForce = 6f;
 	[SerializeField] private float deathRotateSpeed = 2f;
 
+	[Header("SFX Assets")]
+	[SerializeField] private AudioClip deathSFX;
+
 	// Cached vars ☝️🤓 "Used to optimize memory allocation !"
 	private Vector3 _cachedDeathRotation = new Vector3 (0, 0, 0);
 
@@ -114,6 +117,9 @@ public class MobMovement : MonoBehaviour
 	 * @memberOf : UnityEngine.Event
 	 */
 	public void kill() {
+
+		// Play death SFX
+		AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position);
 
 		// Set Mob state
 		_isDead = true;

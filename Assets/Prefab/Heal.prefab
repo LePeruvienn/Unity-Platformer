@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71e445ffa5491902b4ed925602cc5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupSFX: {fileID: 8300000, guid: 9ef493792f2985e7598f2853e8245d8d, type: 3}
+  pickupSFX: {fileID: 8300000, guid: fff4e108a88fc922bbe9e4fd3672eabe, type: 3}
 --- !u!70 &6659152172534575207
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

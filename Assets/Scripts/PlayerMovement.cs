@@ -95,6 +95,9 @@ public class PlayerMovement : MonoBehaviour
 
 	[Header("SFX Assets")]
 	[SerializeField] private AudioClip deathSFX;
+	[SerializeField] private AudioClip jumpSFX;
+	[SerializeField] private AudioClip rollSFX;
+	[SerializeField] private AudioClip bowSFX;
 
 
 	// Cached vars ☝️🤓 "Used to optimize memory allocation !"
@@ -368,6 +371,10 @@ public class PlayerMovement : MonoBehaviour
 			return;
 		}
 
+
+		// Play SFX
+		AudioSource.PlayClipAtPoint(jumpSFX, Camera.main.transform.position);
+
 		// Handle normal jump
 		if (!_isInAir && !_isJumping) {
 
@@ -452,6 +459,9 @@ public class PlayerMovement : MonoBehaviour
 		// Player dont have the right to use his arrow or,
 		// if player is already shooting or jumping or Climbing stop here ❌
 		if (!_gameSession.useArrow() || _isDead || _isShooting || _isJumping || _isClimbing || _isRolling) return;
+
+		// Play SFX
+		AudioSource.PlayClipAtPoint(bowSFX, Camera.main.transform.position);
 	
 		// Set shooting status to true
 		_isShooting = true;
@@ -485,6 +495,9 @@ public class PlayerMovement : MonoBehaviour
 
 		// If we are not allowed to do a roll stop here
 		if (_isInAir || _isDead || _isJumping || _isRolling || _isClimbing || _isShooting) return;
+
+			// Play SFX
+			AudioSource.PlayClipAtPoint(rollSFX, Camera.main.transform.position);
 
 		// Set is rolling status
 		_isRolling = true;

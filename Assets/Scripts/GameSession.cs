@@ -19,7 +19,7 @@ public class GameSession : MonoBehaviour
 	private PlayerMovement _playerMovement;
 
 	[Header("Audio SFX")]
-	[SerializeField] private AudioClip lifePickupSFX;
+	[SerializeField] private AudioClip takeLifeSFX;
 
 	[Header("Player")]
 	[SerializeField] private GameObject playerObject;
@@ -156,8 +156,8 @@ public class GameSession : MonoBehaviour
 		// If player is rolling dont takeLife
 		if (playerLives == 0 || _playerMovement.isImmune() || _playerMovement.isRolling()) return;
 
-		// Play life pickup SFX
-		AudioSource.PlayClipAtPoint(lifePickupSFX, Camera.main.transform.position);
+		// Play life takeLifeSFX
+		AudioSource.PlayClipAtPoint(takeLifeSFX, Camera.main.transform.position);
 
 		// Remove one player live
 		playerLives--;

@@ -443,6 +443,9 @@ MonoBehaviour:
   deathRotateSpeed: 2
   stateDrivenCamera: {fileID: 0}
   deathSFX: {fileID: 8300000, guid: c2b0c948de1651538876bc414a2833ad, type: 3}
+  jumpSFX: {fileID: 8300000, guid: 14c8b321132a59ed98af66b3220e6d89, type: 3}
+  rollSFX: {fileID: 8300000, guid: 20e7340b97681504fbda97829064329b, type: 3}
+  bowSFX: {fileID: 8300000, guid: 54b16519cdef45e5ba62877507809a28, type: 3}
 --- !u!114 &7812780195522648178
 MonoBehaviour:
   m_ObjectHideFlags: 0

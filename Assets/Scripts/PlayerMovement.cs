@@ -372,11 +372,11 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 
-		// Play SFX
-		AudioSource.PlayClipAtPoint(jumpSFX, Camera.main.transform.position);
-
 		// Handle normal jump
 		if (!_isInAir && !_isJumping) {
+
+			// Play SFX
+			AudioSource.PlayClipAtPoint(jumpSFX, Camera.main.transform.position);
 
 			// Add jump velocity
 			Vector2 velocity = _rigidbody.velocity;
@@ -391,6 +391,9 @@ public class PlayerMovement : MonoBehaviour
 
 		// Handle Wall jump left
 		else if (canWallJumpLeft()) {
+
+			// Play SFX
+			AudioSource.PlayClipAtPoint(jumpSFX, Camera.main.transform.position);
 
 			// Compute malus
 			float malus = Mathf.Pow(wallJumpMalus, _wallJumpLeftAmount);
@@ -413,6 +416,9 @@ public class PlayerMovement : MonoBehaviour
 
 		// Handle Wall jump right
 		else if (canWallJumpRight()) {
+
+			// Play SFX
+			AudioSource.PlayClipAtPoint(jumpSFX, Camera.main.transform.position);
 
 			// Compute malus
 			float malus = Mathf.Pow(wallJumpMalus, _wallJumpRightAmount);

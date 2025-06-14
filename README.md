@@ -13,7 +13,6 @@ Il comprend **deux niveaux jouables**, un gameplay fluide et plusieurs ajouts pe
 - Déplacement, saut classique + **wall jumps** (à la place des échelles)
 - Ennemis, pièges (pics), pièces et champignons
 - Boucle de jeu complète : score, vies, mort, changement de scène, écrans de fin
-- **Niveau tutoriel interactif**
 - Menus, UI de score/vie
 
 ## ✨ Bonus ajoutés
@@ -28,7 +27,7 @@ Il comprend **deux niveaux jouables**, un gameplay fluide et plusieurs ajouts pe
 ## 📦 Build
 
 Le jeu est exporté pour **Windows et Linux**.
-👉 Fichier `.zip` disponible dans le dossier `Release/` du dépôt.
+👉 Les fichiers `.zip` disponible dans le `Release` du dépôt.
 
 ---
 

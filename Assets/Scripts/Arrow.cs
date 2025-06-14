@@ -53,7 +53,7 @@ public class Arrow : MonoBehaviour
 			Destroy(gameObject);
 		}
 		// If collide with a Mob 
-		else if (other.gameObject.layer == LayerMask.NameToLayer("Entities")) {
+		else if (!_onGround && other.gameObject.layer == LayerMask.NameToLayer("Entities")) {
 
 			// Get mob Monvement component
 			MobMovement mob = other.gameObject.GetComponent<MobMovement>();
